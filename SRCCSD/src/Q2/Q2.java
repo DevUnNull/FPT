@@ -73,7 +73,7 @@ public class Q2 {
     }
 --------------------
 //xoa thang dau tien co 2 con , duyet theo in-order
-
+// type la so int
   int count = 0;
 
     void inOrder2(Node p, RandomAccessFile f) throws Exception {
@@ -468,6 +468,53 @@ public void rotateRight(Node par) {
         }
     }
 
+// 1 cách khác
+
+  void breadth3(Node p, RandomAccessFile f) throws Exception
+    {if(p==null) return;
+     Queue q = new Queue();
+     q.enqueue(p);Node r;
+     while(!q.isEmpty())
+       {r = q.dequeue();
+       if(r.left != null&&count==0&&r.info.price<7){
+           count++;
+           rotateRight(r);
+       }
+        
+        if(r.left!=null) q.enqueue(r.left);
+        if(r.right!=null) q.enqueue(r.right);
+       }
+    }
+  public void rotateRight(Node par) {
+        Node p = root;
+        Node gr = null;
+        while (p != null) {
+            if (p == par) {
+                break;
+            }
+            gr = p;
+            if (p.info.price>par.info.price) { // compare theo ten 
+                p = p.left;
+            } else {
+                p = p.right;
+            }
+        }
+        if (par.left == null) {
+            return;
+        }
+        Node ch = par.left;
+        par.left = ch.right;
+        ch.right = par;
+        if (gr == null) {
+            root = ch;
+        } else if (gr.left == p) {
+            gr.left = ch;
+        } else if (gr.right == p) {
+            gr.right = ch;
+        }
+    }
+
+
 //----------------
 //xoa node thu may
 
@@ -486,6 +533,15 @@ int count2 = 0;
         preOrder4(p.left, f);
         preOrder4(p.right, f);
     }
+    
+    void preOrder2(Node p, RandomAccessFile f) throws Exception
+     {if(p==null) return;
+     if(p.info.price>3&&p.info.price<8)
+      fvisit(p,f);
+      preOrder2(p.left,f);
+      preOrder2(p.right,f);
+     }
+    
 ---------------------------
 //xoay trai void
  public void rotateL(Node par) {
@@ -816,7 +872,7 @@ int count = 0;
         h = countNode(pNode.right);
         rNode = k + h + 1;
         return rNode;
-    }
+  
 /-----------------------------------------
        
 }

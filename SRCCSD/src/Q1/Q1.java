@@ -241,7 +241,7 @@ void sortByPrice() {
 
 //xoa tu duoi len theo gia tri va so luong xoa
 
- int size() {
+ int size() { // đoạn code này có vẻ sai 
         int size = 0;
         Node p = head;
         while (p.next != null) {
@@ -250,6 +250,16 @@ void sortByPrice() {
         }
         return size;
     }
+ // sửa lại như sau
+ int size(){
+     int size =0;
+     Node p = head;
+     while(p != null){
+         size++;
+         p = p.next;
+     }
+     return size;
+ } 
 
    public Node getNode(int k) {
         int c = 0;
@@ -288,6 +298,7 @@ void sortByPrice() {
         }
     }
 
+      // xóa node có 2 phần tử giống nhau
     public void removeTwoLastNodeCondition() {
         int c = 0;
         int sz = size();
@@ -303,6 +314,16 @@ void sortByPrice() {
         }
     }
 
+    // 1 code tương tự 
+    public void deleteFirstCondition(){
+		Node p = head;
+		while(p != null){
+			if(p.info.price==5) {
+                            dele(p);break;
+                        }
+			p=p.next;
+		}
+    }
 -----------------------------//repalce 
  void Replace() {
         int count = 0;
