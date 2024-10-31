@@ -236,6 +236,21 @@ public class Q2 {
             parent(par).right = ch;
         }
     }
+     
+     // 1 cách làm khác 
+     void inOrder2(Node p, RandomAccessFile f) throws Exception {
+    if (p == null) return;
+    
+    inOrder2(p.left, f);
+    
+    // Check if the price is within the range and visit the node
+    if (p.info.price > 3 && p.info.price < 8) {
+        fvisit(p, f);
+    }
+    
+    inOrder2(p.right, f);
+}
+
 
 //-------------------------
 //xoa thang lon thu (count)

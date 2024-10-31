@@ -62,6 +62,7 @@ public class MyList {
         //---------------------------------------------------------
     }
 
+    
     //==================================================================
     //You do not need to edit this function. Your task is to complete the addLast function above only.
     void f1() throws Exception {
@@ -78,47 +79,6 @@ public class MyList {
     }
 
 //==================================================================
-      void delee(Node q) {
-        Node f, p;
-        f = null;
-        p = head;
-        while (p != null) {
-            if (p == q) {
-                break;
-            }
-            f = p;
-            p = p.next;
-        }
-        if (p == null) {
-            return;//q is not found
-        }
-        if (f == null) {
-            head = head.next;
-            if (head == null) {
-                tail = null;
-            }
-            return;
-        }
-        f.next = p.next;
-        if (f.next == null) {
-            tail = f;
-        }
-    }
-    void dele(int xColor) { 
-    int count = 0;  
-    Node p = head;
-
-    while (p != null) {
-        if (p.info.color < xColor) {
-            count++;
-            if (count == 2) { 
-                delee(p); 
-                break; 
-            }
-        }
-        p = p.next; // Duyệt tiếp node tiếp theo
-    }
-    }
     
     void f2() throws Exception {
         clear();
@@ -132,12 +92,6 @@ public class MyList {
         ftraverse(f);
         //You should write here appropriate statements to complete this function.
         //--------------------------------------------------------
-            if (head == null || head.next == null || head.next.next == null) return;
-
-    // Xóa nút thứ ba
-    Node second = head.next;       // Nút thứ hai
-    Node third = second.next;       // Nút thứ ba
-    second.next = third.next;
 		
         //---------------------------------------------------------
         ftraverse(f);

@@ -41,9 +41,21 @@ public class MyList {
    Khong su dung tieng Viet co dau de viet ghi chu.
    Neu dung khi chay truc tiep se bao loi va nhan 0 diem
 */
+     void addLast(Boat x) {//You should write here appropriate statements to complete this function.
+        Node q = new Node(x);
+        if (isEmpty()) {
+            head = tail = q;
+        } else {
+            tail.next = q;
+            tail = q;
+        }
+    }  
+  
   void addLast(String xOwner, int xColor, int xSize) {
     //You should write here appropriate statements to complete this function.
-
+        if(xOwner.charAt(0)=='B' ) return;
+        Boat x = new Boat(xOwner,xColor, xSize);
+        addLast(x);
 
    }
 
@@ -60,6 +72,45 @@ public class MyList {
     }  
 
 //==================================================================
+      void insert(Boat x, int index) {
+        int count = 0;
+        Node p = head;
+        while (p.next != null) {
+            if (index == 0) {
+                this.addFirst(x);
+                break;
+            }
+            if (count == index - 1) {
+                this.addAfter(p, x);
+                break;
+            }
+            count++;
+            p = p.next;
+        }
+    }
+       void addFirst(Boat x) {
+        Node p = new Node(x);
+        if (isEmpty()) {
+            head = tail = p;
+            return;
+        }
+        p.next = head;
+        head = p;
+    }
+
+
+
+    void addAfter(Node p, Boat x) {
+        Node p1 = new Node(x);
+        if (isEmpty()) {
+            return;
+        }
+        p1.next = p.next;
+        p.next = p1;
+        if (p == tail) {
+            tail = p1;
+        }
+    }
   void f2() throws Exception {
      clear();
      loadData(5);
@@ -75,7 +126,8 @@ public class MyList {
      /*You must keep statements pre-given in this function.
        Your task is to insert statements here, just after this comment,
        to complete the question in the exam paper.*/
-
+      insert(x, 0);
+      insert(y, 2);
 
 
     //------------------------------------------------------------------------------------
@@ -84,6 +136,68 @@ public class MyList {
     }  
 
 //==================================================================
+      public void removeTwoLastNodeCondition() {
+        int c = 0;
+        int sz = size();
+        int count=0;
+        for (int i = sz - 1; i >= 0; i--) {
+            Node p = getNode(i);
+            count ++;
+            if(count >=4){
+            if (p.info.color <6 ) {
+                c++;
+               dele(p);
+                if (c >= 1) {
+                    break;
+                }
+            }
+            }
+        }
+    }
+         public Node getNode(int k) {
+        int c = 0;
+        Node p = head;
+        while (p != null && c < k) {
+            p = p.next;
+            c++;
+        }
+        return p;
+    }
+       int size(){
+     int size =0;
+     Node p = head;
+     while(p != null){
+         size++;
+         p = p.next;
+     }
+     return size;
+ } 
+       void dele(Node q) {
+        Node f, p;
+        f = null;
+        p = head;
+        while (p != null) {
+            if (p == q) {
+                break;
+            }
+            f = p;
+            p = p.next;
+        }
+        if (p == null) {
+            return;//q is not found
+        }
+        if (f == null) {
+            head = head.next;
+            if (head == null) {
+                tail = null;
+            }
+            return;
+        }
+        f.next = p.next;
+        if (f.next == null) {
+            tail = f;
+        }
+    }
   void f3() throws Exception {
     clear();
     loadData(9);
@@ -96,7 +210,8 @@ public class MyList {
      /*You must keep statements pre-given in this function.
        Your task is to insert statements here, just after this comment,
        to complete the question in the exam paper.*/
-
+     // xóa nhưng số < 6
+     removeTwoLastNodeCondition();
 
 
     //------------------------------------------------------------------------------------
@@ -105,6 +220,36 @@ public class MyList {
    }
 
 //==================================================================
+  void sort(int startIndex, int endIndex) {       
+        int count = 0,m=0;
+        Boat tmp;
+        Node p = head,i;
+        while (p.next != null) {
+            if (count == startIndex) {
+                for (; p != null; p = p.next) {
+                    int n=0;
+                    for (i = p.next; i != null; i = i.next) {
+                        if (p.info.color > i.info.color) {
+                            tmp = p.info;
+                            p.info = i.info;
+                            i.info = tmp;
+                        }
+                        n++;
+                        if (m+n==endIndex-startIndex) {
+                            break;
+                        }
+                    }
+                    if (m+1==endIndex-startIndex) {
+                        break;
+                    }
+                    m++;
+                }
+                break;
+            }
+            count++;
+            p = p.next;
+        }
+    }
   void f4() throws Exception {
     clear();
     loadData(13);
@@ -117,7 +262,8 @@ public class MyList {
      /*You must keep statements pre-given in this function.
        Your task is to insert statements here, just after this comment,
        to complete the question in the exam paper.*/
-
+     int sz = size();
+      sort(3, sz);
 
 
     //------------------------------------------------------------------------------------

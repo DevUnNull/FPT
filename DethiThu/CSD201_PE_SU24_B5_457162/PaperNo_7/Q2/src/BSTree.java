@@ -62,9 +62,40 @@ public class BSTree {
 //===========================================================================
 //(2)===YOU CAN EDIT OR EVEN ADD NEW FUNCTIONS IN THE FOLLOWING PART========
 //===========================================================================
+    void insert(Bike x) {
+        Node q = new Node(x);
+        if (root == null) {
+            root = q;
+            return;
+        }
+        Node f, p;
+        p = root;
+        f = null;
+        while (p != null) {
+            if (p.info.price == x.price) {
+                return;
+            }
+            if (x.price < p.info.price) {
+                f = p;
+                p = p.left;
+            } else {
+                f = p;
+                p = p.right;
+            }
+        }
+        if (x.price < f.info.price) {
+            f.left = q;
+        } else {
+            f.right = q;
+        }
+    }
   void insert(String xRiver, int xPrice, int xColor) {
     //You should insert here statements to complete this function
-
+            if (xRiver.charAt(0) == 'A') {
+            return;
+        }
+        Bike x = new Bike(xRiver, xPrice, xColor);
+        insert(x);
 
 
    }
@@ -85,6 +116,20 @@ public class BSTree {
    }  
   
 //=============================================================
+  void inOrder2(Node p, RandomAccessFile f) throws Exception {
+    if (p == null) return;
+    
+    inOrder2(p.left, f);
+    
+    // Check if the price is within the range and visit the node
+    if ( p.info.price < 7) {
+        fvisit(p, f);
+    }
+    
+    inOrder2(p.right, f);
+}
+
+  
   void f2() throws Exception {
     clear();
     loadData(5);
@@ -98,7 +143,8 @@ public class BSTree {
     /*You must keep statements pre-given in this function.
       Your task is to insert statements here, just after this comment,
       to complete the question in the exam paper.*/
-
+    
+     inOrder2(root, f);
 
 
     //------------------------------------------------------------------------------------
@@ -107,6 +153,24 @@ public class BSTree {
    }  
 
 //=============================================================
+
+        Node deleteMaxPriceNode(Node root) {
+        if (root == null) {
+            return null; // Tree is empty
+        }
+
+        // Traverse to the rightmost node to find the largest price
+        if (root.right == null) {
+            return root.left; // Replace root with its left child (if any)
+        }
+
+        // Recursive case: go right until you find the node with the largest price
+        root.right = deleteMaxPriceNode(root.right);
+        return root;
+    }
+   
+    
+    
   void f3() throws Exception {
     clear();
     loadData(9);
@@ -120,8 +184,7 @@ public class BSTree {
     /*You must keep statements pre-given in this function.
       Your task is to insert statements here, just after this comment,
       to complete the question in the exam paper.*/
-
-
+      deleteMaxPriceNode(root);
     //------------------------------------------------------------------------------------
     breadth(root,f);
     f.writeBytes("\r\n");
