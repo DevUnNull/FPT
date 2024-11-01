@@ -71,7 +71,7 @@ public class Q1 {
     addLast(x);
    }
  // có các kiểu charAt như sau 
- // 0 , .Owner.lengh()-1 , ...
+ // 0 , .Owner.lengh()-1 , .statsWith("B") , ....
 
 
  void addFirst(Castor x){
@@ -732,6 +732,7 @@ public class MyList {
      * cach lam reverse addlast xoa phan tu dau tien di lien tuc nhu vay
      */
     // (23) finding Node have max Age and return that Node
+    // tìm ra node lớn nhất
     Node findMaxAge() {
         Node maxNode = this.head;
         Node currentNode = this.head;
@@ -1013,3 +1014,13 @@ while (piNode != null && piNode != endNode) {
     }
 }
 //---------------------------------------------
+// xóa node sau node lớn nhất
+    public void RemoveAffterNode(){
+        Node p = findMaxAge(); // gán node p thành node lớn nhất 
+        if(p.next == null){ // nếu p là node cuối thì không làm gì
+            return;
+        }else{
+            remove(p.next);  // p.next chính là node sau node lớn nhất 
+        }
+        
+    }

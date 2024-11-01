@@ -110,6 +110,67 @@ public class MyList {
             tail = p1;
         }
     }
+    
+    // thử xóa node sau node lớn nhất
+    public void RemoveAffterNode(){
+        Node p = findMaxAge(); // gán node p thành node lớn nhất 
+        if(p.next == null){ // nếu p là node cuối thì không làm gì
+            return;
+        }else{
+            remove(p.next);  // p.next chính là node sau node lớn nhất 
+        }
+        
+    }
+        Node findMaxAge() {
+        Node maxNode = this.head;
+        Node currentNode = this.head;
+        // loop from head to tail
+        while (currentNode != null) {
+            // if the age of Node have value higher than maxNode then assign maxNode = that
+            // Node
+            if (currentNode.info.type > maxNode.info.type) {
+                maxNode = currentNode;
+            }
+            currentNode = currentNode.next;
+
+        }
+        return (maxNode);
+    }
+        void remove(Node q) {
+        if (q == null) {
+            return;
+        }
+        if (q == head) { // xoa not dau tien
+            removeFirst();
+            return;
+
+        }
+        // tim node F truoc node q
+        Node fNode = head;
+        while (fNode != null && fNode.next != q) {
+            fNode = fNode.next;
+        }
+        if (fNode == null) { // q khong co trong list
+            return;
+
+        }
+        // xoa q khoi list
+        fNode.next = q.next;
+        if (fNode.next == null) {
+            tail = null;
+        }
+
+    }
+        void removeFirst() {
+        if (isEmpty()) {
+            return;
+        }
+        head = head.next;
+        if (head == null) {
+            tail = null;
+        }
+
+    }
   void f2() throws Exception {
      clear();
      loadData(5);
@@ -126,9 +187,10 @@ public class MyList {
      /*You must keep statements pre-given in this function.
        Your task is to insert statements here, just after this comment,
        to complete the question in the exam paper.*/
-      insert(x, 1);
-      insert(y, 2);
-      insert(z, 5);
+      //insert(x, 1);
+      //insert(y, 2);
+      //insert(z, 5);
+      RemoveAffterNode();
 
     //------------------------------------------------------------------------------------
      ftraverse(f);
@@ -224,20 +286,21 @@ public class MyList {
   }   
 
 //==================================================================
-    void sortByAge() {
+    void sortByAge(String name) {
     Node endNode = head;
-    while (endNode != null && !endNode.info.place.equals("I")) {
+    while (endNode != null && !endNode.info.place.equals(name)) {
         endNode = endNode.next;
     }
         Node piNode, pjNode;
         Brick temp;
         piNode = head;
+
 while (piNode != null && piNode != endNode) {
         pjNode = piNode.next;
         while (pjNode != null && pjNode != endNode) {
-            // So sánh price để sắp xếp (giả sử price là kiểu double)
+
             if (piNode.info.price > pjNode.info.price) {
-                // Hoán đổi thông tin giữa hai node
+
                 temp = piNode.info;
                 piNode.info = pjNode.info;
                 pjNode.info = temp;
@@ -261,7 +324,7 @@ while (piNode != null && piNode != endNode) {
        Your task is to insert statements here, just after this comment,
        to complete the question in the exam paper.*/
 
-     sortByAge();
+     sortByAge("I");
 
     //------------------------------------------------------------------------------------
     ftraverse(f);

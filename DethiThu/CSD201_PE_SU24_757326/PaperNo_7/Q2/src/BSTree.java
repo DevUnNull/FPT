@@ -62,11 +62,43 @@ public class BSTree {
 //===========================================================================
 //(2)===YOU CAN EDIT OR EVEN ADD NEW FUNCTIONS IN THE FOLLOWING PART========
 //===========================================================================
-  void insert(String xPlace, int xPrice, int xType) {
+    void insert(String xPlace, int xPrice, int xType) {
     //You should insert here statements to complete this function
-
+    if (xPlace.charAt(0) == 'A') {
+            return;
+        }
+        Brick x = new Brick(xPlace, xType, xType);
+        insert(x);
 
    }
+  void insert(Brick x) {
+        Node q = new Node(x);
+        if (root == null) {
+            root = q;
+            return;
+        }
+        Node f, p;
+        p = root;
+        f = null;
+        while (p != null) {
+            if (p.info.type == x.type) {
+                return;
+            }
+            if (x.type < p.info.type) {
+                f = p;
+                p = p.left;
+            } else {
+                f = p;
+                p = p.right;
+            }
+        }
+        if (x.type < f.info.type) {
+            f.left = q;
+        } else {
+            f.right = q;
+        }
+    }
+
 
 //Do not edit this function. Your task is to complete insert function above only.
   void f1() throws Exception {
