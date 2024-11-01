@@ -9,7 +9,7 @@ package Q1;
  * @author Admin
  */
 public class Q1 {
-     //replace thang lon thu n
+    // replace thang lon thu n
     int MaxAgeN(int n) {
         Node p = head;
         int max = -1;
@@ -21,19 +21,18 @@ public class Q1 {
                 }
                 p = p.next;
             }
-        }
-        else {
+        } else {
             p = head;
-            int maxN = MaxAgeN(n-1);
-            while(p!=null) {
-                if (p.info.type<maxN) {
+            int maxN = MaxAgeN(n - 1);
+            while (p != null) {
+                if (p.info.type < maxN) {
                     max = p.info.type;
                 }
-                p=p.next;
+                p = p.next;
             }
-            p=head;
+            p = head;
             while (p.next != null) {
-                if (p.next.info.type > max && p.next.info.type<maxN) {
+                if (p.next.info.type > max && p.next.info.type < maxN) {
                     max = p.next.info.type;
                 }
                 p = p.next;
@@ -41,6 +40,7 @@ public class Q1 {
         }
         return max;
     }
+
     void max1(){
         int max = MaxAgeN(2);//edit here
         Node p = head;
@@ -53,8 +53,9 @@ public class Q1 {
         }
     }
 
----------------------------------
-   void addLast(Castor x) {//You should write here appropriate statements to complete this function.
+    ---------------------------------
+
+    void addLast(Castor x) {// You should write here appropriate statements to complete this function.
         Node q = new Node(x);
         if (isEmpty()) {
             head = tail = q;
@@ -64,22 +65,22 @@ public class Q1 {
         }
     }
 
- void addLast(String xOwner, int xPrice)
-   {//You should write here appropriate statements to complete this function.
-    if(xOwner.charAt(0)=='B' || xPrice>100) return;
-    Car x = new Car(xOwner,xPrice);
-    addLast(x);
-   }
- // có các kiểu charAt như sau 
- // 0 , .Owner.lengh()-1 , .statsWith("B") , ....
+    void addLast(String xOwner, int xPrice) {// You should write here appropriate statements to complete this function.
+        if (xOwner.charAt(0) == 'B' || xPrice > 100)
+            return;
+        Car x = new Car(xOwner, xPrice);
+        addLast(x);
+    }
+    // có các kiểu charAt như sau
+    // 0 , .Owner.lengh()-1 , .statsWith("B") , ....
 
+    void addFirst(Castor x) {
+        head = new Node(x, head);
+        if (tail == null)
+            tail = head;
+    }
 
- void addFirst(Castor x){
-       head = new Node(x,head);
-       if(tail==null) tail=head;
-     }
-
- void addFirst(Castor x) {
+    void addFirst(Castor x) {
         Node p = new Node(x);
         if (isEmpty()) {
             head = tail = p;
@@ -88,8 +89,6 @@ public class Q1 {
         p.next = head;
         head = p;
     }
-
-
 
     void addAfter(Node p, Castor x) {
         Node p1 = new Node(x);
@@ -103,7 +102,6 @@ public class Q1 {
         }
     }
 
-    
     void insert(Castor x, int index) {
         int count = 0;
         Node p = head;
@@ -121,28 +119,27 @@ public class Q1 {
         }
     }
 
-
-
-    int max()
-        {Node p=head;
-        int max=head.info.depth;
-        while(p!=null){
-            if(max<p.info.depth) max=p.info.depth;
-           p=p.next;
-         }
+    int max() {
+        Node p = head;
+        int max = head.info.depth;
+        while (p != null) {
+            if (max < p.info.depth)
+                max = p.info.depth;
+            p = p.next;
+        }
         return max;
-     }
+    }
 
-//sort 
+    // sort
 
-void sort(int startIndex, int endIndex) {       
-        int count = 0,m=0;
+    void sort(int startIndex, int endIndex) {
+        int count = 0, m = 0;
         Castor tmp;
-        Node p = head,i;
+        Node p = head, i;
         while (p.next != null) {
             if (count == startIndex) {
                 for (; p != null; p = p.next) {
-                    int n=0;
+                    int n = 0;
                     for (i = p.next; i != null; i = i.next) {
                         if (p.info.type > i.info.type) {
                             tmp = p.info;
@@ -150,11 +147,11 @@ void sort(int startIndex, int endIndex) {
                             i.info = tmp;
                         }
                         n++;
-                        if (m+n==endIndex-startIndex) {
+                        if (m + n == endIndex - startIndex) {
                             break;
                         }
                     }
-                    if (m+1==endIndex-startIndex) {
+                    if (m + 1 == endIndex - startIndex) {
                         break;
                     }
                     m++;
@@ -166,8 +163,7 @@ void sort(int startIndex, int endIndex) {
         }
     }
 
-
-  void dele(Node q) {
+    void dele(Node q) {
         Node f, p;
         f = null;
         p = head;
@@ -179,7 +175,7 @@ void sort(int startIndex, int endIndex) {
             p = p.next;
         }
         if (p == null) {
-            return;//q is not found
+            return;// q is not found
         }
         if (f == null) {
             head = head.next;
@@ -222,9 +218,9 @@ void sort(int startIndex, int endIndex) {
         }
         p = p.next; // Duyệt tiếp node tiếp theo
     }
-}
----------------------  
-void sortByPrice() {
+}---------------------
+
+    void sortByPrice() {
         Node pi, pj;
         pi = head;
         while (pi != null) {
@@ -241,9 +237,9 @@ void sortByPrice() {
         }
     }
 
-//xoa tu duoi len theo gia tri va so luong xoa
+    // xoa tu duoi len theo gia tri va so luong xoa
 
- int size() { // đoạn code này có vẻ sai 
+    int size() { // đoạn code này có vẻ sai
         int size = 0;
         Node p = head;
         while (p.next != null) {
@@ -252,18 +248,19 @@ void sortByPrice() {
         }
         return size;
     }
- // sửa lại như sau
- int size(){
-     int size =0;
-     Node p = head;
-     while(p != null){
-         size++;
-         p = p.next;
-     }
-     return size;
- } 
 
-   public Node getNode(int k) {
+    // sửa lại như sau
+    int size() {
+        int size = 0;
+        Node p = head;
+        while (p != null) {
+            size++;
+            p = p.next;
+        }
+        return size;
+    }
+
+    public Node getNode(int k) {
         int c = 0;
         Node p = head;
         while (p != null && c < k) {
@@ -272,8 +269,8 @@ void sortByPrice() {
         }
         return p;
     }
-    
-      void dele(Node q) {
+
+    void dele(Node q) {
         Node f, p;
         f = null;
         p = head;
@@ -285,7 +282,7 @@ void sortByPrice() {
             p = p.next;
         }
         if (p == null) {
-            return;//q is not found
+            return;// q is not found
         }
         if (f == null) {
             head = head.next;
@@ -300,7 +297,7 @@ void sortByPrice() {
         }
     }
 
-      // xóa node có 2 phần tử giống nhau
+    // xóa node có 2 phần tử giống nhau
     public void removeTwoLastNodeCondition() {
         int c = 0;
         int sz = size();
@@ -308,7 +305,7 @@ void sortByPrice() {
             Node p = getNode(i);
             if (p.info.price == 5) {
                 c++;
-               dele(p);
+                dele(p);
                 if (c >= 1) {
                     break;
                 }
@@ -316,7 +313,7 @@ void sortByPrice() {
         }
     }
 
-    // 1 code tương tự 
+    // 1 code tương tự
     public void deleteFirstCondition(){
 		Node p = head;
 		while(p != null){
@@ -325,8 +322,8 @@ void sortByPrice() {
                         }
 			p=p.next;
 		}
-    }
------------------------------//repalce 
+    }-----------------------------// repalce
+
  void Replace() {
         int count = 0;
         Node p = head;
@@ -339,8 +336,8 @@ void sortByPrice() {
             }
             p = p.next;
         }
-    }
---------------------//get tail (index last)
+    }--------------------// get tail (index last)
+
  int indexLast() {
         int index1 = 0;
         Node p = head;
@@ -349,8 +346,8 @@ void sortByPrice() {
             p = p.next;
         }
         return index1;
-    }
-----------------------------
+    }----------------------------
+
  int MaxAgeN() {
         Node p = head;
 
@@ -375,10 +372,7 @@ void sortByPrice() {
         return index;
     }
 
-
 }
-
-
 
 ------------------------------------
 
@@ -805,33 +799,33 @@ public class MyList {
     // (27)
     void reverse(int k, int h) // reverse from k to h
     {
-//        if (k >= h) {
-//            return;
-//        }
-//        if (k < 0) {
-//            return;
-//        }
-//        int n = size();
-//        if (h > n - 1) {
-//            return;
-//        }
-//        Person[] persons = toArray();
-//        int i, j;
-//        Person temp;
-//        i = k;
-//        j = h;
-//        while (i < j) {
-//            temp = persons[i];
-//            persons[i] = persons[j];
-//            persons[j] = temp;
-//            i++;
-//            j--;
-//        }
-//        clear();
-//        for (i = 0; i < persons.length; i++) {
-//            addLast(persons[i]);
-//
-//        }
+        // if (k >= h) {
+        // return;
+        // }
+        // if (k < 0) {
+        // return;
+        // }
+        // int n = size();
+        // if (h > n - 1) {
+        // return;
+        // }
+        // Person[] persons = toArray();
+        // int i, j;
+        // Person temp;
+        // i = k;
+        // j = h;
+        // while (i < j) {
+        // temp = persons[i];
+        // persons[i] = persons[j];
+        // persons[j] = temp;
+        // i++;
+        // j--;
+        // }
+        // clear();
+        // for (i = 0; i < persons.length; i++) {
+        // addLast(persons[i]);
+        //
+        // }
         if (k >= h) {
             return;
         }
@@ -860,42 +854,40 @@ public class MyList {
         }
     }
 
-//    void reverse(int k, int h) // reverse from k to h 
-//    {
-//        if (k >= h) {
-//            return;
-//        }
-//        if (k < 0) {
-//            return;
-//        }
-//        int n = size();
-//        if (h > n - 1) {
-//            return;
-//        }
-//        Person[] a = toArray();
-//        int i, j;
-//        Person x;
-//        i = k;
-//        j = h;
-//        while (i < j) {
-//            x = a[i];
-//            a[i] = a[j];
-//            a[j] = x;
-//            i++;
-//            j--;
-//        }
-//        clear();
-//        for (i = 0; i < n; i++) {
-//            addLast(a[i]);
-//        }
-//    }
+    // void reverse(int k, int h) // reverse from k to h
+    // {
+    // if (k >= h) {
+    // return;
+    // }
+    // if (k < 0) {
+    // return;
+    // }
+    // int n = size();
+    // if (h > n - 1) {
+    // return;
+    // }
+    // Person[] a = toArray();
+    // int i, j;
+    // Person x;
+    // i = k;
+    // j = h;
+    // while (i < j) {
+    // x = a[i];
+    // a[i] = a[j];
+    // a[j] = x;
+    // i++;
+    // j--;
+    // }
+    // clear();
+    // for (i = 0; i < n; i++) {
+    // addLast(a[i]);
+    // }
+    // }
 }
 
+    // Swap 2 node chỉ định
 
-
-// Swap 2 node chỉ định
-
-          public void swapNodes(String place1, String place2) {
+    public void swapNodes(String place1, String place2) {
         if (place1.equals(place2)) {
             System.out.println("Hai vị trí trùng nhau, không cần đổi.");
             return;
@@ -939,158 +931,164 @@ public class MyList {
         curr1.next = curr2.next;
         curr2.next = temp;
     }
-// tìm 2 node chỉ đinh xong đổi chỗ
+
+    // tìm 2 node chỉ đinh xong đổi chỗ
     public void findAndSwapNodes(String place1, String place2) {
-    // Tìm node chứa place1
-    Node prev1 = null, curr1 = head;
-    while (curr1 != null && !curr1.info.place.equals(place1)) {
-        prev1 = curr1;
-        curr1 = curr1.next;
+        // Tìm node chứa place1
+        Node prev1 = null, curr1 = head;
+        while (curr1 != null && !curr1.info.place.equals(place1)) {
+            prev1 = curr1;
+            curr1 = curr1.next;
+        }
+
+        // Tìm node chứa place2
+        Node prev2 = null, curr2 = head;
+        while (curr2 != null && !curr2.info.place.equals(place2)) {
+            prev2 = curr2;
+            curr2 = curr2.next;
+        }
+
+        // Nếu một trong hai node không tồn tại, dừng lại
+        if (curr1 == null || curr2 == null) {
+            System.out.println("Không tìm thấy một trong hai vị trí cần đổi.");
+            return;
+        }
+
+        // Gọi hàm swapNodes để đổi chỗ hai node đã tìm thấy
+        swapNodes(place1, place2);
     }
 
-    // Tìm node chứa place2
-    Node prev2 = null, curr2 = head;
-    while (curr2 != null && !curr2.info.place.equals(place2)) {
-        prev2 = curr2;
-        curr2 = curr2.next;
-    }
-
-    // Nếu một trong hai node không tồn tại, dừng lại
-    if (curr1 == null || curr2 == null) {
-        System.out.println("Không tìm thấy một trong hai vị trí cần đổi.");
-        return;
-    }
-
-    // Gọi hàm swapNodes để đổi chỗ hai node đã tìm thấy
-    swapNodes(place1, place2);
-}
-//----------------------------------------------
-    //19.1 sắp xếp trước kí tự chỉ định
-        void sortByAge() {
-    Node endNode = head;
-    while (endNode != null && !endNode.info.place.equals("I")) {
-        endNode = endNode.next;
-    }
+    // ----------------------------------------------
+    // 19.1 sắp xếp trước kí tự chỉ định
+    void sortByAge() {
+        Node endNode = head;
+        while (endNode != null && !endNode.info.place.equals("I")) {
+            endNode = endNode.next;
+        }
         Node piNode, pjNode;
         Brick temp;
         piNode = head;
-        // nếu sắp xếp theo số 
-while (piNode != null && piNode != endNode) {
-        pjNode = piNode.next;
-        while (pjNode != null && pjNode != endNode) {
-            // So sánh price để sắp xếp (giả sử price là kiểu double)
-            if (piNode.info.price > pjNode.info.price) {
-                // Hoán đổi thông tin giữa hai node
-                temp = piNode.info;
-                piNode.info = pjNode.info;
-                pjNode.info = temp;
+        // nếu sắp xếp theo số
+        while (piNode != null && piNode != endNode) {
+            pjNode = piNode.next;
+            while (pjNode != null && pjNode != endNode) {
+                // So sánh price để sắp xếp (giả sử price là kiểu double)
+                if (piNode.info.price > pjNode.info.price) {
+                    // Hoán đổi thông tin giữa hai node
+                    temp = piNode.info;
+                    piNode.info = pjNode.info;
+                    pjNode.info = temp;
+                }
+                pjNode = pjNode.next;
             }
-            pjNode = pjNode.next;
+            piNode = piNode.next;
         }
-        piNode = piNode.next;
     }
-    }
-        void sortByName() {
+
+    void sortByName() {
         // nếu sắp xếp theo chữ
-    Node endNode = head;
-    while (endNode != null && !endNode.info.place.equals("I")) {
-        endNode = endNode.next;
-    }
- Node piNode, pjNode;
+        Node endNode = head;
+        while (endNode != null && !endNode.info.place.equals("I")) {
+            endNode = endNode.next;
+        }
+        Node piNode, pjNode;
         Brick temp;
         piNode = head;
         while (piNode != null && piNode != endNode) {
-        pjNode = piNode.next;
-        while (pjNode != null && pjNode != endNode) {
-            // So sánh tên để sắp xếp
-            if (piNode.info.place.compareTo(pjNode.info.place) > 0) {
-                // Hoán đổi thông tin giữa hai node
-                temp = piNode.info;
-                piNode.info = pjNode.info;
-                pjNode.info = temp;
+            pjNode = piNode.next;
+            while (pjNode != null && pjNode != endNode) {
+                // So sánh tên để sắp xếp
+                if (piNode.info.place.compareTo(pjNode.info.place) > 0) {
+                    // Hoán đổi thông tin giữa hai node
+                    temp = piNode.info;
+                    piNode.info = pjNode.info;
+                    pjNode.info = temp;
+                }
+                pjNode = pjNode.next;
             }
-            pjNode = pjNode.next;
+            piNode = piNode.next;
         }
-        piNode = piNode.next;
     }
-}
-//---------------------------------------------
-<<<<<<< HEAD
-// xóa node sau node lớn nhất
-    public void RemoveAffterNode(){
-        Node p = findMaxAge(); // gán node p thành node lớn nhất 
-        if(p.next == null){ // nếu p là node cuối thì không làm gì
+    // ---------------------------------------------
+    <<<<<<<HEAD
+
+    // xóa node sau node lớn nhất
+    public void RemoveAffterNode() {
+        Node p = findMaxAge(); // gán node p thành node lớn nhất
+        if (p.next == null) { // nếu p là node cuối thì không làm gì
             return;
-        }else{
-            remove(p.next);  // p.next chính là node sau node lớn nhất 
+        } else {
+            remove(p.next); // p.next chính là node sau node lớn nhất
         }
-        
-    }
-=======
-// insertNode
 
-void insert(Node node, int index) {
-    if (node == null) return;  // Nếu node là null thì không chèn gì cả
+    }=======
+    // insertNode
 
-    if (index <= 0) { // Trường hợp 1: Chèn vào đầu nếu index là 0 hoặc âm
-        node.next = head;
-        head = node;
-        if (tail == null || tail.next == node) {
-            tail = node;
+    void insert(Node node, int index) {
+        if (node == null)
+            return; // Nếu node là null thì không chèn gì cả
+
+        if (index <= 0) { // Trường hợp 1: Chèn vào đầu nếu index là 0 hoặc âm
+            node.next = head;
+            head = node;
+            if (tail == null || tail.next == node) {
+                tail = node;
+            }
+            return;
         }
-        return;
-    }
 
-    Node p = head;
-    int count = 0;
+        Node p = head;
+        int count = 0;
 
-    // Duyệt đến vị trí ngay trước vị trí cần chèn
-    while (p != null && count < index - 1) {
-        p = p.next;
-        count++;
-    }
-
-    if (p == null) { // Trường hợp: Vị trí vượt quá chiều dài danh sách, thêm vào cuối
-        if (tail != null) {
-            tail.next = node;
-            tail = node;
-        } else { // Danh sách trống
-            head = tail = node;
+        // Duyệt đến vị trí ngay trước vị trí cần chèn
+        while (p != null && count < index - 1) {
+            p = p.next;
+            count++;
         }
-    } else { // Trường hợp 2: Chèn vào giữa danh sách
-        node.next = p.next;
-        p.next = node;
-        if (node.next == null) {
-            tail = node;  // Cập nhật tail nếu chèn ở cuối
+
+        if (p == null) { // Trường hợp: Vị trí vượt quá chiều dài danh sách, thêm vào cuối
+            if (tail != null) {
+                tail.next = node;
+                tail = node;
+            } else { // Danh sách trống
+                head = tail = node;
+            }
+        } else { // Trường hợp 2: Chèn vào giữa danh sách
+            node.next = p.next;
+            p.next = node;
+            if (node.next == null) {
+                tail = node; // Cập nhật tail nếu chèn ở cuối
+            }
         }
     }
-}
 
-//---------------------------------------------
-// getNode tự làm
-public Node getNode(int k) {
-    int c = 0;
-    Node p = head;
-    while (p != null && c < k) {
-        p = p.next;
-        c++;
+    // ---------------------------------------------
+    // getNode tự làm
+    public Node getNode(int k) {
+        int c = 0;
+        Node p = head;
+        while (p != null && c < k) {
+            p = p.next;
+            c++;
+        }
+        // Kiểm tra nếu c bằng k thì trả về node, nếu không trả về null
+        return (c == k) ? p : null;
     }
-    // Kiểm tra nếu c bằng k thì trả về node, nếu không trả về null
-    return (c == k) ? p : null; 
-}
-//--------------------------------------------------
-// changeColor thay đổi 1 thành phần nào đó trong node 
-public void changeColor(int viTri, int newColor) {
-    Node node;
-    node = getNode(viTri);
-  if (node != null && node.info != null) { // Kiểm tra node và thông tin không null
-      node.info.color = newColor; // Thay đổi màu sắc
-  } else {
-      System.out.println("Node or Bottle info is null.");
-  }
-}
-//----------------------------------------------------
-// sắp xếp đến vị trí thứ bao nhiều là dừng
+
+    // --------------------------------------------------
+    // changeColor thay đổi 1 thành phần nào đó trong node
+    public void changeColor(int viTri, int newColor) {
+        Node node;
+        node = getNode(viTri);
+        if (node != null && node.info != null) { // Kiểm tra node và thông tin không null
+            node.info.color = newColor; // Thay đổi màu sắc
+        } else {
+            System.out.println("Node or Bottle info is null.");
+        }
+    }
+
+    // ----------------------------------------------------
+    // sắp xếp đến vị trí thứ bao nhiều là dừng
 public void sortBeforePosition(int viTri) {
     if (head == null || viTri <= 0) {
         System.out.println("Danh sách trống hoặc vị trí không hợp lệ.");
@@ -1136,5 +1134,5 @@ public void sortBeforePosition(int viTri) {
             last.next = current; // Gắn node còn lại
         }
     }
-}
->>>>>>> eb271ef8880fbe86e7a7c59a9ed799c2d359519a
+}>>>>>>>
+eb271ef8880fbe86e7a7c59a9ed799c2d359519a
