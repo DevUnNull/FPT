@@ -103,6 +103,7 @@ public class Q1 {
         }
     }
 
+    
     void insert(Castor x, int index) {
         int count = 0;
         Node p = head;
@@ -1014,6 +1015,7 @@ while (piNode != null && piNode != endNode) {
     }
 }
 //---------------------------------------------
+<<<<<<< HEAD
 // xóa node sau node lớn nhất
     public void RemoveAffterNode(){
         Node p = findMaxAge(); // gán node p thành node lớn nhất 
@@ -1024,3 +1026,115 @@ while (piNode != null && piNode != endNode) {
         }
         
     }
+=======
+// insertNode
+
+void insert(Node node, int index) {
+    if (node == null) return;  // Nếu node là null thì không chèn gì cả
+
+    if (index <= 0) { // Trường hợp 1: Chèn vào đầu nếu index là 0 hoặc âm
+        node.next = head;
+        head = node;
+        if (tail == null || tail.next == node) {
+            tail = node;
+        }
+        return;
+    }
+
+    Node p = head;
+    int count = 0;
+
+    // Duyệt đến vị trí ngay trước vị trí cần chèn
+    while (p != null && count < index - 1) {
+        p = p.next;
+        count++;
+    }
+
+    if (p == null) { // Trường hợp: Vị trí vượt quá chiều dài danh sách, thêm vào cuối
+        if (tail != null) {
+            tail.next = node;
+            tail = node;
+        } else { // Danh sách trống
+            head = tail = node;
+        }
+    } else { // Trường hợp 2: Chèn vào giữa danh sách
+        node.next = p.next;
+        p.next = node;
+        if (node.next == null) {
+            tail = node;  // Cập nhật tail nếu chèn ở cuối
+        }
+    }
+}
+
+//---------------------------------------------
+// getNode tự làm
+public Node getNode(int k) {
+    int c = 0;
+    Node p = head;
+    while (p != null && c < k) {
+        p = p.next;
+        c++;
+    }
+    // Kiểm tra nếu c bằng k thì trả về node, nếu không trả về null
+    return (c == k) ? p : null; 
+}
+//--------------------------------------------------
+// changeColor thay đổi 1 thành phần nào đó trong node 
+public void changeColor(int viTri, int newColor) {
+    Node node;
+    node = getNode(viTri);
+  if (node != null && node.info != null) { // Kiểm tra node và thông tin không null
+      node.info.color = newColor; // Thay đổi màu sắc
+  } else {
+      System.out.println("Node or Bottle info is null.");
+  }
+}
+//----------------------------------------------------
+// sắp xếp đến vị trí thứ bao nhiều là dừng
+public void sortBeforePosition(int viTri) {
+    if (head == null || viTri <= 0) {
+        System.out.println("Danh sách trống hoặc vị trí không hợp lệ.");
+        return; // Không có gì để sắp xếp
+    }
+
+    // Danh sách tạm để lưu các node trước viTri
+    List<Node> nodeList = new ArrayList<>();
+    Node current = head;
+    int index = 0;
+
+    // Lấy các node trước viTri
+    while (current != null && index < viTri) {
+        nodeList.add(current);
+        current = current.next;
+        index++;
+    }
+
+    // Sắp xếp danh sách tạm theo color sử dụng Bubble Sort (hoặc bạn có thể chọn thuật toán khác)
+    for (int i = 0; i < nodeList.size() - 1; i++) {
+        for (int j = 0; j < nodeList.size() - 1 - i; j++) {
+            if (nodeList.get(j).info.color > nodeList.get(j + 1).info.color) {
+                // Hoán đổi node
+                Node temp = nodeList.get(j);
+                nodeList.set(j, nodeList.get(j + 1));
+                nodeList.set(j + 1, temp);
+            }
+        }
+    }
+
+    // Gán lại các node đã sắp xếp vào danh sách
+    if (!nodeList.isEmpty()) {
+        head = nodeList.get(0); // Đặt head là node đầu tiên trong danh sách đã sắp xếp
+        Node last = head;
+
+        for (int i = 1; i < nodeList.size(); i++) {
+            last.next = nodeList.get(i);
+            last = last.next;
+        }
+
+        // Kết nối node cuối cùng với node ở viTri
+        if (current != null) {
+            last.next = current; // Gắn node còn lại
+        }
+    }
+}
+>>>>>>> eb271ef8880fbe86e7a7c59a9ed799c2d359519a
