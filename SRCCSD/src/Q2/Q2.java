@@ -761,6 +761,7 @@ int count2 = 0;
     }
  
  -------------------//xoa thang cha cua thang node thu 4 duyet theo post-order
+ // xoa thang thu chi chinh
 	int count2 = 0;
         Node parent(Node x) {
         Node p = root;
@@ -887,7 +888,44 @@ int count = 0;
         h = countNode(pNode.right);
         rNode = k + h + 1;
         return rNode;
-  
+  }
 /-----------------------------------------
-       
-}
+// tìm gốc thứ 3 có nhanh bên phải
+      /*
+    pre-order gốc trái phải
+    in-order trái gốc phải
+    post-order trái phải gốc
+  */
+  
+  int rightChildCount =0;
+  Node targetNode = null;
+  public void findThirdNodeWithRightChildPreOrder(Node node) {
+        if (node == null || targetNode != null) return;
+
+        // duyện giữa
+        if (node.right != null) {
+            rightChildCount++;
+            if (rightChildCount == 3) { // 3 la vi tri node cuar cay 
+                targetNode = node;
+                return;
+            }
+        }
+        // duyệt trái 
+        findThirdNodeWithRightChildPreOrder(node.left);
+        // duyệt phải
+        findThirdNodeWithRightChildPreOrder(node.right);
+        if (targetNode != null) {
+            int k = countSubtreeNodes(targetNode); // Đếm số lượng nút trong cây con
+            if (k > 0) {
+                targetNode.info.volume = 100 + k; // Cập nhật volume
+            }
+        }
+    }
+
+    // Đếm số nút trong cây con có gốc là targetNode
+    public int countSubtreeNodes(Node node) {
+        if (node == null) return 0;
+        return 1 + countSubtreeNodes(node.left) + countSubtreeNodes(node.right);
+    }
+   
+
