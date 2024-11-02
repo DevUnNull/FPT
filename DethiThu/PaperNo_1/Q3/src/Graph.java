@@ -51,14 +51,7 @@ public class Graph {
   void fvisit(int i, RandomAccessFile f) throws Exception {
     f.writeBytes("  "+v[i]);
    }
-  
-  /* There is an array int deg[] already declared in the class Graph 
-     You should write a funcion to calculate d[i] = degree of the vertex i
-  */
-  void fvisitDeg(int i, RandomAccessFile f) throws Exception {
-    f.writeBytes("  "+v[i]+"("+deg[i]+")"); // d[i] = degree of the vertex i
-   }
-  
+
  void fdispAdj(RandomAccessFile f) throws Exception { 
     int i,j;
     f.writeBytes("n = "+n+"\r\n");
@@ -111,7 +104,6 @@ public class Graph {
 //===========================================================================
 //(2)===YOU CAN EDIT OR EVEN ADD NEW FUNCTIONS IN THE FOLLOWING PART========
 //===========================================================================
-
   void f1() throws Exception {
     loadData(1);
     String fname = "f1.txt";
@@ -132,7 +124,7 @@ public class Graph {
    }
 
 //=================================================================================================
-  void f2() throws Exception {
+ void f2() throws Exception {
     loadData(12);
     String fname = "f2.txt";
     File g123 = new File(fname);

@@ -62,17 +62,7 @@ public class BSTree {
 //===========================================================================
 //(2)===YOU CAN EDIT OR EVEN ADD NEW FUNCTIONS IN THE FOLLOWING PART========
 //===========================================================================
-  void insert(String xMaker, int xVolume, int xColor) {
-    //You should insert here statements to complete this function
-            if (xMaker.charAt(0) == 'A') {
-            return;
-        }
-        Bottle x = new Bottle(xMaker,xVolume, xColor);
-        insert(x);
-
-   }
-
-  void insert(Bottle x) {
+   void insert(Bottle x) {
         Node q = new Node(x);
         if (root == null) {
             root = q;
@@ -99,6 +89,15 @@ public class BSTree {
             f.right = q;
         }
     }
+  void insert(String xMaker, int xVolume, int xColor) {
+    //You should insert here statements to complete this function
+
+        if (xMaker.charAt(0) == 'B') {
+            return;
+        }
+        Bottle x = new Bottle(xMaker, xVolume, xColor);
+        insert(x);
+   }
 
 //Do not edit this function. Your task is to complete insert function above only.
   void f1() throws Exception {
@@ -116,13 +115,15 @@ public class BSTree {
    }  
   
 //=============================================================
-       void preOrder2(Node p, RandomAccessFile f) throws Exception
+  
+    void preOrder2(Node p, RandomAccessFile f) throws Exception
      {if(p==null) return;
-     if(p.info.volume<7)
+     if(p.info.color<7)
       fvisit(p,f);
       preOrder2(p.left,f);
       preOrder2(p.right,f);
      }
+    
  void f2() throws Exception {
     clear();
     loadData(5);
@@ -145,7 +146,7 @@ public class BSTree {
    }  
 
 //=============================================================
- int count2 = 0;
+ 	int count2 = 0;
         Node parent(Node x) {
         Node p = root;
         Node parent = null;
@@ -163,12 +164,12 @@ public class BSTree {
         return parent;
     }  
     
-void postOrder2(Node p, RandomAccessFile f) throws Exception {
+ void postOrder2(Node p, RandomAccessFile f) throws Exception {
       if(p==null) return;
       postOrder2(p.left,f);
       postOrder2(p.right,f);
      count2++;
-     if(count2 == 5){
+     if(count2 == 4){ // xóa vị trí thứ 5
          dele(parent(p).info.color);
      }
      }
@@ -263,12 +264,6 @@ void postOrder2(Node p, RandomAccessFile f) throws Exception {
    }  
 
 //=============================================================
-  // 1 số lưu ý 
-  /*
-    pre-order gốc trái phải
-    in-order trái gốc phải
-    post-order trái phải gốc
-  */
   
   int rightChildCount =0;
   Node targetNode = null;
@@ -276,7 +271,7 @@ void postOrder2(Node p, RandomAccessFile f) throws Exception {
         if (node == null || targetNode != null) return;
 
         // duyện giữa
-        if (node.right != null) {
+        if (node.right != null&& node.left != null) {
             rightChildCount++;
             if (rightChildCount == 3) { // 3 la vi tri node cuar cay 
                 targetNode = node;
@@ -300,7 +295,6 @@ void postOrder2(Node p, RandomAccessFile f) throws Exception {
         if (node == null) return 0;
         return 1 + countSubtreeNodes(node.left) + countSubtreeNodes(node.right);
     }
-  
  void f4() throws Exception {
     clear();
     loadData(13);;
@@ -315,7 +309,6 @@ void postOrder2(Node p, RandomAccessFile f) throws Exception {
       Your task is to insert statements here, just after this comment,
       to complete the question in the exam paper.*/
      findThirdNodeWithRightChildPreOrder(root);
-
 
      
     //------------------------------------------------------------------------------------
