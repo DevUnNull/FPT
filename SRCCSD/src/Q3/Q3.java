@@ -10,12 +10,9 @@ package Q3;
  */
 public class Q3 {
     Hàm F1
- 
-//output D  A  B  E  H  I  C  G  F
-//  A  B  E  H  I
 
-
-
+    // output D A B E H I C G F
+    // A B E H I
 
     int depthFirst2(boolean visited[], int i, int count, int min, int max, RandomAccessFile f) throws Exception {
         if (count >= min && count <= max) {
@@ -31,7 +28,7 @@ public class Q3 {
         return count;
     }
 
-    //k la bat dau tu vetex nao 
+    // k la bat dau tu vetex nao
     void depthFirst2(int k, int min, int max, RandomAccessFile f) throws Exception {
         int i;
         boolean[] visited = new boolean[20];
@@ -47,13 +44,11 @@ public class Q3 {
         System.out.println();
     }
 
+    // -----------------------------------------
+    // output B G A E F I C H D
+    // B(1) G(2) A(4) E(3) F(3) I(3) C(1) H(2) D(1)
 
-//-----------------------------------------
-//output  B G A E F I C H D
- //  B(1) G(2) A(4) E(3) F(3) I(3) C(1) H(2) D(1)
-
-
-int deg(int i) {
+    int deg(int i) {
         int s, j;
         s = 0;
         for (j = 0; j < n; j++) {
@@ -62,12 +57,12 @@ int deg(int i) {
         s += a[i][i];
         return (s);
     }
-   
+
     void fvisit2(int i, RandomAccessFile f) throws Exception {
-        f.writeBytes(" " + v[i]+"("+deg(i)+")");
+        f.writeBytes(" " + v[i] + "(" + deg(i) + ")");
     }
 
-void depth2(boolean[] visited, int k, RandomAccessFile f) throws Exception {
+    void depth2(boolean[] visited, int k, RandomAccessFile f) throws Exception {
         fvisit2(k, f);
         visited[k] = true;
         for (int i = 0; i < n; i++) {
@@ -90,10 +85,10 @@ void depth2(boolean[] visited, int k, RandomAccessFile f) throws Exception {
             }
         }
     }
-//--------------------------------------
+    // --------------------------------------
 
-//Dijktra
-//  output A B C E D G
+    // Dijktra
+    // output A B C E D G
 
     void dijkstra(int fro, int to, RandomAccessFile f) throws Exception {
         int i, j, k, t, INF;
@@ -129,8 +124,8 @@ void depth2(boolean[] visited, int k, RandomAccessFile f) throws Exception {
                 }
             }
             if (k == -1) {
-                return; 
-            }           
+                return;
+            }
             S[k] = true;
             j++;
             ss[j] = k;
@@ -171,9 +166,9 @@ void depth2(boolean[] visited, int k, RandomAccessFile f) throws Exception {
         f.writeBytes("\r\n");
 
     }
-//-------------------------
-//output   E,15 D,19 F,24 G,29
-//the last count vertices ....
+    // -------------------------
+    // output E,15 D,19 F,24 G,29
+    // the last count vertices ....
 
     void dijkstra2(int fro, int to, int count_index, RandomAccessFile f) throws IOException {
         List<Integer> listSelected = new ArrayList<>();
@@ -243,12 +238,11 @@ void depth2(boolean[] visited, int k, RandomAccessFile f) throws Exception {
         f.writeBytes("\r\n");
     }
 
-//--------------------------------
-//output   A   C   F   E
-//  0   9   11   20
+    // --------------------------------
+    // output A C F E
+    // 0 9 11 20
 
-
- void dijkstra3(int fro, int to, RandomAccessFile f) throws Exception {
+    void dijkstra3(int fro, int to, RandomAccessFile f) throws Exception {
         int i, j, k, t, INF;
         INF = 999;
         boolean[] S = new boolean[n];
@@ -324,12 +318,12 @@ void depth2(boolean[] visited, int k, RandomAccessFile f) throws Exception {
         }
         f.writeBytes("\r\n");
     }
-    
-//-------------------
 
-//Euler
+    // -------------------
 
- boolean hasIsolated() {
+    // Euler
+
+    boolean hasIsolated() {
         for (int i = 0; i < n; i++) {
             if (deg(i) == 0) {
                 return (true);
@@ -337,7 +331,7 @@ void depth2(boolean[] visited, int k, RandomAccessFile f) throws Exception {
         }
         return (false);
     }
-    
+
     boolean isConnected() {
         boolean[] p = new boolean[n];
         int i, j, r;
@@ -363,7 +357,7 @@ void depth2(boolean[] visited, int k, RandomAccessFile f) throws Exception {
         }
         return (true);
     }
-    
+
     boolean isUnDirected() {
         int i, j;
         for (i = 0; i < n; i++) {
@@ -375,7 +369,7 @@ void depth2(boolean[] visited, int k, RandomAccessFile f) throws Exception {
         }
         return (true);
     }
-    
+
     boolean allDegEven() {
         for (int i = 0; i < n; i++) {
             if (deg(i) % 2 == 1) {
@@ -384,7 +378,7 @@ void depth2(boolean[] visited, int k, RandomAccessFile f) throws Exception {
         }
         return (true);
     }
-    
+
     boolean hasEulerCycle() {
         if (!hasIsolated() && isUnDirected() && isConnected() && allDegEven()) {
             return (true);
@@ -392,7 +386,7 @@ void depth2(boolean[] visited, int k, RandomAccessFile f) throws Exception {
             return (false);
         }
     }
-    
+
     void eulerCycle(int fro, RandomAccessFile f) throws IOException {
         if (!hasEulerCycle()) {
             return;
@@ -412,7 +406,7 @@ void depth2(boolean[] visited, int k, RandomAccessFile f) throws Exception {
             if (i == n) {
                 s.pop();
                 eu[j++] = r;
-                
+
             } else {
                 s.push(i);
                 a[r][i]--;
@@ -424,54 +418,97 @@ void depth2(boolean[] visited, int k, RandomAccessFile f) throws Exception {
             f.writeBytes(v[eu[i]] + " ");
         }
     }
-//-----------------------------------------------------
-  int count =0;
-  void breadth2(boolean [] en, int i,int min, int max, RandomAccessFile f) throws Exception {
-    Queue q = new Queue();
-    int r,j;
-    q.enqueue(i); en[i]=true;
-    while(!q.isEmpty()) {
-      r = q.dequeue();
-      count++;
-        if (count>= min && count <= max) {
-            fvisit(r, f);
+
+    // -----------------------------------------------------
+    int count = 0;
+
+    void breadth2(boolean[] en, int i, int min, int max, RandomAccessFile f) throws Exception {
+        Queue q = new Queue();
+        int r, j;
+        q.enqueue(i);
+        en[i] = true;
+        while (!q.isEmpty()) {
+            r = q.dequeue();
+            count++;
+            if (count >= min && count <= max) {
+                fvisit(r, f);
+            }
+            for (j = 0; j < n; j++) {
+                if (!en[j] && a[r][j] > 0) {
+                    q.enqueue(j);
+                    en[j] = true;
+                }
+            }
         }
-      for(j=0;j<n;j++) {
-        if(!en[j] && a[r][j]>0) {
-         q.enqueue(j);en[j]=true;
+    }
+
+    void breadth2(int k, int min, int max, RandomAccessFile f) throws Exception {
+        boolean[] en = new boolean[20];
+        int i;
+        for (i = 0; i < n; i++)
+            en[i] = false;
+        breadth2(en, k, min, max, f);
+        for (i = 0; i < n; i++)
+            if (!en[i])
+                breadth2(en, i, min, max, f);
+    }
+
+    // --f1-graph-depthfirst
+    int count1 = 0;
+
+    void depth2(boolean[] visited, int k, int min, int max, RandomAccessFile f) throws Exception {
+        count1++;
+        if (count1 >= min && count1 <= max) {
+            fvisit(k, f);
         }
-       }
-     }
-   }
+        visited[k] = true;
+        for (int i = 0; i < n; i++) {
+            if (!visited[i] && a[k][i] > 0)
+                depth2(visited, i, min, max, f);
+        }
+    }
 
-  void breadth2(int  k,int min,int max, RandomAccessFile f) throws Exception {
-    boolean [] en = new boolean[20];
-    int i;
-    for(i=0;i<n;i++) en[i]=false;
-    breadth2(en,k,min,max,f);
-    for(i=0;i<n;i++) 
-      if(!en[i]) breadth2(en,i,min,max,f);
-   }
-  //--f1-graph-depthfirst
-  int count1=0;
-  void depth2(boolean [] visited,int k,int min,int max, RandomAccessFile f) throws Exception {
-    count1++;
-      if (count1>=min && count1<=max) {
-          fvisit(k, f);
-      }
-    visited[k]=true;
-    for(int i=0;i<n;i++) {
-      if(!visited[i] && a[k][i]>0) depth2(visited,i,min,max,f);
-     }
-   }
-  void depth2(int k,int min,int max, RandomAccessFile f) throws Exception {
-    boolean [] visited = new boolean[20];
-    int i;
-    for(i=0;i<n;i++) visited[i]=false;
-    depth2(visited,k,min,max,f);
-    for(i=0;i<n;i++) 
-       if(!visited[i]) depth2(visited,i,min,max,f);
-   }
+    void depth2(int k, int min, int max, RandomAccessFile f) throws Exception {
+        boolean[] visited = new boolean[20];
+        int i;
+        for (i = 0; i < n; i++)
+            visited[i] = false;
+        depth2(visited, k, min, max, f);
+        for (i = 0; i < n; i++)
+            if (!visited[i])
+                depth2(visited, i, min, max, f);
+    }
 
+}
 
+    // ------------------------------------------------------------------------------------
+    void depth2(int v, boolean[] visited, RandomAccessFile f) throws Exception {
+        // Mark the current node as visited
+        visited[v] = true;
+
+        // Calculate degree of vertex v (this is a placeholder, adjust to your
+        // implementation)
+        int degree = calculateDegree(v);
+
+        // Write vertex with degree to file
+        f.writeBytes("Vertex " + getVertexName(v) + "(" + degree + ")\n");
+
+        // Traverse neighbors (assuming adjacency list representation)
+        for (int neighbor : adjacencyList[v]) {
+            if (!visited[neighbor]) {
+                depth2(neighbor, visited, f);
+            }
+        }
+    }
+
+    // Helper method to get the degree of a vertex (assuming an adjacency list
+    // representation)
+    int calculateDegree(int v) {
+        return adjacencyList[v].size();
+    }
+
+    // Helper method to map vertex index to vertex name, e.g., 1 -> "B"
+String getVertexName(int index) {
+    // Map index to letter (assuming 0 -> A, 1 -> B, etc.)
+    return String.valueOf((char) ('A' + index));
 }

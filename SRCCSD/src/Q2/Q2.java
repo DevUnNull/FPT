@@ -948,3 +948,189 @@ Gan gia
             if (node == null) return 0;
             return 1 + countSubtreeNodes(node.left) + countSubtreeNodes(node.right);
         }
+
+    // --------------------------------------------------------------------------------------
+    // duyệt theo breadthFist having 2 són and price < 7
+public void breadthFirstHavingBoth2SonAndPrice(){
+      
+    Queue q = new Queue();
+    q.enqueue(root);
+    boolean deleted = false;
+    while (!q.isEmpty() && !deleted) {
+    Node r = q.dequeue();
+    // Check if node has two children and price < 7
+    if (r.left != null && r.right != null && r.info.price < 7) {
+        deleByCopy(r.info.price);  // Delete by copying
+        deleted = true;
+    }
+    // Enqueue children for breadth-first traversal
+    if (r.left != null) q.enqueue(r.left);
+    if (r.right != null) q.enqueue(r.right);
+}
+}
+
+public void rotateRight(Node par) {
+    Node p = root;
+    Node gr = null;
+    while (p != null) {
+        if (p == par) {
+            break;
+        }
+        gr = p;
+        if (p.info.price > par.info.price) { // compare theo ten
+            p = p.left;
+        } else {
+            p = p.right;
+        }
+    }
+    if (par.left == null) {
+        return;
+    }
+    Node ch = par.left;
+    par.left = ch.right;
+    ch.right = par;
+    if (gr == null) {
+        root = ch;
+    } else if (gr.left == p) {
+        gr.left = ch;
+    } else if (gr.right == p) {
+        gr.right = ch;
+    }
+}
+
+    void breadth3(Node p, RandomAccessFile f) throws Exception {
+        int count = 0;
+        if (p == null)
+            return;
+        Queue q = new Queue();
+        q.enqueue(p);
+        Node r;
+        while (!q.isEmpty()) {
+            r = q.dequeue();
+            if (r.left != null && count == 0 && r.info.price < 7) {
+                count++;
+                rotateRight(r);
+            }
+
+            if (r.left != null)
+                q.enqueue(r.left);
+            if (r.right != null)
+                q.enqueue(r.right);
+        }
+    }
+
+    void deleByCopy(int xPrice) {
+        if (root == null) {
+            System.out.println(" The tree is empty, no deletion");
+            return;
+        }
+        Node f, p; // f will be the father of p
+        p = root;
+        f = null;
+        while (p != null) {
+            if (p.info.price == xPrice) {
+                break;// Found key x
+            }
+            if (xPrice < p.info.price) {
+                f = p;
+                p = p.left;
+            } else {
+                f = p;
+                p = p.right;
+            }
+        }
+        if (p == null) {
+            System.out.println(" The key " + xPrice + " does not exist, no deletion");
+            return;
+        }
+        if (p.left == null && p.right == null) // p is a leaf node
+        {
+            if (f == null) // The tree is one node
+            {
+                root = null;
+            } else {
+                if (f.left == p) {
+                    f.left = null;
+                } else {
+                    f.right = null;
+                }
+            }
+            return;
+        }
+
+        if (p.left != null && p.right == null) // p has only left child
+        {
+            if (f == null) // p is a root
+            {
+                root = p.left;
+            } else {
+                if (f.left == p) // p is a left child
+                {
+                    f.left = p.left;
+                } else {
+                    f.right = p.left;
+                }
+            }
+            return;
+        }
+
+        if (p.left == null && p.right != null) // p has only right child
+        {
+            if (f == null) // p is a root
+            {
+                root = p.right;
+            } else {
+                if (f.left == p) // p is aleft child
+                {
+                    f.left = p.right;
+                } else {
+                    f.right = p.right;
+                }
+            }
+            return;
+        }
+
+        if (p.left != null && p.right != null) // p has both left and right children
+        {
+            Node q, fr, rp; // p's key will be replaced by rp's one
+            fr = null;
+            q = p.left;
+            rp = q;
+            while (rp.right != null) {
+                fr = rp;
+                rp = rp.right; // Find the right most node on the left sub-tree
+            }
+            p.info = rp.info;
+            if (fr == null) // rp is just a left son of p
+            {
+                p.left = rp.left;
+            } else {
+                fr.right = rp.left;
+            }
+        }
+
+    }
+
+    // -------------------------------------------------------------------------------------
+    // find the first node p having left son and price < 7 . rotate p to right about
+    // is left son
+public void breadthFirstHavingLeftSon(){
+    Queue q = new Queue();
+    q.enqueue(root);
+    boolean rotated = false;
+
+    while (!q.isEmpty() && !rotated) {
+        Node p = q.dequeue();
+
+        // Check if the node has a left child and price < 7
+        if (p.left != null && p.info.price < 7) {
+            rotateRight(p);  // Perform right rotation on p about its left child
+            rotated = true;
+        }
+
+        // Enqueue children for breadth-first traversal
+        if (p.left != null) q.enqueue(p.left);
+        if (p.right != null) q.enqueue(p.right);
+    }
+
+}
