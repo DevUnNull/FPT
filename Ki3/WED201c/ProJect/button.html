@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--nó sẽ hiện ra 1 nút bấm nó gần tương tự với việc gắn link thôi-->
+    <h1>button</h1>
+    <button onclick="changeText()" style="color: red;" >Click me</button>
+    <h1 id="h1"> HELLO </h1>
+    <script>
+        changeText =() =>
+        {
+            document.getElementById("h1").innerHTML = "BYE";
+        }
+    </script>
+</body>
+</html>

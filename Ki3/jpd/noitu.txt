@@ -1,0 +1,11 @@
+サラダ : salad
+ワイン : wine
+ピザ : pizza
+アイスクリーム : rice cream
+ライス : rice
+パン : bread
+アイスコーヒー : ice coffee
+チョコテートケーキ : chocolate cake
+こーそスープ : corn soup
+
+

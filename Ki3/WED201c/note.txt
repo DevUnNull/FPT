@@ -1,0 +1,77 @@
+Cấu tạo của 1 trang web
+
+- HTML : đây là bộ khung của trang web
+- CSS : đây là màu sắc và hình ảnh của trang web
+- js : đây là logic của trang web
+
+
+
+HTML : 
+<!DOCTYPE html>
+<html>
+	<body>
+		những gì bạn muốn hiện ở trên trang web
+	<body>
+<html>
+
+
+note :
+1,
+ 	<h1>
+        	mấy thằng nguuuuu
+        </h1>
+- h là tiêu đề h càng nhỏ chữ càng to
+2,
+    <p>
+        ban may là một thằng rất là ngu khang văn ngu vvcl ngu thế hả khang văn
+    </p>
+- đây là nó sẽ in ra 1 đoạn văn 
+3,
+	<br>
+- đây là thẻ không cần đóng nó là lệnh xuống dòng
+4,
+	<hr>
+- đây là thẻ không cần đóng nó sẽ in ra 1 đường thẳng 
+VD : ________________________________________________
+
+_____________________________________________________________________________
+
+Các định dạng văn bản trong HTML
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+        đây là in thường 
+        <p>đây là in thường (a)</p> <!--nó tương tự như viết bình thường không cần <p>-->
+        <p>đây là in đậm <b>(a)</b></p>
+        <p>đây là in nghiêng<i>(a)</i></p>
+        <p>đây là in lớn<big>(a)</big></p>
+        <p>đây là in nhỏ<small>(a)</small></p>
+        <p>đay là văn bản subscript<sub>(a)</sub></p>
+        <p>đây là văn bản inserted<ins>(a)</ins></p>
+        <p>đây là văn bản delete<del>(a)</del></p>
+        <p>đây là văn bản marked<mark>(a)</mark></p>
+</body>
+
+</html>
+<!--đây là comment-->
+___________________________________________________________________________________
+cách gắn đường dẫn liên kết 
+<body>
+        <a href="https://code.visualstudio.com/docs/?dv=win64user">
+            visualstudio
+        </a>
+nó sẽ biến trang đó thành link mình gắn
+
+</body>
+
+        <a href="https://code.visualstudio.com/docs/?dv=win64user" target="_blank">
+            visualstudio
+        </a>
+</body>
+nó sẽ tạo 1 trang khang khác thành link mình gắn
+

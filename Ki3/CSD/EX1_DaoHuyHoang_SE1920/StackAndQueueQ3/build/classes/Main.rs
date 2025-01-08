@@ -1,0 +1,2 @@
+StringStack$Node
+StringStack
