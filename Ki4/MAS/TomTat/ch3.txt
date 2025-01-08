@@ -1,12 +1,12 @@
-Thuật ngữ                  | Tác dụng                                                                 | Ví dụ
----------------------------|--------------------------------------------------------------------------|-------------------------------------------------
-Biến ngẫu nhiên rời rạc (Discrete Random Variable) | Mô tả các giá trị là kết quả của quá trình đếm.                         | Số lớp học bạn tham gia, số người thắng cuộc trong một trò chơi.
-Bảng phân phối xác suất (Probability Distribution Table) | Biểu diễn xác suất của các giá trị có thể của một biến ngẫu nhiên.       | Bảng: P(X=0) = 2/8, P(X=1) = 2/8, P(X=2) = 2/8, P(X=3) = 0.
-Hàm khối xác suất (Probability Mass Function - PMF) | Công thức tính xác suất tại một giá trị cụ thể.                         | f(x) = P(X=x).
-Hàm phân phối tích lũy (Cumulative Distribution Function - CDF) | Tính tổng xác suất từ nhỏ nhất đến giá trị cho trước.                  | P(X ≤ 2) = P(X=0) + P(X=1) + P(X=2).
-Phân phối đều (Discrete Uniform Distribution) | Xác suất đồng đều cho các giá trị trong một khoảng.                     | X ~ Discrete Uniform(0, 99), P(X<6).
-Phân phối nhị thức (Binomial Distribution) | Số lần thành công trong n lần thử nghiệm.                               | P(X=k) = C(n,k) p^k (1-p)^(n-k), với n=10, p=0.5.
-Phân phối hình học (Geometric Distribution) | Số lần thử nghiệm cho đến khi đạt thành công đầu tiên.                  | Tính P(X=k), trong đó p là xác suất thành công.
-Phân phối nhị thức âm (Negative Binomial Distribution) | Số lần thử nghiệm cho đến khi đạt r lần thành công.                     | Tính P(X=k), với r=2, p=0.5.
-Phân phối siêu bội (Hypergeometric Distribution) | Xác suất thành công khi lấy mẫu từ một tổng thể không hoàn lại.          | Tính xác suất thành công trong mẫu lấy từ tổng thể 100 phần tử (có 20 thành công).
-Phân phối Poisson (Poisson Distribution) | Số sự kiện xảy ra trong một khoảng thời gian/khoảng cách nhất định.     | P(X=k) = (λ^k * e^(-λ)) / k!, với λ=4.
+Thuật ngữ                  					| Tác dụng                                                                 | Ví dụ
+----------------------------------------------------------------|--------------------------------------------------------------------------|----------------------------------------------------------------
+Biến ngẫu nhiên rời rạc (Discrete Random Variable) 		| Mô tả các giá trị là kết quả của quá trình đếm.                          | Số lớp học bạn tham gia, số người thắng cuộc trong một trò chơi.
+Bảng phân phối xác suất (Probability Distribution Table) 	| Biểu diễn xác suất của các giá trị có thể của một biến ngẫu nhiên.       | Bảng: P(X=0) = 2/8, P(X=1) = 2/8, P(X=2) = 2/8, P(X=3) = 0.
+Hàm khối xác suất (Probability Mass Function - PMF) 		| Công thức tính xác suất tại một giá trị cụ thể.                          | f(x) = P(X=x).
+Hàm phân phối tích lũy (Cumulative Distribution Function - CDF) | Tính tổng xác suất từ nhỏ nhất đến giá trị cho trước.                    | P(X ≤ 2) = P(X=0) + P(X=1) + P(X=2).
+Phân phối đều (Discrete Uniform Distribution) 			| Xác suất đồng đều cho các giá trị trong một khoảng.                      | X ~ Discrete Uniform(0, 99), P(X<6).
+Phân phối nhị thức (Binomial Distribution) 			| Số lần thành công trong n lần thử nghiệm.                                | P(X=k) = C(n,k) p^k (1-p)^(n-k), với n=10, p=0.5.
+Phân phối hình học (Geometric Distribution) 			| Số lần thử nghiệm cho đến khi đạt thành công đầu tiên.                   | Tính P(X=k), trong đó p là xác suất thành công.
+Phân phối nhị thức âm (Negative Binomial Distribution) 		| Số lần thử nghiệm cho đến khi đạt r lần thành công.                      | Tính P(X=k), với r=2, p=0.5.
+Phân phối siêu bội (Hypergeometric Distribution) 		| Xác suất thành công khi lấy mẫu từ một tổng thể không hoàn lại.          | Tính xác suất thành công trong mẫu lấy từ tổng thể 100 phần tử (có 20 thành công).
+Phân phối Poisson (Poisson Distribution) 			| Số sự kiện xảy ra trong một khoảng thời gian/khoảng cách nhất định.      | P(X=k) = (λ^k * e^(-λ)) / k!, với λ=4.

@@ -1,11 +1,20 @@
-Thuật ngữ                  | Tác dụng                                                                 | Ví dụ
----------------------------|--------------------------------------------------------------------------|-------------------------------------------------
-Thí nghiệm ngẫu nhiên      | Mô tả các tình huống không thể đoán trước.                              | Gieo xúc xắc hoặc tung đồng xu.
-Không gian mẫu (Sample Space) | Nền tảng để xác định tất cả các biến cố có thể xảy ra.                   | Gieo xúc xắc, không gian mẫu là {1, 2, 3, 4, 5, 6}.
-Biến cố (Event)            | Xác định một hoặc nhiều kết quả cụ thể mà ta quan tâm.                  | Biến cố "số chẵn" khi gieo xúc xắc là {2, 4, 6}.
-Hoán vị (Permutations)     | Phân biệt các cách sắp xếp khác nhau khi thứ tự quan trọng.            | Sắp xếp ba chữ cái A, B, C: ABC, ACB, BAC...
-Tổ hợp (Combinations)      | Áp dụng khi thứ tự không quan trọng.                                   | Chọn 2 người từ nhóm {A, B, C} có thể là {A, B}, {A, C}, {B, C}.
-Xác suất có điều kiện (Conditional Probability) | Tính xác suất của một sự kiện dựa trên thông tin bổ sung.           | Tính xác suất chọn được viên bi đỏ nếu biết đã chọn từ hộp chỉ có bi đỏ và xanh.
-Hợp (Union, E1 ∪ E2)       | Xác định các kết quả thuộc ít nhất một trong hai tập hợp.               | Hợp của {1, 2} và {2, 3} là {1, 2, 3}.
-Giao (Intersection, E1 ∩ E2) | Xác định các kết quả thuộc cả hai tập hợp.                             | Giao của {1, 2, 3} và {2, 3, 4} là {2, 3}.
-Bù (Complement, E')        | Xác định các kết quả không thuộc tập hợp ban đầu.                       | Bù của {1, 2} trong không gian mẫu {1, 2, 3, 4} là {3, 4}.
+Thuật ngữ                  			| Tác dụng                                                                 	| Ví dụ
+------------------------------------------------|-------------------------------------------------------------------------------|-------------------------------------------------
+Thí nghiệm ngẫu nhiên(Random Experiment)	| Mô tả các tình huống không thể đoán trước.                              	| Gieo xúc xắc hoặc tung đồng xu.
+------------------------------------------------|-------------------------------------------------------------------------------|-------------------------------------------------
+Không gian mẫu (Sample Space) 			| Nền tảng để xác định tất cả các biến cố có thể xảy ra.                   	| Gieo xúc xắc, không gian mẫu là {1, 2, 3, 4, 5, 6}.
+------------------------------------------------|-------------------------------------------------------------------------------|-------------------------------------------------
+Biến cố (Event)            			| Xác định một hoặc nhiều kết quả cụ thể mà ta quan tâm.                  	| Biến cố "số chẵn" khi gieo xúc xắc là {2, 4, 6}.
+------------------------------------------------|-------------------------------------------------------------------------------|-------------------------------------------------
+Hoán vị (Permutations)     			| Phân biệt các cách sắp xếp khác nhau khi thứ tự quan trọng.            	| Sắp xếp ba chữ cái A, B, C: ABC, ACB, BAC...
+------------------------------------------------|-------------------------------------------------------------------------------|-------------------------------------------------
+Tổ hợp (Combinations)      			| Áp dụng khi thứ tự không quan trọng.                                   	| Chọn 2 người từ nhóm {A, B, C} có thể là {A, B}, {A, C}, {B, C}.
+------------------------------------------------|-------------------------------------------------------------------------------|-------------------------------------------------
+Xác suất có điều kiện (Conditional Probability) | Tính xác suất của một sự kiện dựa trên thông tin bổ sung.          		| Tính xác suất chọn được viên bi đỏ nếu biết đã chọn từ hộp chỉ có bi đỏ và xanh.
+------------------------------------------------|-------------------------------------------------------------------------------|-------------------------------------------------
+Hợp (Union, E1 ∪ E2)       			| Xác định các kết quả thuộc ít nhất một trong hai tập hợp.               	| Hợp của {1, 2} và {2, 3} là {1, 2, 3}.
+------------------------------------------------|-------------------------------------------------------------------------------|-------------------------------------------------
+Giao (Intersection, E1 ∩ E2) 			| Xác định các kết quả thuộc cả hai tập hợp.                             	| Giao của {1, 2, 3} và {2, 3, 4} là {2, 3}.
+------------------------------------------------|-------------------------------------------------------------------------------|-------------------------------------------------
+Bù (Complement, E')       			| Xác định các kết quả không thuộc tập hợp ban đầu.                       	| Bù của {1, 2} trong không gian mẫu {1, 2, 3, 4} là {3, 4}.
+------------------------------------------------|-------------------------------------------------------------------------------|-------------------------------------------------
