@@ -1,0 +1,15 @@
+nau 1 
+do 2 
+cam 3
+vang 4
+xanh 5
+bien 6
+tim 7 
+xam 8 
+trang 9
+
+mac noi tiep r = r1 +r2
+mac xong xong 1/r = 1/r1 + 1/r2
+
+bong led chan dai la anode(+) co dau nho , chan ngan la cathode(-) co dau lon
+Code			HIGH 					LOW
