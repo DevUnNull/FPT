@@ -1,0 +1,29 @@
+1.Netbeans "Run File" doesn't work on HTML or JSP (Java Web Application)
+2.Mặc dù có hàm main nhưng vẫn báo không tồn tại
+--> On each app you make: Right click at Web Project - properties. 
+--> Under Build, uncheck compile on save.
+
+3.Deploy fail:
+- Kiểm tra lại server Tomcat:
+  + Đúng version không (thường là cài version 10.1.15).
+  + Add server Tomcat trên Netbeans 17 chưa? Rồi thì start chưa?
+  + Start Tomcat bị fail: Khả năng cao là do vẫn trỏ tới jdk8 hoặc chưa trỏ tới jdk nào --> Server --> Phải Tomcat, chọn Properties, ở Tab Platform thì add jdk17.
+- Lỗi ở file web.xml --> Cần check lại quá trình setting.
+- Lưu project trên đường dẫn có tên dấu cách hoặc tiếng Việt
+- Vào services.msc --> stop Tomcat --> Deploy lại --> chọn Allow access
+
+4.error can not import user-defined package in netbeans 17
+--> Clear the cache to fix it. In Windows, cache is located at:
+--> C:\Users\username\AppData\Local\NetBeans\...
+--> After clearing the cache restart netbeans.
+
+5.cannot start debugging mode with apache tomcat 10.1.x 
+-->Open task manager window then kill the process of "Java Platform SE binary".
+
+6.cannot show Project after add Jar file
+--> copy file jar vào thư mục Project của mình --> sau đó mới add
+
+7.Khi add servlet hoặc run file bị treo máy
+-C1:Tạo và chạy servlet thủ công (nên dùng cách này)
+-C2: Disconnect wifi (chủ yếu là mạng trường) cách này được Khảo thí cho phép với môn PRJ30X trong quá trình thi
+

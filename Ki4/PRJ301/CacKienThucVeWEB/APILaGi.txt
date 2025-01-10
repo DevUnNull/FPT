@@ -1,0 +1,12 @@
+## API : viết đầy đủ là Application Programming Interface
+## Định nghĩa : API là một tập hợp các commands , functions , protocols, objects... giúp hai phần mềm có thể tương tác và trao đổi dữ liệu qua lại được với nhau 
+## liên tưởng
+	- User Interface (UI)
+		+ giúp user tương tác với Application
+		+ User tương tác với Application mà không cần quan tâm Application được xây dựng , thực hiện như thế nào
+			++ Ví dụ: Người dùng bấm nút "Gửi" trên giao diện mà không cần biết hệ thống xử lý yêu cầu gửi như thế nào.
+	- Application Programing Interface (API)
+		+ Giúp Application A tương tác với Application B 
+		+ Application A tương tác với Application B mà không cần quan tâm Application được xây dựng , thực hiện như thế nào 
+		++ Ví dụ : A: Viết mã lệnh gọi hàm tinhTong() (giống việc gọi API).
+			   B: Là người đã lập trình ra hàm tinhTong() và đảm bảo nó thực hiện đúng yêu cầu (giống như nhà cung cấp API).
