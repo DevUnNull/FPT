@@ -18,3 +18,51 @@ Giao (Intersection, E1 ∩ E2) 			| Xác định các kết quả thuộc cả h
 ------------------------------------------------|-------------------------------------------------------------------------------|-------------------------------------------------
 Bù (Complement, E')       			| Xác định các kết quả không thuộc tập hợp ban đầu.                       	| Bù của {1, 2} trong không gian mẫu {1, 2, 3, 4} là {3, 4}.
 ------------------------------------------------|-------------------------------------------------------------------------------|-------------------------------------------------
+
+Random experiment: là một thực nghiệm để dẫn tới những kết quả khả thi
+Sample space: Không gian mẫu, chứa tất cả những kết quả có khả năng xảy ra, kí hiệu là S.
+Event (biến cố): tập con của không gian mẫu
+Union (hợp) của A và B: A ∪ B, đúng khi nằm trong A hoặc B hoặc cả hai
+Intersection (giao) của A và B: A ∩ B, đúng khi nằm trong cả hai
+Complement (đối) của A: A', ngược lại với A
+Multiplication Rule (quy tắc nhân):Nếu quá trình cần k bước, bước 1 có n1 cách, bước 2 có n2 cách, ... thì số cách để đi đến kết thúc: n1 x n2 x ... x nk
+Permutations (hoán vị):nPr (casio).ABC, ACB, BAC, BCA, CAB, CBA
+Combination (tổ hợp):nCr (casio).ab,bc,ca
+Probability (xác xuất)
+2.2 Mutually Exclusive Events (biến cố xung khắc) Là các biến cố không thể đồng thời xảy ra, A ∩ B = ∅. Ví dụ như tung xúc xắc, không thể đồng thời ra mặt 1 hoặc 2.
+2.3 Addition Rules (quy tắc cộng) nó hoạt động khá đơn giản , ta chỉ cần nhớ là cộng tất cả trừ các phần có 2P kết hợp lại với nhau là được
+P(A ∪ B) = P(A) + P(B) − P(A ∩ B)
+					2p	  2p         2p          vì trừ 3 cái 2p kia nó nhỡ trừ đi cả phần 3p nên ở đây nó sẽ cộng lại các phần 3p bị trừ 
+P(A ∪ B ∪ C) = P(A) + P(B) + P(C) − P(A ∩ B) − P(A ∩ C) − P(B ∩ C) + P(A ∩ B ∩ C)
+Nếu A và B xung khắc: P(A ∪ B) = P(A) + P(B) *(lý thuyết xung khắc ở trên)
+note: P(A') = 1 - P(A)
+
+2.4 Conditional Probability (xác suất có điều kiện) : Xác suất để xảy ra B với điều kiện A, tức là xác suất xảy ra B khi mà A đã thỏa mãn. Kí hiệu P(B|A) :
+https://sondeptraicbg.github.io/lrn/img/241.png
+
+2.5 Multiplication and Total Probability Rules (xác suất tổng)
+Multiplication Rule (quy tắc nhân) :
+P(A ∩ B) = P(A)P(B|A) = P(B)P(A|B)
+
+Total Probability Rule (quy tắc tổng xác suất, hình 1)
+P(B) = P(A)P(B|A) + P(A')P(B|A')
+
+Các biến cố E1, E2, . . . , Ek gọi là exhaustive nếu:
+E1 ∪ E2 ∪ . . . ∪ Ek = S
+Total Probability Rule (quy tắc tổng xác suất)
+E1, E2, ... Ek là xung khắc và exhaustive (hình 2) thì:
+P(B) = P(E1)P(B|E1) + P(E2)P(B|E2) + . . . + P(Ek )P(B|Ek)
+
+2.6 Independence (sự độc lập)
+2 biến cố A và B độc lập nếu 1 trong các điều sau đúng:
+(1) P(A|B) = P(A)
+(2) P(B|A) = P(B)
+(3) P(A ∩ B) = P(A)P(B)
+note: nếu test 2 biến cố có độc lập hay không thường dùng cách 3.
+
+2.7 Bayes’ Theorem (định lý Bayes)
+https://sondeptraicbg.github.io/lrn/img/242.png
+
+2.7 Ramdom variable (biến ngẫu nhiên)
+Discrete random variable là biến rời rạc, hữu hạn hoặc vô hạn đếm được, như số lượng, ... .
+Continuous random variable là biến liên tục, không đếm được, như số đo, ... .
