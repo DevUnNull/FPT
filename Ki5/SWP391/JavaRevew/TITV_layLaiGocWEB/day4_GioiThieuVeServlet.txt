@@ -1,0 +1,45 @@
+I. MVC
+- model-view-controler 
+- và servlet ở đây đảm nhiệm vai trò controler để sử lý request và dựa vào đó để đưa ra quyết định 
+- view là jsp
+
+II. sự khác nhau giữa sendRedirect() và	RequestDispatcher.forward()
+🔁 1. RequestDispatcher.forward() – Forward nội bộ (internal forward)
+- Không đổi URL trên trình duyệt
+- Không tạo request mới → dữ liệu request vẫn giữ nguyên
+- Chỉ dùng được trong cùng web app
+- ✅ Dùng khi muốn truyền dữ liệu từ Servlet sang JSP
+	VD: 
+		request.setAttribute("user", "hai23");
+		RequestDispatcher rd = request.getRequestDispatcher("Bai1_Suscess.jsp");
+		rd.forward(request, response);
+	👉 Ý nghĩa:
+		- Gán một giá trị "hai23" vào đối tượng request với tên thuộc tính là "user".
+		- Mục đích là truyền dữ liệu từ servlet sang JSP để JSP có thể lấy ra dùng.
+	📌 Cụ thể:
+		- "user" là tên thuộc tính (bạn đặt tên gì cũng được).
+		- "hai23" là giá trị cần truyền (có thể là String, Integer, Object, v.v).
+	→ JSP có thể lấy ra bằng:
+		- <%= request.getAttribute("user") %>
+
+
+🔄 2. response.sendRedirect() – Redirect bên ngoài (external redirect)
+- Tạo request mới → mất dữ liệu request trừ khi truyền bằng URL hoặc lưu bằng session
+- URL thay đổi trên trình duyệt
+- Có thể chuyển sang trang ngoài hoặc web khác
+- ✅ Dùng khi muốn chuyển hướng giống thao tác trên trình duyệt
+	VD:
+		response.sendRedirect("Bai1_Suscess.jsp");
+
+3. so sánh 
+| Tiêu chí                  | `RequestDispatcher.forward()`   | `response.sendRedirect()`       |
+| ------------------------- | -----------------------------   | ------------------------------  |
+| Request mới?              | ❌ Không                       | ✅ Có                           |
+| URL trên trình duyệt đổi? | ❌ Không                       | ✅ Có                           |
+| Giữ được `request` cũ?    | ✅ Có                          | ❌ Không                        |
+| Dùng được với web khác?   | ❌ Không                       | ✅ Có (nội bộ hoặc bên ngoài)   |
+| Tốc độ phản hồi           | ⚡ Nhanh (nội bộ)              | 🐢 Chậm hơn (2 lần round-trip)  |
+
+✅ Kết luận:
+👉 forward() → xử lý trong server, giữ dữ liệu → dùng khi bạn muốn hiển thị dữ liệu sang JSP.
+👉 sendRedirect() → chuyển hướng như người dùng gõ URL mới → dùng khi bạn không cần truyền dữ liệu, hoặc muốn chuyển ngoài app.

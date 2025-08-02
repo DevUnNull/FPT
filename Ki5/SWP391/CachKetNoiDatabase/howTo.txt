@@ -1,0 +1,3 @@
+bước 1 phải có file allowedlib ở trong project mà mình đang làm
+bước 2 vào probertis vào libraries rồi addfolde các 2 jakarta , jaxb , spljdbc vào 
+bước 3 test kết nối ok chưa bằng class DBContext ở ngoài 

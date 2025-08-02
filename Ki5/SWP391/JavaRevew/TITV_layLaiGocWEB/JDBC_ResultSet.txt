@@ -1,0 +1,21 @@
+- định nghĩa : ResultSet là một đối tượng trong Java JDBC dùng để lưu trữ kết quả truy vấn SELECT từ cơ sở dữ liệu.
+
+- cách hoạt động 
+	VD: ta có csdl sau
+	| id | tenSach       | giaBan | namXuatBan |
+	| -- | ------------- | ------ | ---------- |
+	| 1  | Java Cơ bản   | 50000  | 2021       |
+	| 2  | Java Nâng cao | 80000  | 2022       |
+
+	Khi bạn chạy câu lệnh SQL: SELECT * FROM Sach
+	Thì trong Java: ResultSet rs = ps.executeQuery();
+	-> thì lúc này rs đã chứa các dữ liệu mà ps đã thực hiện (VD ở đây thì ps thực hiện lấy dữ liệu của Sách thì rs chứa dữ liệu của Sach thôi)
+	-> rs bây giờ giống như một bảng tạm, chứa dữ liệu đó. Bạn dùng rs.next() để đi từng dòng, và rs.getXxx("tên_cột") để lấy từng giá trị.
+
+- 1 số câu lệnh cơ bản 
+| Thành phần                | Ý nghĩa                                      |
+| ------------------------- | -------------------------------------------- |
+| `ResultSet`               | Kết quả của câu lệnh SELECT                  |
+| `rs.next()`               | Di chuyển con trỏ xuống dòng kế tiếp         |
+| `rs.getString("tenSach")` | Lấy dữ liệu từ cột `tenSach` ở dòng hiện tại |
+| `rs.getInt("id")`         | Lấy dữ liệu từ cột `id` ở dòng hiện tại      |

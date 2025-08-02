@@ -1,0 +1,19 @@
+Giới thiệu introduce
+1. mục đích môn học : swp391
+- hệ thống hóa toàn bộ kĩ năng của các môn vào trong 1 app mà mỗi nhóm phỉa hoàn thành vào cuối kì - tuần 10
+- cảm nhận được hết quy trình làm phần mềm 
+- làm quen với capstone Projecct - khóa luận tốt nghiệp 
+- chuẩn bị project để đi phỏng vấn ở kỳ 6 - jot - on the job training 
+- mini capstone 
+2. hình thức học 
+- làm việc nhóm từ tuần 1 luôn
+- hàng ngày nhóm gặp giáo viên trên lớp , bàn về project...
+- hằng ngày nhóm chia nhau ra để code
+- tuần 10 -11 chấm project của nhóm - nhóm thuyết trình/báo cáo project - chấm chéo : thầy cô khác cùng chấm / vấn đáp
+
+- không thi PE FE 
+- không quiz
+- chấm bài thuyết trình + app + tiếng độ giao tiếp báo cáo hằng ngày với thầy/cô
+ 		%	   %		%	
+3. tiến trình vận hành 
+- group 4-5 người

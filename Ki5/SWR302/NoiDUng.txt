@@ -1,0 +1,14 @@
+📘 3. SWR302 – Software Requirement
+Tên đầy đủ: Phân tích và quản lý yêu cầu phần mềm
+
+Học phần liên quan: SWE102 & SWE201c
+
+Bạn sẽ học:
+
+Cách thu thập, phân tích, ghi chép yêu cầu người dùng.
+
+Sử dụng Use Case, User Story, mô hình UML, tài liệu SRS (Software Requirement Specification).
+
+Kỹ năng giao tiếp với khách hàng để hiểu đúng và đầy đủ yêu cầu phần mềm.
+
+📌 Tóm gọn: Học cách làm việc với khách hàng và viết tài liệu yêu cầu cho phần mềm.

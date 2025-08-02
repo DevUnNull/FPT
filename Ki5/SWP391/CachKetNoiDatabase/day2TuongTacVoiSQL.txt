@@ -1,0 +1,43 @@
+Bước 1 : tạo kết nối với CSDL
+	Connection conn = DBContext.getConnection();
+Bước 2: Tạo đối tượng statement
+	- Xác định loại câu lệnh SQL phù hợp:
+		+ Câu lệnh DDL (Data Definition Language): Dùng để định nghĩa cấu trúc dữ liệu như bảng, ví dụ: CREATE TABLE, ALTER TABLE,...
+		+ Câu lệnh DML (Data Manipulation Language): Dùng để thao tác với dữ liệu trong bảng, ví dụ: SELECT, INSERT, UPDATE, DELETE,...
+		+ Câu lệnh DCL (Data Control Language): Dùng để phân quyền và thu hồi quyền truy cập, ví dụ: GRANT, REVOKE.
+		+ Câu lệnh TCL (Transaction Control Language): Dùng để quản lý giao dịch trong cơ sở dữ liệu, ví dụ: COMMIT, ROLLBACK, SAVEPOINT,...
+	- Tạo đối tượng statement
+		+ statement
+			1 Là một đối tượng cơ bản dùng để thực thi câu lệnh SQL đơn giản trong cơ sở dữ liệu.
+			2 Thích hợp khi không cần tái sử dụng câu lệnh SQL và không có tham số đầu vào.
+				Statement stmt = connection.createStatement();
+				String sql = "SELECT * FROM users";
+				ResultSet rs = stmt.executeQuery(sql);
+		
+		+ PreparedStatement
+			1 Là một mở rộng của Statement, dùng để thực thi các câu lệnh SQL có tham số.
+			2 Tăng hiệu suất khi thực thi các câu lệnh lặp đi lặp lại, vì câu lệnh SQL được biên dịch một lần và có thể tái sử dụng.
+			3 Giúp bảo vệ khỏi các cuộc tấn công SQL injection vì các tham số được gán một cách an toàn.
+				String sql = "INSERT INTO users (name, age) VALUES (?, ?)";
+				PreparedStatement pstmt = connection.prepareStatement(sql);
+				pstmt.setString(1, "Alice");
+				pstmt.setInt(2, 30);
+				pstmt.executeUpdate();
+
+		+ CallableStatement
+			1 Được sử dụng để gọi các thủ tục lưu trữ (stored procedures) trong cơ sở dữ liệu.
+			2 Hỗ trợ gọi các thủ tục có thể trả về giá trị hoặc không.
+			3 Có thể sử dụng tham số đầu vào và đầu ra để truyền dữ liệu giữa Java và cơ sở dữ liệu.
+				CallableStatement cstmt = connection.prepareCall("{call getUserDetails(?, ?)}");
+				cstmt.setInt(1, 101);
+				cstmt.registerOutParameter(2, java.sql.Types.VARCHAR);
+				cstmt.execute();
+				String userName = cstmt.getString(2);
+
+Buổi 3: Thực thi câu lệnh
+
+	- boolean execute(String SQL) throws SQLException
+	- int executeUpdate(String SQL) throws SQLException
+	- ResultSet executeQuery(String SQL) throws SQLException
+Bước 4 : Xử lý kết quả trả về
+Bước 5 : Ngăt kết nối

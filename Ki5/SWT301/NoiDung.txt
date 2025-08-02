@@ -1,0 +1,16 @@
+📘 4. SWT301 – Software Testing
+Tên đầy đủ: Kiểm thử phần mềm
+
+Học phần liên quan: SWE102/SWE201c
+
+Bạn sẽ học:
+
+Các loại kiểm thử: Unit test, Integration test, System test, Acceptance test.
+
+Viết test case, test plan, bug report.
+
+Sử dụng công cụ kiểm thử như JUnit, Selenium, Postman, v.v.
+
+Tư duy kiểm thử: kiểm tra phần mềm không phải để chỉ tìm lỗi mà còn để đánh giá chất lượng.
+
+📌 Tóm gọn: Học quy trình và công cụ kiểm thử phần mềm chuyên nghiệp.

@@ -1,0 +1,24 @@
+khái niệm : Connection là một đối tượng đại diện cho một kết nối giữa ứng dụng Java và cơ sở dữ liệu.
+
+VD:
+// Bước 1: Tạo kết nối
+Connection conn = DriverManager.getConnection(
+    "jdbc:mysql://localhost:3306/qlsach", "root", "123456"
+);
+
+trong phần mình thường làm như này
+DBContext db = DBContext.getInstance();
+Connection conn = db.getConnection();
+
+
+// Bước 2: Dùng kết nối để thực hiện SQL
+PreparedStatement ps = conn.prepareStatement("SELECT * FROM Sach");
+ResultSet rs = ps.executeQuery(); // ps.exectute nó chạy câu lệnh return ra giá trị rồi gán vào rs
+
+// Bước 3: Duyệt dữ liệu
+while (rs.next()) {
+    System.out.println(rs.getString("tenSach"));
+}
+
+// Bước 4: Đóng kết nối
+conn.close();

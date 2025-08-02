@@ -1,0 +1,42 @@
+1. Session là gì?
+Session (phiên) là nơi lưu trữ dữ liệu riêng biệt của từng người dùng trong một khoảng thời gian truy cập website.
+2. Session dùng để làm gì?
+| Ứng dụng thực tế        | Mô tả                                             |
+| ----------------------- | ------------------------------------------------- |
+| Lưu thông tin đăng nhập | Ghi nhớ tên tài khoản sau khi login               |
+| Giỏ hàng                | Lưu danh sách sản phẩm người dùng chọn            |
+| Lưu dữ liệu tạm thời    | Giữ dữ liệu giữa các trang, ví dụ form nhiều bước |
+
+3. Quy trình hoạt động của Session 
+Giả định: người dùng truy cập lần đầu vào hệ thống.
+
+Bước 1: Client gửi request đầu tiên đến server
+Trình duyệt gửi HTTP request đến server (GET hoặc POST).
+Trong request này chưa có session ID nào cả (vì mới truy cập lần đầu).
+
+Bước 2: Server tạo Session mới
+Server (Tomcat hoặc Servlet container) gọi request.getSession() → thấy chưa có session → sẽ tạo session mới.
+Server sinh ra 1 mã định danh duy nhất gọi là Session ID (ví dụ: JSESSIONID=abc123xyz).
+VD: HttpSession session = request.getSession();
+
+Bước 3: Server gửi Session ID về cho client
+Session ID được gửi kèm trong Set-Cookie ở response header:
+Set-Cookie: JSESSIONID=abc123xyz; Path=/; HttpOnly
+Trình duyệt tự động lưu session ID này vào cookie.
+
+Bước 4: Các request tiếp theo → client tự gửi Session ID
+Trình duyệt gửi các request sau sẽ tự động gắn cookie đó:
+Cookie: JSESSIONID=abc123xyz
+Server nhìn thấy Session ID → tìm trong danh sách session đã tạo → nhận ra đây là user cũ → xử lý tiếp tục cho đúng người.
+VD: session.setAttribute("name",object);
+
+Bước 5: Khi user đăng xuất
+Server gọi session.invalidate() để xóa phiên làm việc đó.
+Trình duyệt vẫn còn session ID, nhưng khi gửi lại, server sẽ không tìm thấy session tương ứng nữa.
+
+4. các câu lệnh cơ bản
+- tạo session
+	HttpSession session = request.getSession();
+- lưu dữ liệu vào session
+	+ session.setAttribute("name",object);
+	+ lưu ý ở đây có 2 loại 1 là parameters chỉ lưu được string và attribute thì lưu được object 

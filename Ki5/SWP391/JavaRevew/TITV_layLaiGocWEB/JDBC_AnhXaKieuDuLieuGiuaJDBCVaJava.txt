@@ -1,0 +1,24 @@
+| JDBC Type             | Java Type                     | Ghi chú                         |
+| --------------------- | ----------------------------- | ------------------------------- |
+| `CHAR`, `VARCHAR`     | `String`                      | Dữ liệu văn bản                 |
+| `LONGVARCHAR`         | `String`                      | Văn bản dài                     |
+| `NUMERIC`, `DECIMAL`  | `java.math.BigDecimal`        | Số chính xác cao                |
+| `BIT`, `BOOLEAN`      | `boolean`, `Boolean`          | Kiểu Boolean                    |
+| `TINYINT`             | `byte`, `Byte`                | Số nguyên nhỏ                   |
+| `SMALLINT`            | `short`, `Short`              | Số nguyên nhỏ hơn               |
+| `INTEGER`             | `int`, `Integer`              | Số nguyên                       |
+| `BIGINT`              | `long`, `Long`                | Số nguyên lớn                   |
+| `REAL`                | `float`, `Float`              | Số thực (float)                 |
+| `FLOAT`, `DOUBLE`     | `double`, `Double`            | Số thực (double)                |
+| `BINARY`, `VARBINARY` | `byte[]`                      | Dữ liệu nhị phân                |
+| `LONGVARBINARY`       | `byte[]`                      | Nhị phân dài                    |
+| `DATE`                | `java.sql.Date`               | Ngày (không có thời gian)       |
+| `TIME`                | `java.sql.Time`               | Thời gian (không có ngày)       |
+| `TIMESTAMP`           | `java.sql.Timestamp`          | Ngày + Giờ                      |
+| `CLOB`                | `java.sql.Clob` hoặc `String` | Văn bản lớn                     |
+| `BLOB`                | `java.sql.Blob` hoặc `byte[]` | Nhị phân lớn                    |
+| `ARRAY`               | `java.sql.Array`              | Mảng                            |
+| `STRUCT`              | `java.sql.Struct`             | Đối tượng cấu trúc              |
+| `REF`                 | `java.sql.Ref`                | Tham chiếu đối tượng            |
+| `ROWID`               | `java.sql.RowId`              | ID hàng (Oracle, PostgreSQL...) |
+| `SQLXML`              | `java.sql.SQLXML`             | XML                             |

@@ -1,0 +1,63 @@
+1. Fundamental Game Development with Unity (FGU301)
+(Phát triển game cơ bản với Unity)
+
+🔹 Bạn sẽ học:
+
+Làm quen với Unity Editor: giao diện, cách tạo scene, thêm object.
+
+Kỹ thuật lập trình cơ bản trong C# để điều khiển game (di chuyển nhân vật, va chạm, điểm số…).
+
+Làm việc với Sprite, Animation 2D, âm thanh và UI cơ bản.
+
+Cách build game đơn giản chạy trên desktop hoặc điện thoại.
+
+📌 Kết thúc môn này, bạn có thể tự làm được một game đơn giản (ví dụ: game bắn máy bay, game vượt chướng ngại vật 2D).
+
+2. Advanced Game Development with Unity (AGU301)
+(Phát triển game nâng cao với Unity)
+
+🔹 Bạn sẽ học:
+
+Làm game 3D (đổ bóng, ánh sáng, vật lý, camera nhiều góc).
+
+Animation nâng cao: blend tree, state machine, nhân vật có khung xương.
+
+AI cơ bản: enemy patrol, tìm đường (pathfinding).
+
+Data management: lưu trữ dữ liệu người chơi (PlayerPrefs, JSON, SQLite).
+
+Tối ưu hóa hiệu suất game.
+
+📌 Kết thúc môn này, bạn sẽ có thể làm một game chuyên nghiệp hơn, ví dụ game phiêu lưu 3D hoặc hành động góc nhìn thứ ba.
+
+3. Game Design Fundamentals – From Concept to Creation (GDC301)
+(Cơ bản về thiết kế game – từ ý tưởng đến hoàn thiện)
+
+🔹 Bạn sẽ học:
+
+Lý thuyết thiết kế game: loại hình game, yếu tố tạo nên game hấp dẫn (game loop, gameplay, mechanic…).
+
+Cách lên ý tưởng và xây dựng kịch bản game: cốt truyện, nhân vật, nhiệm vụ.
+
+Tạo wireframe / prototype: bản phác thảo thiết kế trước khi lập trình.
+
+Cách test, lắng nghe người chơi, cân bằng game.
+
+📌 Môn này thiên về ý tưởng sáng tạo và kỹ năng thiết kế, cực kỳ quan trọng nếu bạn muốn làm Game Designer hoặc xây dựng ý tưởng độc đáo của riêng mình.
+
+4. Game Networking and Server Development (GNS301)
+(Phát triển mạng và máy chủ cho game)
+
+🔹 Bạn sẽ học:
+
+Cách tạo multiplayer game (nhiều người chơi cùng lúc).
+
+Làm quen với các mô hình client-server, peer-to-peer.
+
+Kết nối người chơi qua mạng LAN hoặc Internet.
+
+Sử dụng Photon, Mirror, hoặc WebSocket trong Unity.
+
+Làm server backend (bằng Node.js, hoặc C#) để xử lý đăng nhập, lưu dữ liệu, xếp hạng, chat…
+
+📌 Môn này phù hợp nếu bạn muốn phát triển game online, MMO, hoặc game có tương tác người chơi – người chơi.

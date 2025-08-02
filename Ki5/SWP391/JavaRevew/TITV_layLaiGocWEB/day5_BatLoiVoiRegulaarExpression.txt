@@ -1,0 +1,48 @@
+I. Lmaf sao để bắt lỗi cho dữ liệu số
+	- Request.getParameter("name") -> đây là dữ liệu kiểu Object
+	- vậy nên ta cần ép kiểu thì mới kiểm tra được dữ liệu số 
+		VD: 
+		    name = "5 cai"	
+		    try{
+			  // lúc này nó sẽ không ép kiểu về Double được vì có ký tự chữ trong string
+			  vd = Double.parseDouble(Request.getParameter("name"))	
+		    }catch(Exception e){
+		   	  // su ly loi 
+		    }
+
+II. Regular Experssions (các biểu thức)
+- Ví dụ : 
+	+ email: ....@.....
+	+ Phone: (+84)..... 
+	
+
+- Các ký hiệu hay dùng
+| Ký hiệu 	| Ý nghĩa                                                           	| Ví dụ & Giải thích                                       		|
+| ------- 	| ----------------------------------------------------------------- 	| -------------------------------------------------------- 		|
+| `.`     	| Đại diện cho **bất kỳ 1 ký tự nào** (trừ xuống dòng `\n`)         	| `a.c` khớp với `abc`, `a1c`, nhưng không khớp với `ac`   		|
+| `\\d`   	| **Chữ số từ 0 đến 9**                                             	| `\\d{3}` khớp với `123`, `456`                           		|
+| `\\D`   	| **Không phải là chữ số**                                          	| `\\D+` khớp với `abc`, `!@#`, nhưng không khớp với `123` 		|
+| `\\w`   	| **Ký tự từ a-z, A-Z, 0-9, và dấu gạch dưới `_` (word character)** 	| `\\w+` khớp với `abc123_`                                		|
+| `\\W`   	| **Không phải là ký tự từ a-z, A-Z, 0-9, \_**                      	| `\\W+` khớp với `@#$`                                    		|
+| `\\s`   	| **Ký tự khoảng trắng**: dấu cách, tab, xuống dòng, v.v.           	| `\\s+` khớp với `"   "`, `"\n"`, `"\t"`                  		|
+| `\\S`   	| **Không phải ký tự khoảng trắng**                                 	| `\\S+` khớp với `abc`, `123`, nhưng không khớp với `" "` 		|
+| `^`         	| Bắt đầu chuỗi                     					| `^Hello` khớp với chuỗi bắt đầu bằng `"Hello"`                       	|                                 
+| `$`         	| Kết thúc chuỗi                    					| `world$` khớp với `"hello world"` nhưng không khớp với `"worldwide"` 	|                                 
+| `*`         	| Lặp **0 hoặc nhiều lần**          					| `a*` khớp với `""`, `"a"`, `"aaa"`                                   	|                                 
+| `+`         	| Lặp **1 hoặc nhiều lần**          					| `a+` khớp với `"a"`, `"aaa"` nhưng không khớp với `""`               	|	                                 
+| `?`         	| **Tùy chọn** (0 hoặc 1 lần)       					| `a?` khớp với `""`, `"a"`                                            	|                                 
+| `{n}`       	| Chính xác **n lần**               					| `a{3}` khớp với `"aaa"`                                              	|                                 
+| `{n,}`      	| Ít nhất **n lần**                 					| `a{2,}` khớp với `"aa"`, `"aaaa"`                                    	|                                 
+| `{n,m}`     	| Từ **n đến m lần**                					| `a{2,4}` khớp với `"aa"`, `"aaa"`, `"aaaa"`                          	|                                 
+| `[abc]`     	| **Tập hợp ký tự** được chấp nhận  					| `[abc]` khớp với `"a"`, `"b"`, `"c"`                                 	|                                 
+| `[^0-9]`    	| **Tập hợp ký tự không chấp nhận** 					| `[^0-9]` khớp với mọi ký tự không phải số                            	|                                
+| `(ha)+`     	| **Nhóm** ký tự                    					| `(ha)+` khớp với `"ha"`, `"hahaha"`                                  	|                                 
+| `cat\|dog`  	| `OR` – hoặc                       					| `cat|dog`khớp với`"cat"`hoặc`"dog"`                                 	|  
+| `\b`        	| Ranh giới từ                      					| `\bcat\b` khớp với `"the cat sat"` nhưng không khớp với `"scatter"`  	|                                
+| `\B`        	| Không phải ranh giới từ           					| `\Bcat\B` khớp với `"educating"`                                     	|           
+| `*`           | có thể có hoặc không xuất hiện 					| `a*` khớp với `a`, ` ` ,`aaaaaaa`          				|
+| `+`		| ít nhất phải có 1 lần							| `a+` khớp với `a` , `aaaaaa` , không khớp với ` `			|
+| `{number}`	| chính xác số lần xuất hiện						| `\\d{3}` khớp với `123` không khớp với `12`,`54541`			|
+
+
+

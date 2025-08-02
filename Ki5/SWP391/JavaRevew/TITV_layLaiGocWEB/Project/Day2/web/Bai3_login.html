@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đăng nhập</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    .form-container {
+      border: 1px solid #ccc;
+      display: inline-block;
+      padding: 20px;
+    }
+    .form-row {
+      margin-bottom: 10px;
+    }
+    label {
+      display: inline-block;
+      width: 120px;
+      font-weight: bold;
+    }
+    input[type="text"], input[type="password"] {
+      width: 200px;
+      padding: 4px;
+    }
+    input[type="submit"] {
+      margin-top: 10px;
+      padding: 5px 15px;
+    }
+  </style>
+</head>
+<body>
+  <h3>Đăng nhập hệ thống</h3>
+  <div class="form-container">
+    <form action="Bai3_login.jsp" method="post">
+      <div class="form-row">
+        <label for="username">Tên đăng nhập:</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="form-row">
+        <label for="password">Mật khẩu:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <input type="submit" value="Đăng nhập">
+    </form>
+  </div>
+</body>
+</html>

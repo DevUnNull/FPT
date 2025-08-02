@@ -1,0 +1,4 @@
+- getParameter() => String => Cần ép kiểu về kiểu dữ liệu cần dùng
+- Parsing Numberic Input
+	+ int Interger.parseInt(String)
+	+ double Double.parseDouble(String)

@@ -1,0 +1,17 @@
+bài 2 gồm 3 phần 
+1 type of testing 
+có 2 phần 
+	function testing : to ensure that the (phan mem) meets the user requirements such as inventory (liet ke 3 functional reqs cua web)
+	Non-function testing : includes performance testing
+2 level/stage of testing 
+có 4 phần 
+	unit testing 
+	integration testing 
+	system testing 
+	user acceptance testing 
+3 who will  test at each stage 
+có 4 phần 
+	unit testing 
+	integration testing 
+	system testing 
+	user acceptance testing 

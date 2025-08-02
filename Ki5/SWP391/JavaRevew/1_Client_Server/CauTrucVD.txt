@@ -1,0 +1,12 @@
+SimpleServletApp/
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── com.example.servlet/
+│       │       ├── HelloServlet.java
+│       │       └── LoginServlet.java
+│       └── webapp/
+│           ├── index.html
+│           └── WEB-INF/
+│               └── web.xml
+├── pom.xml

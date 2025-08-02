@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Form đặt hàng</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    .form-container {
+      border: 1px solid #ccc;
+      display: inline-block;
+      padding: 20px;
+    }
+    .form-row {
+      margin-bottom: 10px;
+    }
+    label {
+      display: inline-block;
+      width: 120px;
+      font-weight: bold;
+    }
+    input[type="text"], input[type="email"], input[type="number"] {
+      width: 200px;
+      padding: 4px;
+    }
+    input[type="submit"] {
+      margin-top: 10px;
+      padding: 5px 15px;
+    }
+  </style>
+</head>
+<body>
+  <h3>Dữ liệu được gửi đi</h3>
+  <div class="form-container">
+    <form action="Bai1_index.jsp" method="get">
+      <div class="form-row">
+        <label for="quantity">Số lượng đặt hàng:</label>
+        <input type="number" id="quantity" name="quantity" value="50">
+      </div>
+      <div class="form-row">
+        <label for="fullname">Họ và tên:</label>
+        <input type="text" id="fullname" name="fullname" value="Le Nhat Tung">
+      </div>
+      <div class="form-row">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="abc@gmail.com">
+      </div>
+      <input type="submit" value="Đặt hàng">
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+1, lỗi sql injection: SQL Injection (tấn công chèn mã SQL) là một lỗi bảo mật rất nghiêm trọng, xảy ra khi dữ liệu do người dùng nhập vào được chèn trực tiếp vào câu lệnh SQL, mà không được kiểm tra hoặc lọc kỹ.
+	🔥 Ví dụ SQL Injection đơn giản:
+		String userInput = ID = 4 OR 1=1;-- // dữ liệu người dùng nhập (giải thích : dấu " ở sau số 4 là để kết thúc câu lệnh đầu và ;-- là để mình comment lại đoạn code ở đằng sau vô hiệu hóa code của người lập trình đã đề ra)
+
+		String sql = "SELECT * FROM Sach WHERE " + userInput;
+		Statement stmt = conn.createStatement();
+		ResultSet rs = stmt.executeQuery(sql);
+	thì lúc này ở trong sql sẽ nhận được câu lệnh là  SELECT * FROM Sach WHERE ID = 4 or 1=1;-- tất cả logic sẽ bị vô hiêu hóa vì đã bị comment
+	→ Hậu quả: OR 1=1 sẽ luôn đúng → trả về toàn bộ bảng Sach, thay vì chỉ ID = 4.
+	
+	😱 Trường hợp nguy hiểm hơn:
+	SELECT * FROM Users WHERE username = 'admin' AND password = '' OR '1'='1'
+	→ Người dùng không cần biết mật khẩu, vẫn đăng nhập được!
+
+✅ Cách phòng tránh: Dùng PreparedStatement
+Thay vì viết SQL như chuỗi nối (+), bạn dùng tham số ?:
+	String sql = "SELECT * FROM Users WHERE username = ? AND password = ?";
+	PreparedStatement ps = conn.prepareStatement(sql);
+	ps.setString(1, usernameInput);
+	ps.setString(2, passwordInput);
+	ResultSet rs = ps.executeQuery();

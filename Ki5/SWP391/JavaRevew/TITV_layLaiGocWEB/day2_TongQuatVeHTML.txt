@@ -1,0 +1,63 @@
+I.Cú pháp JSP
+1. 	dạng thẻ cơ bản <%...%>
+- thực hiện đoạn code bên trong , nhưng không trả về kết quả
+	+ thường được dùng để tạo các biến có thể được sử dụng sau này 
+	+ lưu trữ/truy cập các giá trị trong biến / sơ sở dữ liệu
+	VD: <body>
+		<% int sum = 3+2 %>
+		<p>
+			Ba cộng hai = <%= sum %>
+		<p>
+	    </body>
+	dạng thẻ trả về kết quả <%=...%>
+	dạng thẻ inport thư viện <%@page...%>
+
+II.Thẻ Form
+	<form action="url của nơi xử lý yêu cầu " method="get or post ">
+            
+        </form>
+- Get các giá trị gửi về xử lý sẽ được hiện ở trên LINK để lấy về xử lý (và lưu ý nó bị giới hạn dung lượng)
+- Post các giá trị gửi về xử lý sẽ được ẩn đi để xử lý
+
+2. xử lý form data
+-request : là đối tượng có sẵn trong JSP
++ chứa dữ liệu yêu cầu và các phương pháp để dễ dàng truy cập dữ liệu 
++ được truy cập mã JSP
+	VD: String newTest = request.getParameter("tên của tham số đã gửi")
+
+3. Ghi chú trong JSP Files
+
+- Điều quan trọng đối với việc bảo trì trang web trong tương lai
+- Bên trong mã JSP (giữa <% đến%>):
+	// comment
+	/* comment */
+
+- Bên ngoài mã JSP (nghĩa là, trong html)
+	<!-- comment -- >
+
+III. name , type , id , value , for 
+
+<input type="radio" name="cpu" id="i7" value="Core i7">
+<label for="i7">Core i7</label>
+
+1. name : name="cpu" tên biến mà jsp nhận 
+	- Khi bạn dùng request.getParameter("cpu") trong JSP, bạn đang gọi tới name="cpu".
+
+2. value :value="Core i7" → Giá trị gửi về server
+	- Đây là giá trị thực sự được gửi lên khi bạn chọn radio hoặc checkbox.
+	- Bạn có thể hiển thị, lưu database, tính tiền,… dựa vào value này.
+3. id : id="i7" → Mã định danh cho DOM + liên kết với label
+	- Đây là tên duy nhất của input trong trang.
+	- Không ảnh hưởng đến server, nhưng rất quan trọng để:	
+	- liên kết với <label>
+	- điều khiển bằng JavaScript
+4. for : for="i7" (trong label) → Liên kết label và input
+	- Cho phép click vào chữ “Core i7” để chọn luôn radio.
+	- Dùng for="id của input".
+
+=> tổng kết 
+	- name dùng để gọi trong jsp
+	- value dùng để định giá tiền hoặc cái gì đó , khi mình submit thì radio được chọn đó sẽ gửi giá trị đó về để mình dùng
+	- id là để định danh cái radio đó
+	- for là để liên kết với radio mà mình muốn , nếu như ấn vào chữ đã liên kết với for thì nó sẽ gọi đến radio mà for liên kết bằng id
+ 

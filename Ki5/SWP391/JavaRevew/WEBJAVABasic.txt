@@ -1,0 +1,67 @@
+✅1. Kiến thức nền tảng về Java Core
+- Trước khi học JSP/Servlet, bạn cần:
+- OOP (Lập trình hướng đối tượng): class, object, inheritance, encapsulation, polymorphism
+- Collection Framework: List, Set, Map
+- Exception Handling: try-catch, throws
+- I/O Streams: đọc/ghi file
+- Multi-threading (tùy chọn, nâng cao)
+
+2. Mô hình kiến trúc Web
+Client - Server
+HTTP Protocol: GET, POST, request/response, headers
+Web Server vs Application Server
+URL, URI, Context Path
+
+3. Servlet
+Servlet là xương sống của Java Web.
+Servlet Lifecycle: init(), service(), doGet(), doPost(), destroy()
+Cấu hình Servlet:
+Trong file web.xml
+Annotation: @WebServlet
+Gửi dữ liệu từ client: sử dụng form HTML
+Nhận dữ liệu từ form: request.getParameter()
+Redirect vs Forward
+Session, Cookie, Request, Response Object
+Filter và Listener (nâng cao)
+
+4. JSP (Java Server Pages)
+JSP giúp viết giao diện web dễ hơn so với chỉ dùng Servlet.
+Cú pháp JSP:
+<% %>: Scriptlet
+<%= %>: Expression
+<%! %>: Declaration
+Tích hợp HTML với Java
+Implicit Objects: request, response, session, application, out, config, pageContext
+JSP Directive: <%@ page %>, <%@ include %>, <%@ taglib %>
+EL (Expression Language): ${variable}
+JSTL (Java Standard Tag Library): c:forEach, c:if, fmt:formatDate, v.v.
+
+5. MVC Pattern (Model - View - Controller)
+Servlet = Controller
+JSP = View
+Java Beans = Model
+Quản lý flow điều hướng, dữ liệu, tách riêng xử lý và giao diện.
+
+6. Session Management
+HttpSession, Cookies, URL rewriting
+Lưu thông tin đăng nhập, giỏ hàng, v.v.
+7. Tương tác với Database (JDBC)
+
+Kết nối CSDL: MySQL, PostgreSQL, Oracle
+PreparedStatement, ResultSet
+Quản lý kết nối, đóng kết nối
+Thực hiện CRUD: Create, Read, Update, Delete
+
+8. Triển khai Web App
+Cấu trúc dự án chuẩn
+File web.xml (Deployment Descriptor)
+Build WAR file
+Triển khai trên Tomcat
+
+9. Các phần nâng cao (Tùy chọn)
+Filter, Listener
+Security: Authentication, Authorization
+Ajax với JSP/Servlet
+WebSocket (real-time)
+Spring Framework (nếu muốn nâng cấp lên)
+

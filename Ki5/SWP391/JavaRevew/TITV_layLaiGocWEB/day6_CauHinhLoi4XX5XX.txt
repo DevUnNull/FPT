@@ -1,0 +1,32 @@
+ HTTP Status Codes (tên của lỗi này)
+✅ Phân loại chính & tên gọi:
+| Mã lỗi | Tên tiếng Anh               | Nghĩa ngắn gọn                   |
+| ------ | --------------------------- | -------------------------------- |
+| `1xx`  | **Informational responses** | Thông tin, đang xử lý            |
+| `2xx`  | **Success**                 | Thành công                       |
+| `3xx`  | **Redirection**             | Chuyển hướng                     |
+| `4xx`  | **Client Error**            | Lỗi từ phía người dùng (browser) |
+| `5xx`  | **Server Error**            | Lỗi từ phía máy chủ (server)     |
+✅ Các mã lỗi phổ biến & tên chính thức:
+| Mã    | Tên tiếng Anh             | Giải thích ngắn gọn                            |
+| ----- | ------------------------- | ---------------------------------------------- |
+| `200` | OK                        | Thành công, phản hồi bình thường               |
+| `301` | Moved Permanently         | URL đã chuyển vĩnh viễn                        |
+| `302` | Found (redirect)          | Tạm thời chuyển hướng                          |
+| `400` | Bad Request               | Request sai cú pháp                            |
+| `401` | Unauthorized              | Chưa đăng nhập hoặc sai token                  |
+| `403` | **Forbidden**             | Bị cấm truy cập (dù đã đăng nhập)              |
+| `404` | **Not Found**             | Không tìm thấy tài nguyên (file, trang...)     |
+| `405` | Method Not Allowed        | Phương thức (GET/POST/PUT/...) không được phép |
+| `408` | Request Timeout           | Hết thời gian chờ                              |
+| `500` | **Internal Server Error** | Lỗi phía server (exception, code lỗi, null...) |
+| `502` | Bad Gateway               | Gateway nhận phản hồi lỗi từ server khác       |
+| `503` | Service Unavailable       | Dịch vụ tạm thời không hoạt động               |
+- các bước làm 
+bước 1 : cấu hình web.xml
+	<error-page>
+            <error-code>404</error-code>
+            <location>/404.jsp</location>
+        </error-page>
+bước 2 : tạo 404.jsp (có thể trang trí nếu muốn)
+	cụ thể trong bài Day6

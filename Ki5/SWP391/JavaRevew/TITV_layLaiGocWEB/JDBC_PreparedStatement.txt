@@ -1,0 +1,55 @@
+📖 PreparedStatement là gì?
+Là một lớp trong JDBC dùng để:
+Thực hiện câu lệnh SQL một cách an toàn, nhanh và linh hoạt hơn Statement.
+Cho phép sử dụng tham số hóa (?) để truyền dữ liệu vào câu SQL.
+Bảo vệ khỏi lỗi SQL injection.
+
+🧠 Tại sao phải dùng PreparedStatement thay vì Statement?
+| Statement                           | PreparedStatement                  |
+| ----------------------------------- | ---------------------------------- |
+| Không hỗ trợ `?`                    | Có hỗ trợ `?`                      |
+| Không an toàn (SQL injection)       | An toàn hơn                        |
+| Không hiệu quả với truy vấn lặp lại | Hiệu quả hơn vì được biên dịch sẵn |
+
+🔄 Sau đó dùng ps để làm gì?
+Thực hiện truy vấn: ps.executeQuery() → trả về ResultSet
+Truyền tham số nếu có: Ví dụ:
+	String sql = "SELECT * FROM Sach WHERE id = ?";
+	PreparedStatement ps = conn.prepareStatement(sql);
+	ps.setInt(1, 5); // Gán giá trị cho dấu ?
+
+✅ Tóm lại:
+| Dòng code                         | Ý nghĩa                                 |
+| --------------------------------- | --------------------------------------- |
+| `PreparedStatement ps = null;`    | Khai báo biến sẽ dùng để thực thi SQL   |
+| `ps = conn.prepareStatement(...)` | Gán câu SQL cho `ps`, chuẩn bị thực thi |
+| `ps.executeQuery()`               | Chạy câu SQL và trả về kết quả          |
+
+
+các câu lệnh cơ bản
+✅ 1. Tạo PreparedStatement
+String sql = "SELECT * FROM Sach WHERE id = ?";
+PreparedStatement ps = conn.prepareStatement(sql);
+
+✅ 2. Truyền giá trị vào ? (tham số)
+| Phương thức                   | Ý nghĩa        |
+| ----------------------------- | -------------- |
+| `ps.setInt(index, value)`     | Gán số nguyên  |
+| `ps.setString(index, value)`  | Gán chuỗi      |
+| `ps.setDouble(index, value)`  | Gán số thực    |
+| `ps.setBoolean(index, value)` | Gán true/false |
+| `ps.setDate(index, value)`    | Gán ngày tháng |
+
+
+✅ 3. Thực thi truy vấn SELECT
+ResultSet rs = ps.executeQuery();
+→ Trả về bảng kết quả (nhiều dòng) → duyệt bằng rs.next()
+
+✅ 4. Thực thi INSERT, UPDATE, DELETE
+int rows = ps.executeUpdate();
+→ Trả về số dòng bị ảnh hưởng (chèn, sửa, xóa thành công bao nhiêu dòng
+
+✅ 5. Đóng PreparedStatement
+ps.close();
+→ Giải phóng tài nguyên.
+

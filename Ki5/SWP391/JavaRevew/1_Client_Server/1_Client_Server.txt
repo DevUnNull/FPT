@@ -1,0 +1,58 @@
+I. Client - Server
+1 khái niệm 
+- Client : các trình duyệt (coccoc,chrome,...) 
+- server : máy chủ xử lý yêu cầu từ client và gửi phản hồi lại 
+2 Quy trình 
+- Người dùng gỡ URL vào trình duyệt (Client)
+- Client gửi yêu cầu HTTP đến Server (HTTP sẽ được học ở dưới)
+- Server xử lý và trả về kết quả (HTML,JSON,ảnh..)
+3 Ví dụ 
+- trình duyệt yêu cầu : http://localhost:8080/hello
+- Server (Servlet) xử lý và trả về "Hello"
+
+II. HTTP Protocol : GET,POST,Request/Response,Headers
+1 HTTP là gì?
+- Giao thức truyền tải siêu văn bản giữa client và server
+- Hoạt động theo mô hình: Request -> Response
+2 Các phương thức HTTP phổ biến:
+- Get : lấy dữ liệu(hiển thị thông tin)
+	+ Ví dụ : GET /product?id=5
+- POST: Gửi dữ liệu (Thường dùng khi submit form)
+	+ Ví dụ : POST /login (kèm dữ liệu username/password)
+3 Request/Response
+- Request gồm :
+	+ URL, Method (GET/POST), Headers (User-Agent, Content-Type), Body (chỉ khi POST).
+- Response gồm :
+	+ Status Code (200, 404, 500), Headers, Body (HTML, JSON, …)
+-> Ví dụ với Servlet
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException 
+	{
+    		String name = req.getParameter("name");
+    		resp.setContentType("text/html");
+    		resp.getWriter().write("<h1>Hello " + name + "</h1>");
+	}
+III.  Web Server vs Application Server
+| Tiêu chí         | Web Server                      | Application Server                         |
+| ---------------- | ------------------------------- | ------------------------------------------ |
+| Vai trò          | Xử lý yêu cầu HTTP, tĩnh (HTML) | Xử lý logic nghiệp vụ, động (Servlet, JSP) |
+| Ví dụ            | Apache HTTP Server, Nginx       | Apache Tomcat, GlassFish, WildFly          |
+| Tài nguyên xử lý | HTML, CSS, JS, ảnh              | Servlet, JSP, EJB                          |
+
+IV. URL, URI, Context Path
+
+1. URL (Uniform Resource Locator):
+	- Là địa chỉ đầy đủ truy cập tài nguyên trên web.
+	- Ví dụ: http://localhost:8080/MyApp/user/profile?id=2
+
+2. URI (Uniform Resource Identifier):
+	- Là phần xác định tài nguyên (không bao gồm scheme http).
+	- URI của ví dụ trên: /MyApp/user/profile?id=2
+
+3. Context Path:
+	- Là phần đầu tiên của URI, đại diện cho ứng dụng web bạn triển khai.
+	- Ví dụ: nếu deploy ứng dụng tên MyApp, thì: http://localhost:8080/MyApp → context path là /MyApp
+4. Ví dụ trong Servlet
+	String uri = request.getRequestURI();          // /MyApp/user/profile
+	String context = request.getContextPath();     // /MyApp
+	String realPath = request.getServletPath();    // /user/profile
+

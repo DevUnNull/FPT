@@ -1,0 +1,3 @@
+- request : yêu cầu (của client gửi lên để server sử lý dữ liệu đó)
+- client : khách khàng
+- response : phản hồi (khi cách gửi yêu cầu đến server sẽ tạo ra response và gửi lại cho client)

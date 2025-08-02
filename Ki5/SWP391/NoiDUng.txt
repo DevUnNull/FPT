@@ -1,0 +1,16 @@
+📘 1. SWP391 – Application Development Project
+Tên đầy đủ: Software Project (Phát triển dự án phần mềm)
+
+Học phần liên quan: SWE201 & PRJ301
+
+Bạn sẽ học:
+
+Quản lý dự án phần mềm từ đầu đến cuối.
+
+Làm việc nhóm, lập kế hoạch, phân công, theo dõi tiến độ dự án.
+
+Ứng dụng kiến thức lập trình đã học để phát triển một ứng dụng thực tế.
+
+Học cách viết tài liệu dự án, báo cáo, và thuyết trình kết quả.
+
+📌 Tóm gọn: Làm một dự án phần mềm thực tế theo nhóm, như một bài "tốt nghiệp mini".
