@@ -1,4 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="dao.ProductDAO" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.Collections" %>
+<%@ page import="java.util.List" %>
+<%@ page import="model.Product" %>
 <%
     Boolean isLoggedIn = (Boolean) session.getAttribute("isLoggedIn");
     String username = (String) session.getAttribute("username");
@@ -67,34 +72,26 @@
         </li>
         <li class="nav-item"><a class="nav-link" href="#">Hết hàng</a></li>
       </ul>
-        <form action="FindProductServlet" method="get" class="d-flex">
-            <input class="form-control me-2" 
-                   type="search" 
-                   name="keyword" 
-                   placeholder="Nội dung tìm kiếm">
-            <button class="btn btn-outline-success" type="submit">Tìm</button>
-        </form>
+      <form action="FindProductServlet" method="get" class="d-flex">
+        <input class="form-control me-2" type="search" name="keyword" placeholder="Nội dung tìm kiếm">
+        <button class="btn btn-outline-success" type="submit">Tìm</button>
+      </form>
 
       <!-- Nút giỏ hàng -->
-        <%@ page import="dao.CartDAO" %>
-        <%
-            CartDAO cart = (CartDAO) session.getAttribute("cart");
-            int quantitycart = 0;
-            if (cart != null) {
-                // Nếu CartDAO có sẵn method tổng số lượng, dùng nó:
-                // quantitycart = cart.getTotalQuantity();
-
-                // Nếu chưa có, tạm tính thủ công (giả sử có cart.getItems()):
-                if (cart.getItems() != null) {
-                    quantitycart = cart.getItems().stream().mapToInt(i -> i.getQuantity()).sum();
-                }
-            }
-        %>
-        <a href="cart.jsp" class="cart-btn" title="Xem giỏ hàng">
-          <i class="fas fa-shopping-cart"></i>
-          <span class="badge"><%= quantitycart %></span>
-        </a>
-
+      <%@ page import="dao.CartDAO" %>
+      <%
+          CartDAO cart = (CartDAO) session.getAttribute("cart");
+          int quantitycart = 0;
+          if (cart != null) {
+              if (cart.getItems() != null) {
+                  quantitycart = cart.getItems().stream().mapToInt(i -> i.getQuantity()).sum();
+              }
+          }
+      %>
+      <a href="cart.jsp" class="cart-btn" title="Xem giỏ hàng">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="badge"><%= quantitycart %></span>
+      </a>
 
       <!-- Avatar user -->
       <div class="dropdown ms-3">
@@ -128,41 +125,36 @@
       <div class="col-md-9">
         <img src="image/banner.png" class="banner mb-4" alt="Banner">
         <div class="row row-cols-1 row-cols-md-3 g-4">
-          <div class="col">
-            <div class="card">
-              <img src="https://via.placeholder.com/300x250.png?text=REDEFINE+FASHION" class="card-img-top product-img" alt="Product">
-              <div class="card-body">
-                <h5><a href="#" class="text-decoration-none">Áo thun Pro-S1</a></h5>
-                <p class="fw-bold">50.000</p>
-                <p>Sản phẩm thoáng mát, có độ bền tốt, giữ màu sắc tốt.</p>
-                <div class="star-rating">★ ★ ★ ★ ☆</div>
+          <%
+              List<Product> productList = ProductDAO.getInstance().getAllProducts();
+              List<Product> affterCollection = new ArrayList<>();
+              int count = 0;
+
+              if (productList != null && !productList.isEmpty()) {
+                  Collections.sort(productList, (p1, p2) -> p2.getStockQuantity() - p1.getStockQuantity());
+                  for (Product product : productList) {
+                      count++;
+                      if (count <= 3) {
+                          affterCollection.add(product);
+                      }
+                  }
+              }
+          %>
+          <% for (int i = 0; i < Math.min(3, affterCollection.size()); i++) { %>
+            <div class="col">
+              <div class="card">
+                <img src="https://via.placeholder.com/300x250.png?text=PRODUCT+<%= i + 1 %>" class="card-img-top product-img" alt="Product">
+                <div class="card-body">
+                  <h5><a href="#" class="text-decoration-none"><%= affterCollection.get(i).getName() %></a></h5>
+                  <p class="fw-bold"><%= affterCollection.get(i).getPrice() %></p>
+                  <p>Sản phẩm thoáng mát, có độ bền tốt, giữ màu sắc tốt.</p>
+                  <div class="star-rating">★ ★ ★ ★ ☆</div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="https://via.placeholder.com/300x250.png?text=TUXEDO" class="card-img-top product-img" alt="Product">
-              <div class="card-body">
-                <h5><a href="#" class="text-decoration-none">Áo thun Pro-S2</a></h5>
-                <p class="fw-bold">50.000</p>
-                <p>Sản phẩm thoáng mát, có độ bền tốt, giữ màu sắc tốt.</p>
-                <div class="star-rating">★ ★ ★ ★ ☆</div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="https://via.placeholder.com/300x250.png?text=CLASS+SUIT" class="card-img-top product-img" alt="Product">
-              <div class="card-body">
-                <h5><a href="#" class="text-decoration-none">Áo thun Pro-S3</a></h5>
-                <p class="fw-bold">50.000</p>
-                <p>Sản phẩm thoáng mát, có độ bền tốt, giữ màu sắc tốt.</p>
-                <div class="star-rating">★ ★ ★ ★ ☆</div>
-              </div>
-            </div>
-          </div>
+          <% } %>
         </div>
-      </div> 
+      </div>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

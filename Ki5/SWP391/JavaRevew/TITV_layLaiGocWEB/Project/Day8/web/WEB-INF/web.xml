@@ -36,6 +36,10 @@
         <servlet-name>UpdateProductFromCart</servlet-name>
         <servlet-class>controller.UpdateProductFromCart</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CheckoutServlet</servlet-name>
+        <servlet-class>controller.CheckoutServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -71,5 +75,9 @@
     <servlet-mapping>
         <servlet-name>UpdateProductFromCart</servlet-name>
         <url-pattern>/UpdateProductFromCart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckoutServlet</servlet-name>
+        <url-pattern>/CheckoutServlet</url-pattern>
     </servlet-mapping>
 </web-app>

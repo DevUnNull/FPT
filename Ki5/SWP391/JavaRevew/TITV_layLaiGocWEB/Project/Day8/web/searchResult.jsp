@@ -15,6 +15,13 @@
     <span class="text-primary"><%= request.getAttribute("keyword") != null ? request.getAttribute("keyword") : "" %></span>
 </h2>
 
+<%-- Hiển thị thông báo thành công nếu có --%>
+<c:if test="${not empty sessionScope.addSuccessMessage}">
+    <div class="alert alert-success">
+        Sản phẩm <strong>${sessionScope.nameProductAddCart}</strong> đã được thêm vào giỏ hàng.
+    </div>
+</c:if>
+
 <%
     List<Product> products = (List<Product>) request.getAttribute("products");
     if (products != null && !products.isEmpty()) {
@@ -71,7 +78,6 @@
                         </button>
                     <% } %>
                 </td>
-
             </tr>
         <% } %>
         </tbody>

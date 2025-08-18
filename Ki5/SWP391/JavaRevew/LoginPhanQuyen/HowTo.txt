@@ -1,0 +1,45 @@
+1. Kiến trúc tổng thể
++ Một ứng dụng login chuẩn sẽ gồm các phần:
++ Front-end: HTML/CSS/JS để người dùng nhập thông tin đăng nhập.
++ Servlet: Xử lý request/response, gọi tầng service.
++ Service Layer: Chứa logic kiểm tra tài khoản, phân quyền.
++ DAO Layer (Data Access Object): Truy xuất DB.
++ Database: Lưu thông tin người dùng, mật khẩu (hash), quyền.
+- Sơ đồ tổng thể (Login Flow)
+[Browser] 
+   │ (1) POST /login (username, password)
+   ▼
+[LoginServlet]
+   │ (2) Gọi UserService.login(username, password)
+   ▼
+[UserService]
+   │ (3) Gọi UserDAO.getUserByUsername(username)
+   ▼
+[Database]
+   │ (4) Trả về User (username, passwordHash, roles)
+   ▼
+[UserService]
+   │ (5) So sánh password (hash)
+   │ (6) Lưu thông tin user + roles vào session
+   ▼
+[LoginServlet]
+   │ (7) Redirect sang trang theo role (ADMIN/USER)
+
+
+2. Sơ đồ Database chuẩn phân quyền (đã để cập ở ngoài)
+3. Best Practices cho bảo mật & phân quyền
+	- Hash mật khẩu:
+		+ Dùng BCrypt hoặc PBKDF2, không lưu plain-text.
+		+ Trong Java: thư viện BCrypt (org.mindrot.jbcrypt.BCrypt).
+	- Session Management:
+		+ Sau khi login thành công, lưu userId, username, roles vào session.
+		+ Không lưu password trong session.
+	- Phân quyền:
+		+ Tạo Filter trong Servlet để kiểm tra quyền trước khi cho truy cập vào các URL.
+	- Mapping:
+		+ /admin/*  → ADMIN
+		+ /user/*   → USER hoặc ADMIN
+	- SQL Injection Protection:
+		+Luôn dùng PreparedStatement.
+	- Logout:
+		+Xóa session và redirect về trang login

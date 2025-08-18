@@ -1,0 +1,51 @@
+- to enhance the convenience experience for visitors by not having to carry paper tickets,cash , just wear a wristband to enter and pay for all services , The water park needs to build a software called Ticket Tracking System to serve the control of visitor activities such as adminssion , payment , and use of water park facilities through RFID wrisbads
+The system has the function of allowing staff to sell tickets directly to visitors at water park ticket counters.The water park provides 2 types of tickets : standards and priority. When using games and services , standard tickets have limited play (number of times) in some games , priority tickets have unlimited play in games and have priority entrance. When visitors buy tickets , the system will issue them an RFID wristband . At the water park entrance , RFID readers will check wristbands as visitors pass through the gate . If the wristband is valid (not expired,suitable for the type of ticket purchased), the door will automatically opent to allow visitors to enter.  The function allows visitors to top up the account integrated with the wrisband in the water park through staff or RFID kioshs. Through Kiosh , visitors can also scan the the wristband to look up information related to their account , including account balance , transaction history , or used devices . Every time a visitor uses a service (such as participating in games , eating or buying souvenirs), staff will use an RFID reader to scan the wristband to record transaction information. The system will automatically recored the number of times participating in  the game or deduct money for paid services that the visitor uses, ensuring conveniect payment and no need to use cash . Through the system , sivitors use the locker according to the following operations :  put items in the locker and scan the wristband to lock the locker , scan the wristband to open the locker and retrieve itmes . The system allows staff to lock the writband or issue a new wristband in case the visitor loses the wristband .The function allows staff to receive the wristband back when the sivitor leaves the water park and return the remaining balance  in the visitor's account. Staff only view customer-related information during the working day. The function allow manager to declare ticket prices by ticket type and time , locker rental prices , and service prices in the water park . The system provides reports so that manager can monitor activities , manage the number of visitors and ticket status
+
+- để nâng cấp trải nghiệm tiện lợi của khách hàng khi không mang theo vé , thẻ ngân hàng thì chỉ cần đeo cái vòng tay để vào cổng và thanh toán tất cả dịch vụ , Công viên nước cần phát triển 1 phần mềm gọi là Ticket Tracking System để phục vụ việc kiểm soát hoạt động của khách như là quản trị , thanh toán , và sử dụng các cơ sở của công viên nước thông qua vòng tay RFID
+Hệ thống có chức năng cho phép nhân viên bán vé trực tiếp cho khách tham quan tại quầy vé công viên nước . Công viên nước có cung cấp 2 loại vé : tiêu chuẩn và ưu tiên . Khi chơi game và sử dụng dịch vụ , vé tiêu chuẩn sẽ bị giới hạn chơi (số lần chơi) ở 1 số game , vé ưu tiên  sẽ không bị giới hạn chơi và sẽ được ưu tiên và cổng . Khi khách hàng mua vé , hệ thống sẽ cấp cho họ vòng tay RFID . Tại cổng công viên nước , thiết bị đọc RFID sẽ kiểm tra vòng của khách hàng thông qua cổng . Nếu như vòng tay hợp lệ(chưa hết hạn , thích hợp với loại vé đã mua) , cửa sẽ tự động gọi mở ra để cho phép khách hàng vào . Chức năng cho phép khách hàng nạp tiền vào tài khoản tích hợp với vòng tay của công viên nước thông qua nhân viên hoặc là máy ki ốt tự phục vụ . thông qua  Kiosh , khách hàng cũng có thể quét vòng tay để nhìn được các thông tin liên quan đến tài khoản của hộ , như là số dư tài khoản , lịch sử giao dịch , hoặc thiết bị đang sử dụng. Mỗi lần khahcs sử dụng dịch vụ (bao gồm tham gia trò chơi , ăn hoặc mua quà lưu niệm ) nhân viên sẽ sử dụng RFID quét mã vòng tay để lưu lại thông tin giao dịch . Hệ thống sẽ tự động lưu lại số lần tham gia trò choi hoặc trừ tiền  cho dịch vụ trả phí mà khách dùng  , đảm bảo thanh toán thuận lợi và không cần đến tiền mặt . Thông qua hệ thống , khách hàng sử dụng tủ khóa theo các cách hoạt động sau : để đồ vào tủ khóa và quét vòng tay để khóa tủ , quét vòng tay để mở tủ và lấy đồ . Hệ thống cho phép nhân viên khóa đồ hồ hoặc cấp vòng đeo tay mới ở trường hợp khahcs hàng làm mất vòng. Chức năng  cho phép nhân viên nhậ lại vòng tay khi khách hàng ra khỏi công viên nước và trả lại số dư còn lại trong tài khoản của khách . Nhân viên chỉ xem được thông tin liên quan đến khách hàng trong lúc làm việc. Chức năng cho phép quản lý tuyên bố giá vé theo loại vé và thời gian , hệ thống cung cấp báo cáo cho quản lý để theo rõi hoạt động , quản lý số lượng du khách , và tình trạng vé
+
+
+vocabulary
+status : trạng thái , tình trạng 
+manage : quản lý
+rental : thuê
+declare : tuyên bố
+allow : cho phép
+during : trong lúc
+related : có liên quan
+return : trả lại 
+case : trường hợp 
+loses : làm mất
+operations : hoạt động
+according : các 
+retrieve : lấy lại
+function : chức năng
+enhance : nang cap 
+convenience experrience : trải nghiệm tiện lợi
+visitors : khách hàng 
+carry papter tickets : vé
+wear : đeo , mặc 
+services : dịch vụ
+serve : phục vụ 
+activities : các hoạt động 
+counters : quầy 
+provides: cung cấp
+standards : tiêu chuẩn 
+priority : ưu tiên 
+entrance : vào cổng
+issue : cấp (trao cho)
+readers : thiết bị đọc
+gate : cổng 
+valid : hợp lệ 
+exprired : hết hạn
+suitable : thích hợp
+purchased : đã mua
+integrated : tích hợp 
+up top up : nạp tiền 
+account balance : số dư tài khoản
+related : có liên quan
+transaction history : lịch sử giao dịch
+used devices : thiết bị đang sử dụng
+such as : bao gồm
+participating : tham gia
+souvenirs : quà lưu niệm

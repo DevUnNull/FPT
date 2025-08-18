@@ -58,21 +58,22 @@ public class AddToCartServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        int productId = Integer.parseInt(request.getParameter("id"));
-        int quantity = Integer.parseInt(request.getParameter("quantity"));
-        
-        // find product from DB (ex: productDAO)
-        Product product = ProductDAO.getInstance().getProductById(productId);
-        
-        HttpSession session = request.getSession();
-        CartDAO cart = (CartDAO) session.getAttribute("cart");
-        if (cart == null) {
-            cart = new CartDAO();
-            session.setAttribute("cart", cart);
-        }
-        
-        cart.addItem(new CartItem(product.getId(), product.getName(), quantity, product.getPrice()));
-        response.sendRedirect("cart.jsp");
+//        int productId = Integer.parseInt(request.getParameter("id"));
+//        int quantity = Integer.parseInt(request.getParameter("quantity"));
+//        
+//        // find product from DB (ex: productDAO)
+//        Product product = ProductDAO.getInstance().getProductById(productId);
+//        
+//        HttpSession session = request.getSession();
+//        CartDAO cart = (CartDAO) session.getAttribute("cart");
+//        if (cart == null) {
+//            cart = new CartDAO();
+//            session.setAttribute("cart", cart);
+//        }
+//        
+//        cart.addItem(new CartItem(product.getId(), product.getName(), quantity, product.getPrice()));
+//        //response.sendRedirect("cart.jsp");
+//        response.sendRedirect("searchResult.jsp");
     } 
 
     /** 
@@ -87,7 +88,9 @@ public class AddToCartServlet extends HttpServlet {
     throws ServletException, IOException {
         int productId = Integer.parseInt(request.getParameter("productId"));
         int quantity = Integer.parseInt(request.getParameter("quantity"));
-        // find product from DB (ex: productDAO)
+        String successMessage = "Sản phẩm đã được thêm vào giỏ hàng"; // Sửa từ "accsecct" thành "successMessage"
+
+        // Find product from DB (ex: productDAO)
         Product product = ProductDAO.getInstance().getProductById(productId);
         
         HttpSession session = request.getSession();
@@ -97,7 +100,12 @@ public class AddToCartServlet extends HttpServlet {
             session.setAttribute("cart", cart);
         }
         cart.addItem(new CartItem(product.getId(), product.getName(), quantity, product.getPrice()));
-        response.sendRedirect("cart.jsp");
+        
+        // Sử dụng tên biến rõ ràng
+        session.setAttribute("addSuccessMessage", successMessage); // Sửa "AddAccsecc" thành "addSuccessMessage"
+        session.setAttribute("nameProductAddCart", product.getName());
+        // Redirect lại về trang kết quả tìm kiếm
+        response.sendRedirect("FindProductServlet");
     }
 
     /** 

@@ -136,14 +136,30 @@ public class UserDAO extends DBContext {
 
         return null;
     }
-
+    
+    public boolean addUserAsAdmin(int userId) {
+        String sql = "INSERT INTO admins (user_id) VALUES (?)";
+        try (
+            Connection conn = getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql)
+        ) {
+            ps.setInt(1, userId);
+            return ps.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+    
+    
     // Test thử
     public static void main(String[] args) {
-    UserDAO dao = new UserDAO();
-
-    User user = new User(0, "test99349", "123", "t999@example.com", "Test 999");
-    boolean success = dao.insertUser(user);
-    System.out.println(">>> Insert result: " + success);
-}
+        UserDAO dao = new UserDAO();
+        User user = dao.getUserByUsername("hai12");
+        if(user != null){
+            boolean success = dao.addUserAsAdmin(user.getId());
+            System.out.println(">>> Add user as admin result: " + success);
+        }
+    }
 
 }

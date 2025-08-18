@@ -1,0 +1,72 @@
+Bước 1 – Hoàn thiện phần tài khoản & phân quyền (RBAC)
+📌 Mục tiêu: Cho phép người dùng đăng ký, đăng nhập, phân quyền.
+Bạn đã có:
+users
+roles
+user_roles
+✅ Việc cần làm:
+Viết form đăng nhập (login.jsp).
+Viết servlet login (LoginServlet) để kiểm tra tài khoản và lấy roles.
+Viết phân quyền theo roles (dùng Filter).
+Tạo một vài tài khoản mẫu trong DB (ADMIN, CUSTOMER).
+làm logout 
+làm trang admin.jsp
+Bước 2 – Quản lý sản phẩm
+📌 Mục tiêu: Lưu thông tin sản phẩm quần áo.
+Bảng cần tạo:
+products
+categories
+product_categories (nếu 1 sản phẩm thuộc nhiều loại)
+product_images (nếu sản phẩm có nhiều ảnh)
+✅ Việc cần làm:
+Tạo bảng và thêm dữ liệu mẫu quần áo.
+Viết DAO + Model cho sản phẩm.
+Tạo trang JSP hiển thị danh sách sản phẩm (products.jsp).
+Tạo trang chi tiết sản phẩm (product-detail.jsp).
+
+Bước 3 – Giỏ hàng
+📌 Mục tiêu: Cho phép user thêm sản phẩm vào giỏ và lưu vào DB.
+Bảng cần tạo:
+carts
+cart_items
+✅ Việc cần làm:
+Khi user click "Thêm vào giỏ" → Servlet kiểm tra giỏ hàng đã tồn tại chưa, nếu chưa thì tạo.
+Thêm sản phẩm vào cart_items (nếu đã có thì tăng số lượng).
+Trang JSP cart.jsp hiển thị giỏ hàng
+
+Bước 4 – Đặt hàng
+📌 Mục tiêu: User xác nhận mua hàng.
+Bảng cần tạo:
+orders
+order_items
+✅ Việc cần làm:
+Từ cart_items tạo order và order_items.
+Xóa giỏ hàng sau khi tạo đơn.
+Hiển thị danh sách đơn hàng (orders.jsp) cho khách và admin
+
+Bước 5 – Thanh toán & Vận chuyển
+📌 Mục tiêu: Quản lý thanh toán và địa chỉ giao hàng.
+Bảng cần tạo:
+payment_methods
+order_payments
+shipping_addresses
+shipping_methods
+✅ Việc cần làm:
+Lưu địa chỉ giao hàng khi user mua hàng.
+Chọn phương thức thanh toán (COD, Momo, thẻ…).
+Lưu vào order_payments
+
+Bước 6 – Marketing & Đánh giá sản phẩm
+📌 Mục tiêu: Tăng trải nghiệm người dùng.
+Bảng cần tạo:
+discounts
+product_reviews
+✅ Việc cần làm:
+Admin tạo mã giảm giá.
+User nhập mã giảm giá khi đặt hàng.
+User có thể đánh giá sản phẩm đã mua.
+
+Bước 7 – Kiểm thử & Hoàn thiện
+Test toàn bộ luồng mua hàng.
+Fix lỗi UI, DB, logic.
+Bảo mật session, phân quyền

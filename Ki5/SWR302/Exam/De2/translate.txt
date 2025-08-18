@@ -1,0 +1,47 @@
+the water park need to build a software calles Show Management System to help visitors easily track and buy tickets to participate in the shows in the water park . The system also makes it easy for the manager to manage  shows in the water park
+The system has the function of allowing the manager to create , adjust and manage schedules for shows in the water park (daily , special) . Daily shows are usually held every day at fixed times , the ticket price is included in the water park entrance fee of there may be a small surcharge. Special shows are held on  special occasions with the participation of artists or events in cooperation with major brands, the ticket price will not be included in the entrance fee. The manager an declare  ticket prices for each type of show . The system provides automatic audio announcements about upcoming shows through the Announcement Sound System located in the water park , helping staff and visitors to quickly grasp information . Visitors can view the schedule of shows at the Self-Service Ticket kiosk and purchase tickets themselves there  . The system also has a function  that allows staff to sell show tickter to siviter at the ticket countters . In case a visiter loses their ticket , the system allows staff to reprint the ticket for the visiters . At the entrance of the show , the system provides the function for staff to quickly check in for visitors by using a Barcode reader to scan the barcode printed on the ticket. The system has the ability to allow the manager to assign detailed work schedules to each staff member performing the show (such as actors , musicians ,technicians), ensuring that eachstaff member knows the working hours , breaks , and other requirements of the show . The system allows the manager to evaluate and provide feedback to staffs to improve their skills and performance for each show . Only staffs whose work schedule is declared by the manager can access and operate the system. Staffs can only view their work schedules assigned by the manager . Staffs can submit a request to cancel their work schdule , and the manager can approve or deny a requets to cancel their work schedule.
+The manager and staffs can approve communicate with each other through the chat function of the system . The system provides the manager with a dashboard that analyzes the trend of visitors watching the show by number and time to adjust the schedule and program accordingly
+
+
+
+
+Công viên nước cần phát triển phần mềm gọi là SMS để hỗ trợ khach hàng theo dõi và mua vé  để tham gia các buối biểu diễn trong công viên nước . Hệ thống cũng hỗ trợ ban quản lý để quản lý biểu diễn trong công viên nước
+Hệ thống có chức năng cho phép  quản lý tạo , điều chỉnh và quản lý lịch biểu diễn công viên nước (hằng ngày , đặc biệt). Buổi biễu diễn hằng ngày thường được tổ chức hằng ngày vào thời gian cố định , giá vé bao gồm phí vào cổng hoặc phụ phí nhỏ nào đó . Buổi diễn đặc biệt tổ thức vào những dịp đặc biệt  với sự tham gia của các nghệ sĩ hoặc là sự kiện hợp tác giữ các thương hiệu lớn , giá vé sẽ không bao gồm trong phí vào cổng . Quanr lý thông báo giá vé  cho từng loại biểu diễn . Hệ thống tự động cung cấp âm thanh thông báo về buổi biểu diễn sắp diễn ra thông qua thông báo hệ thống được đặt ở công viên nước , giúp nhân viên và khách du lịch nắm bắt thông tin nhanh chóng . Khách hàng có thể nhìn thấy lích của buổi biểu diễn tại vé và tự mua vé . Hệ thống cũng có chức năng cho phép nhân viên bán vé buổi biểu diễn cho khách ahngf tại quầy . Trong trường hợp vị khách làm mất vé của họ , hệ thống cho phép nhân viên tạo ra vé mới cho khách . Tại lối vào triển lãm, hệ thống cung cấp chức năng cho nhân viên nhanh chóng làm thủ tục cho khách tham quan bằng cách sử dụng đầu đọc mã vạch để quét mã vạch được in trên vé. Hệ thống có khả năng cho phpes quản lý giao phó lịch trình chi tiết công việc cho từng nhân viên biểu diên (như là : viễn viên,nhạc công , kỹ thuật ),đảm bảo rằng từng nhân viên biết công việc của họ , giờ nghỉ , và 1 số yêu cầu khác . Hệ thống cho phép quản lý đánh giá và cung cấp phảm hồi từ nhân viên để cải thiện kĩ năng và hiệu xuất ở mỗi buổi diễn .  Chỉ có những nhân viên  có lịch làm việc được tuyên bố bởi quản lý mói có thể truy cập và vận hành hệ thống
+. Nhân viên chỉ có thẻ xem lịch làm việc được giao bởi quản lý . Nhân viên có thể gửi yêu cầu để hủy lịch làm việc của họ  , và quản lý có thể chấp thuận hoặc từ chối yêu cầu hủy lịch làm việc. Quản lý và nhân viên có thể chấp thuận giao tiếp với nhau thông qua chức năng nhắn tin của hệ thống . Hệ thống cung cấp  cho quản lý với bảng điều khiển nó phân tích xu hướng khahcs hàng muốn xem bởi số lượng và thời gian để điều chỉnh lịch và chương trình cho phù hợp
+
+
+program : chương chình
+adjust : điều chỉnh
+analyzes : phân tích
+dashboard : bảng điểu khiển
+deny : từ chối
+approve : chấp thuận
+submit : nột
+operate : vận nhanh
+assigned : được giao
+declared : tuyên bố
+improve : cải thiện
+evaluate : đánh giá
+ensuring : đảm bảo
+actors : diễn viên
+performing : biểu diễn
+performance : hiệu xuất
+assign
+ability : khả năng
+schedules : lịch 
+special : đặc biệt 
+usually : thường xuyên 
+held : cầm / tổ chức
+included : bao gồm
+surcharge : phụ phí
+fee : phí
+occasions : những dịp 
+cooperation : sự hợp tác
+major : lớn
+provide : cung cấp 
+announcement : thông báo
+located : ở vị trí nào đó
+grasp : nắm bắt
+purchase : mua
+counters : quầy 
+case : trường hợp 

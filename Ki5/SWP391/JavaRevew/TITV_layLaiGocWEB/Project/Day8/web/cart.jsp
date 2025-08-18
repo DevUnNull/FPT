@@ -112,7 +112,7 @@
 
             <div  class="actions">
                 <a class="btn" href="<c:url value='/home.jsp'/>">Tiếp tục mua sắm</a>
-                <form action="<c:url value='/checkout'/>" method="get">
+                <form action="<c:url value='/CheckoutServlet'/>" method="get">
                     <button type="submit" class="btn primary">Tiến hành thanh toán</button>
                 </form>
             </div>
