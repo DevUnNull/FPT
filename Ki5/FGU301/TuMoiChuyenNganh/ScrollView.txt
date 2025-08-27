@@ -1,0 +1,29 @@
+hiện tại mình có 2 cách để làm 
+1, tạo bằng chính component của unity luôn 
+2, tự tạo 
+Cách làm : 
+- cách 1
+ấn vào Ui -> ScrollView rồi mình chỉ cần chỉnh ở trong đó họ làm cho hết rồi
+- cách 2 :
+-tạo 1  Create empty Scroll đây là thư mục cha
+	-tạo 1 GameObject Viewport đây là thư mục con của Scroll
+		-tạo 1 gameObject con tên là Conten : để chứa các nội dung (đây là thư mục con của ViewPort
+		 	nhét các nội dung mình muốn vào conten 
++ ở trong ImageUI ViewPort mình cần thêm component Mask ( để ẩn các phần con không trong khu vực của ViewPort)
++ ở trong Create empty Scroll mình cần thêm component Scroll Rect
+	-- ở trong mục Scroll Rect mình sẽ có các mục quan trọng sau 
+		++ Content : mình sẽ kéo GameObject Conten của mình vào đây 
+		++ Horizontal : đây là Scroll chiều dọc nếu bật lên
+		++ Vertical : đây là chiều Scroll ngang nếu bật lên
+		++ Movement Type : đây là các loại Di chuyển khi mình Scroll
+			+++ Elastic : đàn hồi ( nó sẽ hồi lại vị trí nếu mình kéo quá vùng của GameObject Conten
+				++++ Elasticity : lực đàn hồi
+			+++ Unrestricted : không giới hạn (là kéo bao xa cx đc)
+			+++ Clamped : kẹp (đây là mình chỉ kéo đến giới hạn của GameObject Conten thôi)
+		++ inertia : quán tính (nếu bật mình kéo các conten sẽ có lực kéo theo )
+			+++ Deceleration Rate : tỉ lệ giảm tốc quán tính
+		++ Scroll Sensitivity : độ nhạy của Scroll
+
+- 1 số mẹo hữu dụng 
++ ở trong GameObject Conten mình có thể thêm Component Content Size Fitter để nếu game đang chạy mà mình add thêm conten vào thì nó sẽ tự fix lại size của conten cho phù hợp tránh không Scroll được conten mới
+	

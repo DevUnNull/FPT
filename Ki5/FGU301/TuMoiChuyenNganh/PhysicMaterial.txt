@@ -1,0 +1,1 @@
+Physics Material là một tài sản (asset) trong Unity dùng để điều chỉnh các đặc tính vật lý của một Collider. Vai trò chính của nó là kiểm soát ma sát (friction) và độ nảy (bounciness) khi các vật thể va chạm với nhau.

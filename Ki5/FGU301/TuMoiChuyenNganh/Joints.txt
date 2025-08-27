@@ -1,0 +1,20 @@
+- vậy joints là gì : joints là khớp xoay và ta có 4 loại cơ bản sau 
+1. Hinge Joint (Khớp Bản Lề)
+Chức năng: Cho phép hai vật thể xoay quanh một trục duy nhất.
+Ứng dụng: Mô phỏng các chuyển động như bản lề cửa, bánh xe, cánh quạt, hoặc bất cứ vật thể nào có chuyển động xoay tròn trên một mặt phẳng. Đây chính là đáp án cho câu hỏi của bạn.
+
+2. Fixed Joint (Khớp Cố Định)
+Chức năng: Gắn chặt hai vật thể lại với nhau như thể chúng là một khối duy nhất.
+Ứng dụng: Kết nối các bộ phận của một vật thể phức tạp lại với nhau mà không cho chúng chuyển động tương đối.
+
+3. Spring Joint (Khớp Lò Xo)
+Chức năng: Nối hai vật thể bằng một "lò xo" ảo, cho phép chúng co giãn và bật lại, giữ khoảng cách tối thiểu hoặc tối đa.
+Ứng dụng: Mô phỏng các hiệu ứng như dây xích, dây thun, hoặc các vật thể được kết nối bằng lò xo.
+
+4. Character Joint (Khớp Nhân Vật)
+Chức năng: Một loại khớp phức tạp được dùng chủ yếu để tạo hiệu ứng vật lý cho các nhân vật (ragdoll physics). Nó cho phép giới hạn xoay trên nhiều trục, mô phỏng khớp xương linh hoạt của con người hoặc động vật.
+Ứng dụng: Tạo chuyển động ngã, bị đẩy hoặc va chạm thực tế cho nhân vật trong game.
+
+để dùng ta chỉ cần add các component vào thôi
+đây là link để học cách dùng 
+https://www.youtube.com/watch?v=MElbAwhMvTc&ab_channel=DitzelGames

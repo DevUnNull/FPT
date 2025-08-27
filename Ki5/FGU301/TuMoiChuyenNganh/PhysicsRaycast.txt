@@ -1,0 +1,18 @@
+để tạo được PhysicsRaycast
+
+khởi tạo raycasteDistance
+khởi tạo lấy LayerMask, ... để phát hiện 
+
+khởi tạo biến lấy vị trí của tia 
+khởi tạo hướng của tia 
+tạo ra tia 
+// RaycastHit2D hit Raycast(vị trí tia , hướng tia , độ dài tia , vị trí phát hiện colider)
+sử lý logic
+
+// Vẽ tia Raycast trong Scene view để dễ hình dung
+void OnDrawGizmos()
+{
+    Gizmos.color = Color.red;
+    Gizmos.DrawRay(transform.position, Vector2.down * raycastDistance);
+}
+

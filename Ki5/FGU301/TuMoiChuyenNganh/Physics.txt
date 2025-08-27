@@ -1,0 +1,52 @@
+Giai đoạn 1: Nền tảng cơ bản
+Mục tiêu: Nắm vững vai trò của các thành phần chính trong Inspector và cách chúng tương tác.
+Nội dung học:
+Rigid Body (2D/3D):
+Học cách thêm Rigid Body vào GameObject.
+Hiểu các thuộc tính chính: Mass (khối lượng), Drag (lực cản), Gravity Scale (độ ảnh hưởng của trọng lực). Thử thay đổi các giá trị này trong Inspector và xem vật thể phản ứng như thế nào khi chạy game.
+Thực hành code: Sử dụng AddForce() và AddTorque() để tác dụng lực và mô-men xoắn lên Rigid Body trong script.
+Collider (2D/3D):
+Học các loại Collider phổ biến: Box, Sphere, Capsule, Mesh (cho 3D) và Box, Circle, Polygon (cho 2D).
+Hiểu sự khác biệt giữa Collider vật lý (collision) và Collider Trigger. Thử tích vào ô Is Trigger và quan sát hành vi của vật thể.
+Thực hành code: Sử dụng các hàm OnCollisionEnter (để xử lý va chạm vật lý) và OnTriggerEnter (để xử lý trigger) trong script.
+Dự án thực hành: Tạo một cảnh đơn giản với một quả bóng rơi vào một cái hộp. Thử thay đổi khối lượng và vật liệu vật lý (Physics Material) để xem quả bóng nảy khác nhau như thế nào.
+
+Giai đoạn 2: Tương tác nâng cao và Raycast (đã xong 27/8)
+Mục tiêu: Học cách kiểm soát và phát hiện các tương tác vật lý bằng code một cách chính xác hơn.
+Nội dung học:
+Raycast:
+Tìm hiểu về Physics.Raycast (3D) và Physics2D.Raycast (2D).
+Học cách bắn một tia từ một điểm, theo một hướng và với một khoảng cách nhất định.
+Hiểu cách sử dụng Layer Mask để chỉ phát hiện va chạm trên một layer cụ thể.
+Thực hành code: Tạo một script để bắn tia từ nhân vật. Nếu tia chạm vào một vật thể, in ra tên vật thể đó.
+Các phương thức phát hiện khác:
+Học cách sử dụng OverlapSphere, OverlapBox và các hàm tương tự để phát hiện tất cả các Collider trong một khu vực nhất định.
+Hiểu sự khác biệt giữa các phương thức này và Raycast (Raycast kiểm tra một đường thẳng, Overlap kiểm tra một khu vực).
+Thực hành code: Viết một script để tìm tất cả các kẻ thù trong một bán kính nhất định quanh người chơi.
+Dự án thực hành: Tạo một cảnh bắn súng đơn giản. Khi người chơi nhấn chuột, một Raycast sẽ được bắn ra để xác định mục tiêu bị trúng đạn.
+
+Giai đoạn 3: Joints và Physics Materials
+Mục tiêu: Hiểu và sử dụng các công cụ vật lý phức tạp hơn để tạo ra các hiệu ứng game thực tế.
+Nội dung học:
+Joints:
+Tìm hiểu các loại Joint phổ biến: Hinge Joint (khớp xoay), Spring Joint (khớp lò xo), Fixed Joint (khớp cố định).
+Hiểu các thuộc tính của từng loại Joint và cách chúng kết nối hai Rigid Body với nhau.
+Thực hành trong Inspector: Kéo và thả Rigid Body vào trường Connected Rigid Body và điều chỉnh các thông số.
+Physics Material:
+Tìm hiểu về Physics Material (cho 3D) và Physics Material 2D (cho 2D).
+Hiểu các thuộc tính như Friction (độ ma sát) và Bounciness (độ nảy).
+Thực hành trong Inspector: Tạo một Physics Material mới, điều chỉnh độ nảy và gán nó vào Collider của một vật thể để xem nó nảy khác nhau như thế nào.
+Dự án thực hành:
+Dự án 1: Tạo một cây cầu treo đơn giản bằng cách dùng nhiều Hinge Joint để nối các tấm ván lại với nhau.
+Dự án 2: Tạo một vật thể treo lơ lửng bằng Spring Joint và tác dụng lực vào nó để xem nó dao động như thế nào.
+
+Giai đoạn 4: Tối ưu hóa và kiểm tra
+Mục tiêu: Học cách debug và tối ưu hóa hiệu suất của hệ thống Physics.
+Nội dung học:
+Debugging:
+Sử dụng Debug.DrawRay để trực quan hóa tia Raycast trong Scene view.
+Sử dụng cửa sổ Physics Debugger trong Unity để xem các Collider và Rigid Body hoạt động.
+Hiệu suất
+Học cách điều chỉnh Fixed Timestep trong Project Settings để kiểm soát tốc độ tính toán vật lý.
+Hiểu sự khác biệt giữa Update và FixedUpdate và tại sao các hàm liên quan đến Physics nên được gọi trong FixedUpdate.
+Dự án thực hành: Mở một trong các dự án trước đó và sử dụng Debug.DrawRay để theo dõi các tia Raycast của bạn. Quan sát sự khác biệt khi thay đổi Fixed Timestep.
