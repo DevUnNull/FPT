@@ -1,0 +1,10 @@
+Trong Unity, transform là một thành phần (component) rất quan trọng có mặt trong mọi GameObject. Nó đại diện cho:
+Vị trí (position) trong không gian (world hoặc local)
+Xoay (rotation)
+Tỉ lệ (scale)
+
+VD: 
+collision.gameObject.transform (Nó lấy ra Transform component của đối tượng mà bạn va chạm vào.)
+collision.transform.position  -> (2.0, 3.0, 0.0)
+transform.position = new Vector3(5, 0, 0);
+transform.Rotate(0, 0, 90);

@@ -1,0 +1,4 @@
+Khái niệm Instantiate trong Unity
+Trong Unity, Instantiate là một hàm được sử dụng để tạo ra một bản sao (clone) của một đối tượng hiện có. Nó tương tự như việc sao chép và dán một Game Object trong trình soạn thảo, nhưng được thực hiện thông qua mã lập trình trong lúc trò chơi đang chạy.
+VD:
+GameObject obj = instantiate (Prefab)

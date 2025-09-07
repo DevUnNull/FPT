@@ -1,0 +1,4 @@
+ForceMode2D.Impulse áp dụng một lực tức thời, mạnh mẽ trong một khung hình duy nhất. Điều này tạo ra hiệu ứng "giật" đột ngột, rất phù hợp với việc mô phỏng độ giật khi bắn súng. Ngược lại, nếu bạn dùng ForceMode2D.Force, nó sẽ áp dụng một lực liên tục theo thời gian, phù hợp cho việc mô phỏng các lực đẩy liên tục như động cơ tên lửa.
+
+VD 
+Rigidbody.AddForce(hướng * lực, ForceMode2D.Impulse);

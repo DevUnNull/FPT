@@ -1,0 +1,24 @@
+có 2 loại chính 
+1, Collision : thể hiện vật lý như là : đẩy đi , hút vào ,,....
+| Thuộc tính                   | Ý nghĩa                                        |VD
+| ---------------------------- | ---------------------------------------------- |
+| `collision.gameObject`       | Đối tượng bạn vừa va chạm                      |Lấy tên object va chạm (enemy, wall,...)
+| `collision.transform`        | Transform của đối tượng đó                     |Lấy vị trí hoặc xoay của object đó
+| `collision.collider`         | Collider của đối tượng đó                      |Xác định loại collider (Box, Circle, ...)
+| `collision.contacts`         | Danh sách điểm tiếp xúc va chạm                |Lấy ra điểm va chạm cụ thể trên bề mặt
+| `collision.relativeVelocity` | Vận tốc tương đối giữa 2 đối tượng lúc va chạm |Xác định lực đập (dùng để tính damage, v.v.)
+| `collision.rigidbody`        | Rigidbody (nếu có) của đối tượng va chạm       |Truy cập Rigidbody để thay đổi velocity, mass, v.v.
+
+2, Trigger : Dùng để kích hoạt sự kiện như: mở cửa, lấy item, kích hoạt trap,...
+| Thuộc tính                    | Ý nghĩa                                     |
+| ----------------------------- | ------------------------------------------- |
+| `collision.gameObject`        | Đối tượng vừa đi vào vùng Trigger           |Lấy đối tượng đã đi vào trigger
+| `collision.transform`         | Transform của đối tượng đó                  |Vị trí / xoay của đối tượng kia
+| `collision.attachedRigidbody` | Rigidbody2D gắn vào đối tượng kia (nếu có)  |Lấy Rigidbody2D nếu có, dùng để điều khiển
+| `collision.offset`            | Offset (độ lệch) giữa Collider và Transform |Độ lệch của Collider
+| `collision.bounds`            | Kích thước và vị trí hình học của Collider  |Kích thước vùng trigger
+| `collision.isTrigger`         | Đối tượng kia có phải là trigger không?     |Biết được object kia có phải là trigger
+
+
+
+

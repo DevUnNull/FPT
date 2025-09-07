@@ -1,0 +1,5 @@
+Tên hàm			Chức năng							Tham số đặc trưng			Trả về
+OverlapCircleAll	Phát hiện tất cả Collider trong hình tròn.			Vector2 point, float radius		Collider2D[] (mảng)
+OverlapBoxAll		Phát hiện tất cả Collider trong hình hộp.			Vector2 point, Vector2 size		Collider2D[] (mảng)
+OverlapAreaAll		Phát hiện tất cả Collider trong khu vực giới hạn bởi hai điểm.	Vector2 pointA, Vector2 pointB		Collider2D[] (mảng)
+OverlapPoint		Kiểm tra xem có Collider nào tại một điểm cụ thể không.		Vector2 point				Collider2D (đối tượng đầu tiên tìm thấy)

@@ -1,0 +1,23 @@
+1. Giới thiệu
+- Touch Input trong Unity được dùng để xử lý các thao tác chạm (tap), kéo (drag), vuốt (swipe), chụm (pinch), xoay (rotate)… trên màn hình cảm ứng (điện thoại, tablet).
+- Unity cung cấp Input.touches, Input.GetTouch(), TouchPhase… để quản lý từng điểm chạm.
+
+2. Các API chính
+a. Input.touchCount : Số lượng ngón tay hiện đang chạm.
+
+b. Input.GetTouch(index) : Lấy thông tin của 1 ngón tay theo chỉ số index (0,1,2…). Touch touch = Input.GetTouch(0);
+
+c. Touch
+- Một struct chứa dữ liệu về lần chạm:
+- fingerId: ID của ngón tay (0,1,2…)
+- position: Vị trí trên màn hình (pixel).
+- deltaPosition: Vị trí thay đổi so với frame trước.
+- phase: Trạng thái của lần chạm.
+- tapCount: Số lần chạm liên tiếp.
+
+d. TouchPhase (trạng thái chạm)
+- Began: Bắt đầu chạm.
+- Moved: Di chuyển ngón tay.
+- Stationary: Đang giữ yên.
+- Ended: Ngón tay rời màn hình.
+- Canceled: Hệ thống hủy chạm (VD: có cuộc gọi đến).

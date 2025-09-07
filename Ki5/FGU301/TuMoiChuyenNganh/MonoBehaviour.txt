@@ -1,0 +1,17 @@
+| Loại script                                                   | Kế thừa `MonoBehaviour`? | Lý do                                      |
+| ------------------------------------------------------------- | ------------------------ | ------------------------------------------ |
+| ✅ GameObject controller (Player, Enemy, NPC...)               | ✅ Có                     | Cần `Update()`, `Awake()`, tương tác scene |
+| ✅ UI handler (HUD, Canvas Manager...)                         | ✅ Có                     | Dùng `OnClick()`, `Update()` UI, v.v.      |
+| ✅ Input Manager (nếu đơn giản)                                | ✅ Có                     | Lấy `Input.GetAxis`, `GetKeyDown`, v.v.    |
+| ✅ Bootstrapper / GameManager                                  | ✅ Có                     | Quản lý vòng đời scene, Singleton, v.v.    |
+| ✅ ObjectPool, AudioManager, VFXManager (nếu dùng trong scene) | ✅ Có                     | Thường là Singleton hoạt động trong scene  |
+
+
+
+| Loại script                                  | Không cần kế thừa `MonoBehaviour` | Lý do                                           |
+| -------------------------------------------- | --------------------------------- | ----------------------------------------------- |
+| ✅ Logic riêng biệt (Shoot, Damage, Combo...) | ✅ Không                           | Viết như class thường – dễ test, dễ tái sử dụng |
+| ✅ State Machine & các `State`                | ✅ Không                           | FSM và từng state không cần nằm trong scene     |
+| ✅ Weapon, Skill, Item, Buff                  | ✅ Không                           | Dữ liệu + logic độc lập                         |
+| ✅ Config, GameData, GameRule                 | ✅ Không                           | Chỉ cần class thuần hoặc ScriptableObject       |
+| ✅ AI logic (chưa gắn với NavMesh)            | ✅ Không                           | Có thể test, tính toán logic mà không cần scene |

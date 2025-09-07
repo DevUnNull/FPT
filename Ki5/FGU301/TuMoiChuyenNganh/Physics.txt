@@ -20,10 +20,11 @@ Học cách bắn một tia từ một điểm, theo một hướng và với m�
 Hiểu cách sử dụng Layer Mask để chỉ phát hiện va chạm trên một layer cụ thể.
 Thực hành code: Tạo một script để bắn tia từ nhân vật. Nếu tia chạm vào một vật thể, in ra tên vật thể đó.
 Các phương thức phát hiện khác:
+OnCollisionEnter2D (đã xong 28/8)
 Học cách sử dụng OverlapSphere, OverlapBox và các hàm tương tự để phát hiện tất cả các Collider trong một khu vực nhất định.
 Hiểu sự khác biệt giữa các phương thức này và Raycast (Raycast kiểm tra một đường thẳng, Overlap kiểm tra một khu vực).
 Thực hành code: Viết một script để tìm tất cả các kẻ thù trong một bán kính nhất định quanh người chơi.
-Dự án thực hành: Tạo một cảnh bắn súng đơn giản. Khi người chơi nhấn chuột, một Raycast sẽ được bắn ra để xác định mục tiêu bị trúng đạn.
+Dự án thực hành: Tạo một cảnh bắn súng đơn giản. Khi người chơi nhấn chuột, một Raycast sẽ được bắn ra để xác định mục tiêu bị trúng đạn. (29/8)
 
 Giai đoạn 3: Joints và Physics Materials
 Mục tiêu: Hiểu và sử dụng các công cụ vật lý phức tạp hơn để tạo ra các hiệu ứng game thực tế.

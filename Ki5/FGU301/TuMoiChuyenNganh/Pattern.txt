@@ -1,0 +1,80 @@
+1. Singleton Pattern
+Đây là một trong những pattern quan trọng nhất và được dùng nhiều nhất. Nó đảm bảo rằng một lớp chỉ có duy nhất một thể hiện và cung cấp một điểm truy cập toàn cục tới thể hiện đó. Nó rất phù hợp cho các manager như GameManager, SoundManager hoặc UIManager, những thứ bạn chỉ cần một và duy nhất trong suốt trò chơi.
+🧠 1. Singleton Pattern là gì?
+Singleton đảm bảo:
+Có duy nhất một instance của class trong suốt thời gian chạy.
+Instance đó có thể được truy cập toàn cục qua một thuộc tính tĩnh (static).
+🧱 2. Khi nào dùng Singleton trong Unity?
+Quản lý game (GameManager, UIManager, AudioManager, SceneManager, v.v.)
+Quản lý dữ liệu (DataManager)
+Hệ thống lưu game (SaveManager)
+Quản lý object pool (PoolManager)
+
+
+2. Object Pool Pattern
+Pattern này giúp tối ưu hóa hiệu suất bằng cách tái sử dụng các đối tượng thay vì liên tục tạo (instantiate) và hủy (destroy) chúng. Nó cực kỳ hữu ích cho các vật thể được sinh ra và biến mất liên tục trong game, như đạn, kẻ thù, hoặc các hiệu ứng đặc biệt.
+🎯 1. Object Pool Pattern là gì?
+✅ Ý tưởng chính:
+Thay vì liên tục Instantiate() và Destroy() (rất tốn tài nguyên), ta:
+Tạo sẵn một “pool” (hồ chứa) các object và tái sử dụng chúng bằng cách bật/tắt và thay đổi vị trí.
+⚠ Tại sao không nên dùng Instantiate/Destroy quá nhiều?
+Gây giật lag do việc cấp phát và giải phóng bộ nhớ (GC)
+Gây tăng CPU usage khi số lượng object lớn
+Gây giảm FPS nếu dùng liên tục trong game loop
+🧱 2. Cấu trúc Object Pool trong Unity
+Chúng ta sẽ tạo:
+Một prefab để "pool"
+Một class ObjectPool
+Sử dụng Queue<GameObject> để quản lý các object tái sử dụng
+
+
+3.State Parten (liên quan S – Single Responsibility + O – Open/Closed)
+Pattern này giúp bạn quản lý các hành vi phức tạp của một đối tượng dựa trên trạng thái hiện tại của nó. Ví dụ, một nhân vật có thể có các trạng thái như đi bộ, nhảy, tấn công. Bằng cách sử dụng State Pattern, bạn có thể dễ dàng thêm hoặc thay đổi hành vi của nhân vật mà không làm lộn xộn code.
+
+các bước để có thể làm 
+bước 1 tạo interface : IState
+ở đây sẽ có các thư như là : Enter , LogicUpdate , Exit
+bước 2 tạo bộ chuyển đổi giữa các state : PlayerStateMachine
+ở đây mình sẽ lấy State hiện tại : 
+Private IState currentState
+public void ChangeState(IState newState)
+    {
+        currentState?.Exit();
+        currentState = newState;
+        currentState.Enter();
+    }
+    private void Update()
+    {
+        // ← Đây là nơi bạn gọi LogicUpdate() MỖI FRAME
+        currentState?.LogicUpdate();
+    }
+bước 3 gọi ở trong playerController 
+private void Start()
+{
+    stateMachine = GetComponent<PlayerStateMachine>();
+    stateMachine.ChangeState(new IdleState(stateMachine));
+}
+
+
+
+
+
+
+Các Pattern Nâng Cao Hơn
+Khi đã nắm vững ba pattern trên, bạn có thể tìm hiểu thêm các pattern sau để nâng cao kỹ năng:
+
+4. Observer Pattern (liên quan L – Liskov Substitution + I – Interface Segregation)
+Pattern này cho phép các đối tượng "lắng nghe" sự thay đổi trạng thái của một đối tượng khác mà không cần biết chi tiết về đối tượng đó. Nó rất hữu ích cho hệ thống sự kiện (event system) trong game, chẳng hạn như khi người chơi chết, thanh máu thay đổi, hoặc đạt được thành tích.
+
+5. Command Pattern (liên quan S và O)
+Pattern này đóng gói một yêu cầu (ví dụ: một hành động của người chơi) thành một đối tượng, cho phép bạn quản lý các yêu cầu đó một cách linh hoạt, hỗ trợ việc hoàn tác (undo) hoặc ghi lại (replay) các hành động.
+
+6. Factory Pattern
+Khi bạn cần tạo ra nhiều loại đối tượng phức tạp khác nhau, Factory Pattern sẽ giúp bạn quản lý quá trình tạo chúng một cách hiệu quả. Nó ẩn đi logic tạo đối tượng phức tạp và cung cấp một giao diện đơn giản để tạo ra chúng. Ví dụ, một EnemyFactory có thể tạo ra các loại kẻ thù khác nhau mà không cần bạn phải biết cách tạo từng loại.
+
+7. Strategy Pattern (liên quan O – Open/Closed + D – Dependency Inversion) (done)
+Trong Unity:
+Vi dụ bạn có một vũ khí (Weapon) nhưng muốn thay đổi cách tấn công: bắn đạn, phóng lửa, bắn laser...
+Thay vì viết if-else trong Weapon, bạn tách ra các class AttackStrategy khác nhau.
+Khi cần đổi, chỉ cần gắn Strategy mới.
+👉 Đây là một cách để giảm if-else, tuân theo OCP (Open/Closed Principle).
