@@ -1,0 +1,22 @@
+1. định nghĩa
+finite :hưu hạn 
+state : trạng thái 
+machine : máy móc
+-> finite state machine : máy trạng thái hữu hạn , đây là một môi hình lập trình để quản lý trạng thái của một đối tượng .
+- đối tượng ở đây là : nhân vật , kẻ địch , cảu , ui ... chỉ có thể ở một trạng thoái tại một thời điểm , và sẽ chuyển đổi (transition) giữa các trạng thái khi có điều kiện  xảy ra
+- VD : 
++ kẻ địch trong game có các trạng thái sau 
+	idle (đứng yên)
+	patrol (tuần tra)
+	chase (đuổi theo player)
+	attack (tấn công)
+	dead (chít)
+-> FSM sẽ giúp ta quản lsy những hành vi này gọn gàng tránh code rối loạn
+
+2. lợi ích khi dùng FSM 
+-Tách biệt logic hành vi theo từng trạng thái (dễ đọc, dễ bảo trì).
+-Tránh dùng nhiều if-else hay switch-case phức tạp.
+-Có thể tái sử dụng cho nhiều đối tượng (nhân vật, AI, UI).
+
+3. Cách triển khai FSM trong Unity
+cụ thể tại project LearnFGU301FPT tại class HTU_FSM

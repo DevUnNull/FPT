@@ -1,0 +1,22 @@
+1 cách hoạt động của Translate
+-transform.translate(Vector3 translation)
+	+translation ở đây KHÔNG PHẢI là một tọa độ (position),	
+	+mà phải là một vector dịch chuyển (delta position), tức là: dịch bao nhiêu đơn vị, theo hướng nào, tính từ vị trí hiện tại
+	+VD: transform.Translate(Vector3.forward * 2); //forward : xác định hướng quay về 
+
+
+2. Cách MoveTowards hoạt động
+-transform.position = Vector3.MoveTowards(current, target, step)
+	+Cái này trả về một tọa độ tuyệt đối trong world (ví dụ (2,0,0), (4,0,0), …).
+	+Chứ không phải là một vector dịch chuyển.
+
+3. Tại sao Translate không dùng được kết quả MoveTowards?
+-Ví dụ bạn đang ở (0,0,0), player ở (10,0,0).
+	+Vector3 newPos = Vector3.MoveTowards(new Vector3(0,0,0), new Vector3(10,0,0), 2);
+	+Kết quả: newPos = (2,0,0)
+		++ và nếu bây giờ mình làm: transform.Translate(newPos);
+		++ Unity sẽ hiểu: dịch chuyển từ (0,0,0) thêm (2,0,0) → object đến (2,0,0) (ngẫu nhiên đúng)
+		++ Frame sau: MoveTowards sẽ trả về (4,0,0)
+		++ thì lúc này nó sẽ ra là: transform.Translate(new vector3(4,0,0)); 
+		++ Unity hiểu: dịch chuyển thêm (4,0,0) từ vị trí hiện tại (2,0,0) → ra (6,0,0) 😅.
+		👉 Như vậy enemy sẽ đi quá nhanh và sai vị trí

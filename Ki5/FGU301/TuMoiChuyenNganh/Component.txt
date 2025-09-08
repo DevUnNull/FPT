@@ -1,0 +1,8 @@
+- Trong unity Component được gắn vào GameObject để xác định hành vi , đặc tính hoặc là chức năng của GameObject đó (scrip có kế thừa từ monoBehaviour cx được coi là 1 Component )
+- Ví dụ về các Component thường dùng
+	Transform: Mọi GameObject đều có sẵn, lưu vị trí (Position), xoay (Rotation), và tỉ lệ (Scale).
+	Rigidbody: Giúp GameObject chịu tác động vật lý (trọng lực, lực đẩy...).
+	Collider: Xác định vùng va chạm của GameObject.
+	Mesh Renderer: Cho phép GameObject hiển thị hình ảnh 3D.
+	AudioSource: Phát âm thanh.
+	Script (C#): Component do lập trình viên viết để thêm logic tuỳ chỉnh.

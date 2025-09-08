@@ -1,0 +1,5 @@
+Enabled là thuộc tính có sẵn của component
+Nếu enabled = true → component đang hoạt động.
+Nếu enabled = false → component bị tắt (Unity sẽ gọi OnDisable(), ngừng Update, v.v.).
+
+Chi tiết xem tại classHowToUseOnEnable của learnFGU301FPT

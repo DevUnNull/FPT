@@ -1,0 +1,7 @@
+-GetComponent là gì?
+	Đây là hàm của GameObject để lấy component (thành phần) đang gắn trên chính object đó.
+	trả về component bạn yêu cầu (ví dụ: Rigidbody, Collider, Renderer, hoặc script bạn tự viết).
+- câu lệnh cơ bản 
+	T component = gameObject.GetComponent<T>();
+
+hiểu kỹ hơn tại HowToUseGetComponent tại LearnFGU301FPT
