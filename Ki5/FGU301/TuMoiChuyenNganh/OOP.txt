@@ -1,0 +1,7 @@
+Encapsulation (Đóng gói)
+
+Inheritance (Kế thừa)
+
+Polymorphism (Đa hình)
+
+Abstraction (Trừu tượng hóa)
