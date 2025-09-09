@@ -1,0 +1,6 @@
+"Hãy viết lại toàn bộ nội dung trong slide tôi gửi theo định dạng phù hợp để đưa vào tài liệu Word (doc).
+Ở đầu văn bản, hãy tạo một mục lục (Table of Contents) dựa trên nội dung trong slide.
+Khi viết, hãy thêm các thuật ngữ tiếng Anh chuyên ngành bên cạnh những khái niệm hoặc từ khóa quan trọng (ghi trong ngoặc).
+Nội dung cần được viết lại rõ ràng, súc tích, dễ hiểu, không chỉ chép y nguyên từ slide.
+Hãy bổ sung thêm các ví dụ thực tế liên quan trực tiếp đến môn học đang đề cập trong slide để minh họa.
+Trình bày sao cho gọn gàng, logic, và dễ copy vào file Word."
