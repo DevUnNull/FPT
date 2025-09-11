@@ -1,0 +1,14 @@
+D:\UnityTuLam\C#\ProjectOOP\OOP\OOP\bin\Debug\net8.0\OOP.exe
+D:\UnityTuLam\C#\ProjectOOP\OOP\OOP\bin\Debug\net8.0\OOP.deps.json
+D:\UnityTuLam\C#\ProjectOOP\OOP\OOP\bin\Debug\net8.0\OOP.runtimeconfig.json
+D:\UnityTuLam\C#\ProjectOOP\OOP\OOP\bin\Debug\net8.0\OOP.dll
+D:\UnityTuLam\C#\ProjectOOP\OOP\OOP\bin\Debug\net8.0\OOP.pdb
+D:\UnityTuLam\C#\ProjectOOP\OOP\OOP\obj\Debug\net8.0\OOP.GeneratedMSBuildEditorConfig.editorconfig
+D:\UnityTuLam\C#\ProjectOOP\OOP\OOP\obj\Debug\net8.0\OOP.AssemblyInfoInputs.cache
+D:\UnityTuLam\C#\ProjectOOP\OOP\OOP\obj\Debug\net8.0\OOP.AssemblyInfo.cs
+D:\UnityTuLam\C#\ProjectOOP\OOP\OOP\obj\Debug\net8.0\OOP.csproj.CoreCompileInputs.cache
+D:\UnityTuLam\C#\ProjectOOP\OOP\OOP\obj\Debug\net8.0\OOP.dll
+D:\UnityTuLam\C#\ProjectOOP\OOP\OOP\obj\Debug\net8.0\refint\OOP.dll
+D:\UnityTuLam\C#\ProjectOOP\OOP\OOP\obj\Debug\net8.0\OOP.pdb
+D:\UnityTuLam\C#\ProjectOOP\OOP\OOP\obj\Debug\net8.0\OOP.genruntimeconfig.cache
+D:\UnityTuLam\C#\ProjectOOP\OOP\OOP\obj\Debug\net8.0\ref\OOP.dll

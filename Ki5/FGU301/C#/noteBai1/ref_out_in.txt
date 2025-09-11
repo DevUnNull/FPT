@@ -1,0 +1,5 @@
+| Từ khóa | Truyền gì?                 | Ghi nhớ ngắn gọn               |
+| ------- | -------------------------- | ------------------------------ |
+| `ref`   | Tham chiếu (reference)     | "Thay đổi được biến bên ngoài" |
+| `out`   | Tham chiếu để nhận giá trị | "Chỉ để trả kết quả ra ngoài"  |
+| `in`    | Tham chiếu để đọc          | "Chỉ đọc, không được thay đổi" |

@@ -1,0 +1,56 @@
+ở đây ta sẽ có 2 loại 
+- interface
+- abstract
+
+1. Abstract class
+Kế thừa:
+Một class chỉ kế thừa được 1 abstract class (vì C# không hỗ trợ đa kế thừa class). nhưng vẫn có thể kế thừa tiếp interface
+Thành phần bên trong:
+Có thể chứa:
+Code chung (method có thân hàm, biến, property, constructor).
+Phương thức abstract (không có code, bắt buộc lớp con phải override).
+Mục đích:
+Dùng khi các lớp có mối quan hệ gần nhau và cần dùng lại một phần code.
+
+VD: 
+abstract class Animal
+{
+    public void Eat() => Console.WriteLine("Eating..."); // code chung
+    public abstract void Speak(); // bắt buộc lớp con phải cài đặt
+}
+
+class Dog : Animal
+{
+    public override void Speak() => Console.WriteLine("Dog barks");
+}
+
+2. Interface
+Kế thừa:
+Một class có thể implement nhiều interface cùng lúc → hỗ trợ đa kế thừa hành vi.
+Thành phần bên trong (C# < 8.0):
+Chỉ khai báo hợp đồng (chữ ký method, property, event).
+Không có code triển khai, không có biến instance.
+Mục đích:
+Dùng khi các lớp không liên quan nhau nhưng cần tuân theo cùng một hành vi.
+
+VD:
+interface IFlyable
+{
+    void Fly();
+}
+
+interface IRunnable
+{
+    void Run();
+}
+
+class Bird : IFlyable, IRunnable // đa kế thừa interface
+{
+    public void Fly() => Console.WriteLine("Bird flies");
+    public void Run() => Console.WriteLine("Bird runs");
+}
+
+
+- sự khác nhau 
++ interface có thể đa kế thừa , ngược lại abstract lại chỉ là đơn kế thừa
++ abstract có thể có code hàm chung tương tự như kế thừa bình thường

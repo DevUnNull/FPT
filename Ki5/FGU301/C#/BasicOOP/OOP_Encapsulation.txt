@@ -1,0 +1,12 @@
+-Ẩn giấu thông tin bên trong đối tượng, chỉ cho phép truy cập thông qua các phương thức (methods) hoặc thuộc tính (properties) được công khai.
+
+-Giúp:
+	+Bảo vệ dữ liệu khỏi bị thay đổi ngoài ý muốn.
+	+Giữ cho đối tượng có tính độc lập, dễ bảo trì.
+class BankAccount
+{
+    private decimal balance; // ẩn dữ liệu
+
+    public void Deposit(decimal amount) => balance += amount;
+    public decimal GetBalance() => balance; // chỉ cho đọc qua method
+}

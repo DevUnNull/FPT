@@ -1,0 +1,20 @@
+public struct Enemy
+{
+    public string Name;
+    public int Level;
+
+    public void PrintInfo()
+    {
+        Console.WriteLine($"{Name} - Level {Level}");
+    }
+}
+
+this here we dont need to create new class
+
+| Đặc điểm     | `struct`                           | `class`               |
+| ------------ | ---------------------------------- | --------------------- |
+| Kiểu dữ liệu | Value type                         | Reference type        |
+| Lưu trữ      | Stack                              | Heap                  |
+| Kế thừa      | ❌ Không hỗ trợ                   | ✅ Có hỗ trợ          |
+| Null         | Không thể null (trừ `Nullable<T>`) | Có thể null           |
+| Hiệu năng    | Thường nhanh hơn khi nhỏ gọn       | Có thể tốn bộ nhớ hơn |

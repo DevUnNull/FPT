@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Thay đổi từ "vi" sang "en" -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tica's Tacos - Trang Chủ</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html">Tica's Tacos</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="reservation.html">Reservation</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Phần Chào Mừng -->
+    <section id="welcome">
+        <div class="overlay"></div>
+        <div class="welcome-content">
+            <h2>WELCOME TO</h2>
+            <h1>TICA'S TACOS</h1>
+            <p>THE AUTHENTIC MEXICO TACO EXPERIENCE</p>
+        </div>
+        <div class="scroll-down">
+            <a href="#about"><span></span></a>
+        </div>
+    </section>
+
+    <!-- Phần Giới Thiệu -->
+    <section id="about">
+        <div class="about-content">
+            <h2>About Tica's Tacos</h2> <!-- Thêm tiêu đề h2 -->
+            <p>Tica's Tacos is one of the most famous taco shops in Mexico City, offering you a special culinary experience with the flavorful Tacos al Pastor. Established since the 1950s, Tica's Tacos has become an icon of Mexican street food, serving not only locals but also visitors from all over the world. We are proud to bring you great tacos made with fresh ingredients and traditional recipes, creating unforgettable flavors, typical of Mexican culinary culture.</p>
+           <a href="#why-choose-us" class="about-button">MORE ABOUT US</a>
+        </div>
+    </section>
+
+    <!-- Phần Thực Đơn -->
+    <section id="menu">
+        <div class="menu-overlay"></div>
+        <div class="menu-content">
+            <h2>Our Menu</h2>
+            <p class="menu-intro">At Tica's Tacos, every taco is carefully prepared with the finest ingredients, from the freshest meats to the finest spices. Our signature taco is the Tacos al Pastor, a pork roast on a rotating shaft, seasoned with our own spices and paired with fresh pineapple, creating a wonderful blend of flavors. Here are some of our signature dishes:</p>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="menu-card">
+                        <div class="menu-front">
+                            <img src="Menu/tacos-al-pastor.jpg" alt="Tacos al Pastor">
+                            <h3>Tacos al Pastor</h3>
+                            <span class="best-seller">Best Seller</span>
+                        </div>
+                        <div class="menu-back">
+                            <h3>Tacos al Pastor</h3>
+                            <p>Marinated pork, grilled on a rotisserie, combined with fresh pineapple, onions and cilantro, creates a sweet, rich flavor.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-card">
+                        <div class="menu-front">
+                            <img src="Menu/taco_de_barbacoa.jpg" alt="Taco de Barbacoa">
+                            <h3>Taco de Barbacoa</h3>
+                        </div>
+                        <div class="menu-back">
+                            <h3>Tacos de Suadero</h3>
+                            <p>Slow cooked, tender beef brisket served with fresh salsa and lime.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-card">
+                        <div class="menu-front">
+                            <img src="Menu/tacos-de-carnitas.jpg" alt="Tacos de Carnitas">
+                            <h3>Tacos de Carnitas</h3>
+                        </div>
+                        <div class="menu-back">
+                            <h3>Tacos de Carnitas</h3>
+                            <p>Slow cooked, flavorful pork served with green salsa and fresh cilantro.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-card">
+                        <div class="menu-front">
+                            <img src="Menu/tacos-de-bistec.jpg" alt="Tacos de Bistec">
+                            <h3>Tacos de Bistec</h3>
+                        </div>
+                        <div class="menu-back">
+                            <h3>Tacos de Bistec</h3>
+                            <p>Grilled beef, thinly sliced, combined with typical Mexican spices.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-card">
+                        <div class="menu-front">
+                            <img src="Menu/tacos-de-pollo.jpg" alt="Tacos de Pollo">
+                            <h3>Tacos de Pollo</h3>
+                        </div>
+                        <div class="menu-back">
+                            <h3>Tacos de Pollo</h3>
+                            <p>Grilled chicken with rich flavor, served with fresh salsa.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="menu-outro">We also serve side dishes like guacamole, tortilla chips and salsa made fresh daily, so you can enjoy your taco to the fullest.</p>
+            <a href="menu.html" class="menu-button">VIEW FULL MENU</a>
+        </div>
+    </section>
+
+    <!-- Phần Tại Sao Chọn Tica's Tacos? -->
+    <section id="why-choose-us">
+        <div class="why-choose-overlay"></div>
+        <div class="why-choose-content">
+            <h2>Why Choose Tica's Tacos?</h2>
+            <p>Discover why Tica's Tacos is the top choice for Mexican food lovers. We pride ourselves on delivering an authentic taco experience that perfectly combines long-standing tradition with exceptional quality.</p>
+            <div class="why-choose-items">
+                <div class="why-choose-column left-column">
+                    <div class="why-choose-item">
+                        <h3>Authentic Taste</h3>
+                        <p>With carefully selected fresh ingredients, each taco at Tica's is imbued with the soul of Mexico with a rich, irresistible flavor.</p>
+                    </div>
+                    <div class="why-choose-item">
+                        <h3>Long-standing Tradition</h3>
+                        <p>For over 60 years, Tica's Tacos has been a Mexican street food icon, beloved by generations of diners worldwide.</p>
+                    </div>
+                </div>
+                <div class="why-choose-column right-column">
+                    <div class="why-choose-item">
+                        <h3>Friendly Space</h3>
+                        <p>The restaurant space is spacious, modern and cozy, ideal for family meals, meeting friends or relaxing dates.</p>
+                    </div>
+                    <div class="why-choose-item">
+                        <h3>Excellent Quality</h3>
+                        <p>Each dish is meticulously prepared, from fragrant grilled meat to unique spices, ensuring fresh deliciousness every day.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Container for Visit Us and Notification with Shared Video Background -->
+    <div class="video-background-container">
+        <video autoplay muted loop playsinline class="background-video">
+            <source src="tacos-background-video.mp4" type="video/mp4">
+            Trình duyệt của bạn không hỗ trợ thẻ video.
+        </video>
+
+        <!-- Phần Tham Quan Tica's Tacos -->
+        <section id="visit-us">
+            <div class="visit-us-overlay"></div>
+            <div class="visit-us-content">
+                <h2>Visit Tica's Tacos</h2>
+                <p>Tica's Tacos is not just a restaurant, but also a place to preserve and spread the essence of Mexican cuisine. Here, you will enjoy traditional tacos with rich flavors, made from the freshest ingredients, in a warm and intimate space. Come and discover our famous Tacos al Pastor, along with many other special tacos, promising to bring an unforgettable culinary experience.</p>
+            </div>
+        </section>
+
+        <!-- Receive a Notification Section -->
+        <section id="notification">
+            <div class="notification-overlay"></div>
+            <div class="notification-section">
+                <h3>Join Our Taco Club</h3>
+                <p>Subscribe to our newsletter for exclusive offers, new menu items, and taco tips!</p>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Enter your email address">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-section contact">
+                    <h3>Contact</h3>
+                    <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b1859892908590929e82c0c3c2c2b1969c90989ddf929e9c">[email&#160;protected]</a></p>
+                    <h3>Phone Number</h3>
+                    <p>090.404.3689</p>
+                </div>
+                
+                <div class="footer-section info">
+                    <h3>Operation</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Reservation</a></li>
+                        <li><a href="#">Menu</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">View Cart</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Tách phần Location thành một cột riêng -->
+                <div class="footer-section location">
+                    <h3>Location</h3>
+                    <p>136 Phó Đức Chinh, Trúc Bạch, Ba Đình, Hà Nội</p>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.923589981027!2d105.83841731540213!3d21.03578588599425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab4c8c06e989%3A0xbec6c80b9514f071!2s136%20Ph%C3%B3%20%C4%90%E1%BB%A9c%20Ch%C3%ADnh%2C%20Tr%C3%BAc%20B%E1%BA%A1ch%2C%20Ba%20%C4%90%C3%ACnh%2C%20H%C3%A0%20N%E1%BB%99i%2C%20Vietnam!5e0!3m2!1sen!2sus!4v1677654321" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div> <!-- Thêm thẻ đóng cho footer-top -->
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="https://www.facebook.com/ticastacos" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.ticastacos.com/#/"><i class="fab fa-dribbble"></i></a>
+                    <a href="https://www.instagram.com/ticas_tacos/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/tacobell" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="copyright">
+                    <p>© 2025 Tica's Tacos. Group7: All rights reserved.</p>
+                </div>
+            </div>
+        </div> <!-- Đảm bảo thẻ đóng cho footer-container -->
+    </footer>
+
+    <!-- JavaScript for smooth scrolling -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+    <!-- JavaScript to update cart count -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            document.getElementById('cart-count').textContent = cart.length;
+        });
+    </script>
+
+    <!-- JavaScript for form submission -->
+    <script>
+        document.querySelector('.subscribe-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            if (email) {
+                alert(`Thank you for subscribing with ${email}!`);
+                this.reset();
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        });
+    </script>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+</body>
+</html>

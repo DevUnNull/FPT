@@ -1,0 +1,14 @@
+D:\UnityTuLam\C#\AdvancedC#\Delegate_\Delegate_\bin\Debug\net8.0\Delegate_.exe
+D:\UnityTuLam\C#\AdvancedC#\Delegate_\Delegate_\bin\Debug\net8.0\Delegate_.deps.json
+D:\UnityTuLam\C#\AdvancedC#\Delegate_\Delegate_\bin\Debug\net8.0\Delegate_.runtimeconfig.json
+D:\UnityTuLam\C#\AdvancedC#\Delegate_\Delegate_\bin\Debug\net8.0\Delegate_.dll
+D:\UnityTuLam\C#\AdvancedC#\Delegate_\Delegate_\bin\Debug\net8.0\Delegate_.pdb
+D:\UnityTuLam\C#\AdvancedC#\Delegate_\Delegate_\obj\Debug\net8.0\Delegate_.GeneratedMSBuildEditorConfig.editorconfig
+D:\UnityTuLam\C#\AdvancedC#\Delegate_\Delegate_\obj\Debug\net8.0\Delegate_.AssemblyInfoInputs.cache
+D:\UnityTuLam\C#\AdvancedC#\Delegate_\Delegate_\obj\Debug\net8.0\Delegate_.AssemblyInfo.cs
+D:\UnityTuLam\C#\AdvancedC#\Delegate_\Delegate_\obj\Debug\net8.0\Delegate_.csproj.CoreCompileInputs.cache
+D:\UnityTuLam\C#\AdvancedC#\Delegate_\Delegate_\obj\Debug\net8.0\Delegate_.dll
+D:\UnityTuLam\C#\AdvancedC#\Delegate_\Delegate_\obj\Debug\net8.0\refint\Delegate_.dll
+D:\UnityTuLam\C#\AdvancedC#\Delegate_\Delegate_\obj\Debug\net8.0\Delegate_.pdb
+D:\UnityTuLam\C#\AdvancedC#\Delegate_\Delegate_\obj\Debug\net8.0\Delegate_.genruntimeconfig.cache
+D:\UnityTuLam\C#\AdvancedC#\Delegate_\Delegate_\obj\Debug\net8.0\ref\Delegate_.dll

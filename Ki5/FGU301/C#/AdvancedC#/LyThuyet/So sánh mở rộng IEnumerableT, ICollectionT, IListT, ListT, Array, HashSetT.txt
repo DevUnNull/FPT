@@ -1,0 +1,11 @@
+| Giao diện/Lớp             | `foreach`   | Thêm/Xoá (`Add`, `Remove`)   | Đếm (`Count`)  | Truy cập `[i]`  | Truy cập theo key   | Dung lượng động    | Ghi chú đặc biệt              |
+| ------------------------- | ---------   | --------------------------   | -------------  | --------------  | -----------------   | ---------------    | ------------------------------|
+| `IEnumerable<T>`          | ✅         | ❌ Không                    | ❌ Không       | ❌ Không        | ❌                 | ✅ Tuỳ implement | Duyệt là chính                 |
+| `ICollection<T>`          | ✅         | ✅ Có                       | ✅ Có          | ❌ Không        | ❌                 | ✅ Tuỳ implement | Cơ bản để thao tác             |
+| `IList<T>`                | ✅         | ✅ Có                       | ✅ Có          | ✅ Có           | ❌                 | ✅               | Có `[i]`, `Insert`, `IndexOf`  |
+| `List<T>`                 | ✅         | ✅ Có                       | ✅ Có          | ✅ Có           | ❌                 | ✅               | Lớp phổ biến nhất              |
+| `HashSet<T>`              | ✅         | ✅ Có                       | ✅ Có          | ❌ Không        | ❌                 | ✅               | Không chứa phần tử trùng       |
+| `Array` (`T[]`)           | ✅         | ❌ Không (cố định)          | ✅ Có          | ✅ Có           | ❌                 | ❌ Không         | Kích thước cố định             |
+| `Dictionary<K,V>`         | ✅         | ✅ Có                       | ✅ Có          | ❌ Không        | ✅ Có              | ✅               | Truy cập theo key              |
+| `IReadOnlyCollection<T>`  | ✅         | ❌ Không (chỉ đọc)          | ✅ Có          | ❌ Không        | ❌                 | ✅               | Dùng cho bảo vệ dữ liệu        |
+| `ObservableCollection<T>` | ✅         | ✅ Có                       | ✅ Có          | ✅ Có           | ❌                 | ✅               | Tự động thông báo khi thay đổi |

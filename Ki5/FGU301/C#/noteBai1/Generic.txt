@@ -1,0 +1,52 @@
+Bạn có một hộp đựng đồ (Box).
+
+Lúc thì đựng táo 🍎
+
+Lúc thì đựng cam 🍊
+
+Bạn không cần tạo AppleBox, OrangeBox, BananaBox...
+
+→ Bạn chỉ cần một Box<T>, khi dùng thì thay T bằng loại bạn muốn đựng.
+
+1. ✅ Generic Class
+class MyClass<T>
+{
+    public T data;
+
+    public void Print()
+    {
+        Console.WriteLine(data);
+    }
+}
+
+var intBox = new MyClass<int>();
+intBox.data = 10;
+
+var stringBox = new MyClass<string>();
+stringBox.data = "Hello";
+
+2. ✅ Generic Method
+class Utils
+{
+    public static void Swap<T>(ref T a, ref T b)
+    {
+        T temp = a;
+        a = b;
+        b = temp;
+    }
+}
+
+int x = 5, y = 10;
+Utils.Swap(ref x, ref y); // x=10, y=5
+
+string a = "A", b = "B";
+Utils.Swap(ref a, ref b); // a="B", b="A"
+
+3. ✅ Generic Interface (Ví dụ với IComparer<T>)
+class StudentComparerByName : IComparer<Student>
+{
+    public int Compare(Student x, Student y)
+    {
+        return x.name.CompareTo(y.name);
+    }
+}

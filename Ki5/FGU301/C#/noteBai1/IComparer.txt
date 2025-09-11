@@ -1,0 +1,13 @@
+| `IComparable`                                                           | `IComparer`                                                         |
+| ----------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| Dùng khi bạn muốn mỗi class **tự định nghĩa cách so sánh** của chính nó | Dùng khi bạn muốn **nhiều cách sắp xếp khác nhau** cho cùng 1 class |
+| Gắn cứng vào class                                                      | Linh hoạt, viết ngoài class                                         |
+| Gọi bằng `Sort()`                                                       | Gọi bằng `Sort(new IComparer)`                                      |
+
+public int Compare(Student? x, Student? y)
+{
+    if (x == null || y == null) return 0;
+
+    Console.WriteLine($"🔍 So sánh: {x.name} với {y.name}");
+    return x.name.CompareTo(y.name); // Tăng dần theo tên
+}

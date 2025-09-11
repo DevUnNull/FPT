@@ -1,0 +1,14 @@
+D:\UnityTuLam\C#\AdvancedC#\leet_code4\leet_code4\bin\Debug\net8.0\leet_code4.exe
+D:\UnityTuLam\C#\AdvancedC#\leet_code4\leet_code4\bin\Debug\net8.0\leet_code4.deps.json
+D:\UnityTuLam\C#\AdvancedC#\leet_code4\leet_code4\bin\Debug\net8.0\leet_code4.runtimeconfig.json
+D:\UnityTuLam\C#\AdvancedC#\leet_code4\leet_code4\bin\Debug\net8.0\leet_code4.dll
+D:\UnityTuLam\C#\AdvancedC#\leet_code4\leet_code4\bin\Debug\net8.0\leet_code4.pdb
+D:\UnityTuLam\C#\AdvancedC#\leet_code4\leet_code4\obj\Debug\net8.0\leet_code4.GeneratedMSBuildEditorConfig.editorconfig
+D:\UnityTuLam\C#\AdvancedC#\leet_code4\leet_code4\obj\Debug\net8.0\leet_code4.AssemblyInfoInputs.cache
+D:\UnityTuLam\C#\AdvancedC#\leet_code4\leet_code4\obj\Debug\net8.0\leet_code4.AssemblyInfo.cs
+D:\UnityTuLam\C#\AdvancedC#\leet_code4\leet_code4\obj\Debug\net8.0\leet_code4.csproj.CoreCompileInputs.cache
+D:\UnityTuLam\C#\AdvancedC#\leet_code4\leet_code4\obj\Debug\net8.0\leet_code4.dll
+D:\UnityTuLam\C#\AdvancedC#\leet_code4\leet_code4\obj\Debug\net8.0\refint\leet_code4.dll
+D:\UnityTuLam\C#\AdvancedC#\leet_code4\leet_code4\obj\Debug\net8.0\leet_code4.pdb
+D:\UnityTuLam\C#\AdvancedC#\leet_code4\leet_code4\obj\Debug\net8.0\leet_code4.genruntimeconfig.cache
+D:\UnityTuLam\C#\AdvancedC#\leet_code4\leet_code4\obj\Debug\net8.0\ref\leet_code4.dll

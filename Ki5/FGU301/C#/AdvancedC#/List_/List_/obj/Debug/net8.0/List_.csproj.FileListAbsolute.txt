@@ -1,0 +1,14 @@
+D:\UnityTuLam\C#\AdvancedC#\List_\List_\bin\Debug\net8.0\List_.exe
+D:\UnityTuLam\C#\AdvancedC#\List_\List_\bin\Debug\net8.0\List_.deps.json
+D:\UnityTuLam\C#\AdvancedC#\List_\List_\bin\Debug\net8.0\List_.runtimeconfig.json
+D:\UnityTuLam\C#\AdvancedC#\List_\List_\bin\Debug\net8.0\List_.dll
+D:\UnityTuLam\C#\AdvancedC#\List_\List_\bin\Debug\net8.0\List_.pdb
+D:\UnityTuLam\C#\AdvancedC#\List_\List_\obj\Debug\net8.0\List_.GeneratedMSBuildEditorConfig.editorconfig
+D:\UnityTuLam\C#\AdvancedC#\List_\List_\obj\Debug\net8.0\List_.AssemblyInfoInputs.cache
+D:\UnityTuLam\C#\AdvancedC#\List_\List_\obj\Debug\net8.0\List_.AssemblyInfo.cs
+D:\UnityTuLam\C#\AdvancedC#\List_\List_\obj\Debug\net8.0\List_.csproj.CoreCompileInputs.cache
+D:\UnityTuLam\C#\AdvancedC#\List_\List_\obj\Debug\net8.0\List_.dll
+D:\UnityTuLam\C#\AdvancedC#\List_\List_\obj\Debug\net8.0\refint\List_.dll
+D:\UnityTuLam\C#\AdvancedC#\List_\List_\obj\Debug\net8.0\List_.pdb
+D:\UnityTuLam\C#\AdvancedC#\List_\List_\obj\Debug\net8.0\List_.genruntimeconfig.cache
+D:\UnityTuLam\C#\AdvancedC#\List_\List_\obj\Debug\net8.0\ref\List_.dll

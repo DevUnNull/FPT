@@ -1,0 +1,6 @@
+| Nhóm                | Các kiểu dữ liệu                                                                                                                                                         |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Value Types**     | `sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong`, `char`, `float`, `double`, `decimal`, `bool`, `struct`, `enum`, `Nullable<T>`, `Tuple`, `ValueTuple` |
+| **Reference Types** | `object`, `string`, `class`, `interface`, `delegate`, `record`, `array`, `dynamic`, `anonymous type`                                                                     |
+| **Pointer Types**   | `int*`, `char*`, `void*` (chỉ trong `unsafe`)                                                                                                                            |
+| **Special**         | `void`                                                                                                                                                                   |

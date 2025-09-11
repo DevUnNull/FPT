@@ -1,0 +1,36 @@
+“Tôi đang làm một project web về Restaurant Booking dành cho một quán duy nhất. Hiện tại nhóm có 5 thành viên, mỗi thành viên phải thiết kế ít nhất 5 màn hình. Hãy tạo bản dự kiến đầu tiên các màn hình cơ bản và nâng cao, chia đều cho từng người trong nhóm. Ưu tiên cách phân chia sao cho có nhiều chức năng đa dạng, vừa có luồng người dùng đặt bàn, vừa có quản lý của Admin, vừa có màn hình phụ trợ để đạt nhiều điểm theo tiêu chí chấm.”
+
+Thành viên 1 – Nhóm User Cơ bản
+Trang chủ.
+Đăng ký/Đăng nhập.
+Quên mật khẩu.
+Hồ sơ cá nhân.
+Chi tiết nhà hàng (menu + thông tin).
+
+Thành viên 2 – Nhóm Đặt bàn & Thanh toán
+Tìm bàn trống (theo ngày/giờ).
+Chọn món & đặt bàn.
+Giỏ hàng & thanh toán.
+Xem danh sách bàn đã đặt.
+Hủy đặt bàn.
+
+Thành viên 3 – Nhóm Admin Quản lý Nhà hàng
+Quản lý đặt bàn (Admin)
+Quản lý menu (Admin).
+Cập nhật thông tin nhà hàng (Admin).
+Quản lý khuyến mãi/voucher.
+Báo cáo doanh thu.
+
+Thành viên 4 – Nhóm Admin Hệ thống
+Dashboard (tổng quan hoạt động quán).
+Quản lý nhân viên (thêm/sửa/xóa).
+Quản lý lịch phục vụ (ca làm, bàn).
+Quản lý đánh giá & bình luận.
+Quản lý thông báo cho khách.
+
+Thành viên 5 – Nhóm Màn hình Phụ trợ
+Liên hệ (hotline/email).
+Giới thiệu về quán.
+FAQ (câu hỏi thường gặp).
+Cài đặt tài khoản (ngôn ngữ, thông báo).
+Chính sách & điều khoản.

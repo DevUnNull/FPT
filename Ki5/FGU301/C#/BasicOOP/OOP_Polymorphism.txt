@@ -1,0 +1,33 @@
+Polymorphism (Đa hình)
+Một hành động có thể thực hiện theo nhiều cách khác nhau.
+Có 2 loại trong C#:
+
+1. Runtime polymorphism (ghi đè phương thức – override).
+class Shape
+{
+    public virtual void Draw() => Console.WriteLine("Drawing shape"); // phải có virtual thì mình mới override được
+}
+
+class Circle : Shape
+{
+    public override void Draw() => Console.WriteLine("Drawing circle");
+}
+
+2. Compile-time polymorphism (method overloading, operator overloading).
+class MathHelper
+{
+    public int Add(int a, int b) => a + b;
+    public double Add(double a, double b) => a + b; // nạp chồng theo kiểu dữ liệu |  Method Overloading (nạp chồng phương thức).
+    public int Add(int a, int b, int c) => a + b + c; // nạp chồng theo số tham số | Operator Overloading (nạp chồng toán tử).
+}
+
+class Program
+{
+    static void Main()
+    {
+        MathHelper m = new MathHelper();
+        Console.WriteLine(m.Add(2, 3));       // gọi hàm int
+        Console.WriteLine(m.Add(2.5, 3.5));   // gọi hàm double
+        Console.WriteLine(m.Add(1, 2, 3));    // gọi hàm 3 tham số
+    }
+}

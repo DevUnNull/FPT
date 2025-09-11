@@ -1,0 +1,14 @@
+D:\UnityTuLam\C#\AdvancedC#\Sorted_List\Sorted_List\bin\Debug\net8.0\Sorted_List.exe
+D:\UnityTuLam\C#\AdvancedC#\Sorted_List\Sorted_List\bin\Debug\net8.0\Sorted_List.deps.json
+D:\UnityTuLam\C#\AdvancedC#\Sorted_List\Sorted_List\bin\Debug\net8.0\Sorted_List.runtimeconfig.json
+D:\UnityTuLam\C#\AdvancedC#\Sorted_List\Sorted_List\bin\Debug\net8.0\Sorted_List.dll
+D:\UnityTuLam\C#\AdvancedC#\Sorted_List\Sorted_List\bin\Debug\net8.0\Sorted_List.pdb
+D:\UnityTuLam\C#\AdvancedC#\Sorted_List\Sorted_List\obj\Debug\net8.0\Sorted_List.GeneratedMSBuildEditorConfig.editorconfig
+D:\UnityTuLam\C#\AdvancedC#\Sorted_List\Sorted_List\obj\Debug\net8.0\Sorted_List.AssemblyInfoInputs.cache
+D:\UnityTuLam\C#\AdvancedC#\Sorted_List\Sorted_List\obj\Debug\net8.0\Sorted_List.AssemblyInfo.cs
+D:\UnityTuLam\C#\AdvancedC#\Sorted_List\Sorted_List\obj\Debug\net8.0\Sorted_List.csproj.CoreCompileInputs.cache
+D:\UnityTuLam\C#\AdvancedC#\Sorted_List\Sorted_List\obj\Debug\net8.0\Sorted_List.dll
+D:\UnityTuLam\C#\AdvancedC#\Sorted_List\Sorted_List\obj\Debug\net8.0\refint\Sorted_List.dll
+D:\UnityTuLam\C#\AdvancedC#\Sorted_List\Sorted_List\obj\Debug\net8.0\Sorted_List.pdb
+D:\UnityTuLam\C#\AdvancedC#\Sorted_List\Sorted_List\obj\Debug\net8.0\Sorted_List.genruntimeconfig.cache
+D:\UnityTuLam\C#\AdvancedC#\Sorted_List\Sorted_List\obj\Debug\net8.0\ref\Sorted_List.dll

@@ -1,0 +1,14 @@
+D:\UnityTuLam\C#\AdvancedC#\Event_Standard\Event_Standard\bin\Debug\net8.0\Event_Standard.exe
+D:\UnityTuLam\C#\AdvancedC#\Event_Standard\Event_Standard\bin\Debug\net8.0\Event_Standard.deps.json
+D:\UnityTuLam\C#\AdvancedC#\Event_Standard\Event_Standard\bin\Debug\net8.0\Event_Standard.runtimeconfig.json
+D:\UnityTuLam\C#\AdvancedC#\Event_Standard\Event_Standard\bin\Debug\net8.0\Event_Standard.dll
+D:\UnityTuLam\C#\AdvancedC#\Event_Standard\Event_Standard\bin\Debug\net8.0\Event_Standard.pdb
+D:\UnityTuLam\C#\AdvancedC#\Event_Standard\Event_Standard\obj\Debug\net8.0\Event_Standard.GeneratedMSBuildEditorConfig.editorconfig
+D:\UnityTuLam\C#\AdvancedC#\Event_Standard\Event_Standard\obj\Debug\net8.0\Event_Standard.AssemblyInfoInputs.cache
+D:\UnityTuLam\C#\AdvancedC#\Event_Standard\Event_Standard\obj\Debug\net8.0\Event_Standard.AssemblyInfo.cs
+D:\UnityTuLam\C#\AdvancedC#\Event_Standard\Event_Standard\obj\Debug\net8.0\Event_Standard.csproj.CoreCompileInputs.cache
+D:\UnityTuLam\C#\AdvancedC#\Event_Standard\Event_Standard\obj\Debug\net8.0\Event_Standard.dll
+D:\UnityTuLam\C#\AdvancedC#\Event_Standard\Event_Standard\obj\Debug\net8.0\refint\Event_Standard.dll
+D:\UnityTuLam\C#\AdvancedC#\Event_Standard\Event_Standard\obj\Debug\net8.0\Event_Standard.pdb
+D:\UnityTuLam\C#\AdvancedC#\Event_Standard\Event_Standard\obj\Debug\net8.0\Event_Standard.genruntimeconfig.cache
+D:\UnityTuLam\C#\AdvancedC#\Event_Standard\Event_Standard\obj\Debug\net8.0\ref\Event_Standard.dll

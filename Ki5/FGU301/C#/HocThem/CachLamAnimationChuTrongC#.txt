@@ -1,0 +1,7 @@
+1, xóa toàn bộ trang (khuyến cáo không nên dùng vì nó sẽ xóa toàn bộ console)
+	Console.Clear();
+2, ghi đè lại vị trí chỉ định
+	Console.SetCursorPosition(0, 5); // đến dòng 5, cột 0
+	Console.Write(new string(' ', 50)); // xoá 50 ký tự
+	Console.SetCursorPosition(0, 5);
+	Console.Write("Ghi lại nội dung mới");

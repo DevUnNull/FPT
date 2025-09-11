@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đặt chỗ nhà hàng với mô hình 3D</title>
+	<link rel="stylesheet" href="styles.css">
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; }
+        canvas { width: 100%; height: 70vh; display: block; }
+        #reservation-form {
+            padding: 20px;
+            background: #f4f4f4;
+            text-align: center;
+        }
+        #reservation-form h2 {
+            margin-bottom: 20px;
+        }
+        #reservation-form input {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+        }
+        #reservation-form button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #reservation-form button:hover {
+            background-color: #45a049;
+        }
+        #status {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">Tica's Tacos</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="reservation.html">Reservation</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="contact.html">Contact</a></li>
+				<li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Phần hiển thị mô hình 3D -->
+    <div id="canvas-container"></div>
+
+    <!-- Form đặt chỗ -->
+    <div id="reservation-form">
+        <h2>Restaurant Reservations</h2>
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="tel" id="phone" placeholder="Phone Number" required>
+        <input type="datetime-local" id="datetime" required>
+        <input type="number" id="table-code" placeholder="Mã số bàn (VD: 1, 4, 7,...)" min="1" required>
+        <button onclick="submitReservation()">Book a table</button>
+        <div id="status"></div>
+    </div>
+
+    <!-- Three.js và các thư viện -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.134.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://unpkg.com/three@0.134.0/examples/js/loaders/GLTFLoader.js"></script>
+
+    <script>
+        // Thiết lập scene, camera và renderer
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight * 0.7);
+        document.getElementById('canvas-container').appendChild(renderer.domElement);
+
+        // Thêm nền để kiểm tra render
+        scene.background = new THREE.Color(0xaaaaaa); // Màu xám để dễ nhận biết
+
+        // Ánh sáng
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambientLight);
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+        directionalLight.position.set(5, 10, 5);
+        scene.add(directionalLight);
+
+        // Tải mô hình glTF
+        const loader = new THREE.GLTFLoader();
+        let tables = [];
+        loader.load(
+            './scene.gltf',
+            (gltf) => {
+                const model = gltf.scene;
+                scene.add(model);
+
+                // Điều chỉnh vị trí và tỷ lệ
+                model.position.set(0, 0, 0);
+                model.scale.set(15, 15, 15); // Phóng to mô hình 15 lần
+
+                // Đánh mã số cho các bàn
+                let tableCounter = 1;
+                model.traverse((child) => {
+                    if (child.isMesh) {
+                        console.log('Mesh name:', child.name);
+
+                        // Tính kích thước của mesh để nhận diện bàn
+                        const boundingBox = new THREE.Box3().setFromObject(child);
+                        const size = new THREE.Vector3();
+                        boundingBox.getSize(size);
+                        console.log(`Mesh ${child.name} size:`, size);
+
+                        // Điều kiện nhận diện bàn: kích thước sau khi phóng to
+                        if (size.x > 0.5 && size.x < 50 && size.y < 10 && size.z > 0.5 && size.z < 50) {
+                            const tableCode = tableCounter;
+                            console.log('Table code:', tableCode);
+                            child.userData = { 
+                                booked: false, 
+                                originalMaterial: child.material.clone(), 
+                                tableCode: tableCode
+                            };
+                            tables.push(child);
+                            tableCounter++;
+                        }
+                    }
+                });
+
+                console.log('Mô hình đã được tải:', model);
+                console.log('Số lượng bàn:', tables.length);
+            },
+            (progress) => {
+                console.log('Đang tải:', (progress.loaded / progress.total * 100) + '%');
+            },
+            (error) => {
+                console.error('Lỗi khi tải mô hình:', error);
+            }
+        );
+
+        // Đặt vị trí camera
+        camera.position.set(0, 150, 300); // Xa hơn để nhìn thấy mô hình lớn
+        camera.lookAt(0, 0, 0);
+
+        // Thêm OrbitControls
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.05;
+
+        // Xử lý khi người dùng nhập mã số bàn
+        let selectedTable = null;
+        document.getElementById('table-code').addEventListener('input', (event) => {
+            const validTableCodes = [1, 4, 7, 10, 13, 16, 19, 22, 25]; // Danh sách mã số bàn hợp lệ
+            const tableCode = parseInt(event.target.value);
+
+            // Đặt lại màu của bàn trước đó (nếu có)
+            if (selectedTable) {
+                selectedTable.material = selectedTable.userData.originalMaterial;
+                selectedTable = null;
+            }
+
+            if (!isNaN(tableCode)) {
+                // Kiểm tra xem mã số bàn có nằm trong danh sách hợp lệ không
+                if (validTableCodes.includes(tableCode)) {
+                    // Tìm bàn theo mã số
+                    selectedTable = tables.find(table => table.userData.tableCode === tableCode);
+                    if (selectedTable) {
+                        if (!selectedTable.userData.booked) {
+                            // Tạo material mới để đổi màu
+                            const newMaterial = new THREE.MeshBasicMaterial({
+                                color: 0x00ff00, // Xanh lá
+                                opacity: 0.8,
+                                transparent: true
+                            });
+                            selectedTable.material = newMaterial;
+                            document.getElementById('status').innerText = `Bạn đã chọn Bàn ${tableCode}`;
+                        } else {
+                            document.getElementById('status').innerText = `Bàn ${tableCode} đã được đặt!`;
+                            selectedTable = null;
+                        }
+                    } else {
+                        document.getElementById('status').innerText = `Không tìm thấy Bàn ${tableCode}.`;
+                    }
+                } else {
+                    document.getElementById('status').innerText = `Mã số bàn không hợp lệ! Chỉ chấp nhận: 1, 4, 7, 10, 13, 16, 19, 22, 25.`;
+                }
+            } else {
+                document.getElementById('status').innerText = `Vui lòng nhập một số hợp lệ!`;
+            }
+        });
+
+        // Hàm xử lý đặt chỗ
+        function submitReservation() {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const datetime = document.getElementById('datetime').value;
+            const tableCode = parseInt(document.getElementById('table-code').value);
+            const validTableCodes = [1, 4, 7, 10, 13, 16, 19, 22, 25]; // Danh sách mã số bàn hợp lệ
+
+            if (!name || !phone || !datetime || isNaN(tableCode)) {
+                document.getElementById('status').innerText = 'Vui lòng điền đầy đủ thông tin!';
+                return;
+            }
+
+            if (!validTableCodes.includes(tableCode)) {
+                document.getElementById('status').innerText = 'Mã số bàn không hợp lệ! Chỉ chấp nhận: 1, 4, 7, 10, 13, 16, 19, 22, 25.';
+                return;
+            }
+
+            if (!selectedTable) {
+                document.getElementById('status').innerText = 'Không tìm thấy bàn này! Vui lòng chọn một bàn khác.';
+                return;
+            }
+
+            selectedTable.userData.booked = true;
+            document.getElementById('status').innerText = `Đặt chỗ thành công! Bàn ${tableCode} đã được đặt bởi ${name}.`;
+
+            // Khôi phục màu gốc ngay sau khi đặt
+            selectedTable.material = selectedTable.userData.originalMaterial;
+
+            // Reset form
+            document.getElementById('name').value = '';
+            document.getElementById('phone').value = '';
+            document.getElementById('datetime').value = '';
+            document.getElementById('table-code').value = '';
+            selectedTable = null;
+        }
+
+        // Hàm animation
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Xử lý thay đổi kích thước cửa sổ
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight * 0.7);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+D:\UnityTuLam\C#\AdvancedC#\ICollection_\ICollection_\bin\Debug\net8.0\ICollection_.exe
+D:\UnityTuLam\C#\AdvancedC#\ICollection_\ICollection_\bin\Debug\net8.0\ICollection_.deps.json
+D:\UnityTuLam\C#\AdvancedC#\ICollection_\ICollection_\bin\Debug\net8.0\ICollection_.runtimeconfig.json
+D:\UnityTuLam\C#\AdvancedC#\ICollection_\ICollection_\bin\Debug\net8.0\ICollection_.dll
+D:\UnityTuLam\C#\AdvancedC#\ICollection_\ICollection_\bin\Debug\net8.0\ICollection_.pdb
+D:\UnityTuLam\C#\AdvancedC#\ICollection_\ICollection_\obj\Debug\net8.0\ICollection_.GeneratedMSBuildEditorConfig.editorconfig
+D:\UnityTuLam\C#\AdvancedC#\ICollection_\ICollection_\obj\Debug\net8.0\ICollection_.AssemblyInfoInputs.cache
+D:\UnityTuLam\C#\AdvancedC#\ICollection_\ICollection_\obj\Debug\net8.0\ICollection_.AssemblyInfo.cs
+D:\UnityTuLam\C#\AdvancedC#\ICollection_\ICollection_\obj\Debug\net8.0\ICollection_.csproj.CoreCompileInputs.cache
+D:\UnityTuLam\C#\AdvancedC#\ICollection_\ICollection_\obj\Debug\net8.0\ICollection_.dll
+D:\UnityTuLam\C#\AdvancedC#\ICollection_\ICollection_\obj\Debug\net8.0\refint\ICollection_.dll
+D:\UnityTuLam\C#\AdvancedC#\ICollection_\ICollection_\obj\Debug\net8.0\ICollection_.pdb
+D:\UnityTuLam\C#\AdvancedC#\ICollection_\ICollection_\obj\Debug\net8.0\ICollection_.genruntimeconfig.cache
+D:\UnityTuLam\C#\AdvancedC#\ICollection_\ICollection_\obj\Debug\net8.0\ref\ICollection_.dll

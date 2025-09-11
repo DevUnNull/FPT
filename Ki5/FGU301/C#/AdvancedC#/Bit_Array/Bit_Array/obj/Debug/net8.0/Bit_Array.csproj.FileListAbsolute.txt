@@ -1,0 +1,14 @@
+D:\UnityTuLam\C#\AdvancedC#\Bit_Array\Bit_Array\bin\Debug\net8.0\Bit_Array.exe
+D:\UnityTuLam\C#\AdvancedC#\Bit_Array\Bit_Array\bin\Debug\net8.0\Bit_Array.deps.json
+D:\UnityTuLam\C#\AdvancedC#\Bit_Array\Bit_Array\bin\Debug\net8.0\Bit_Array.runtimeconfig.json
+D:\UnityTuLam\C#\AdvancedC#\Bit_Array\Bit_Array\bin\Debug\net8.0\Bit_Array.dll
+D:\UnityTuLam\C#\AdvancedC#\Bit_Array\Bit_Array\bin\Debug\net8.0\Bit_Array.pdb
+D:\UnityTuLam\C#\AdvancedC#\Bit_Array\Bit_Array\obj\Debug\net8.0\Bit_Array.GeneratedMSBuildEditorConfig.editorconfig
+D:\UnityTuLam\C#\AdvancedC#\Bit_Array\Bit_Array\obj\Debug\net8.0\Bit_Array.AssemblyInfoInputs.cache
+D:\UnityTuLam\C#\AdvancedC#\Bit_Array\Bit_Array\obj\Debug\net8.0\Bit_Array.AssemblyInfo.cs
+D:\UnityTuLam\C#\AdvancedC#\Bit_Array\Bit_Array\obj\Debug\net8.0\Bit_Array.csproj.CoreCompileInputs.cache
+D:\UnityTuLam\C#\AdvancedC#\Bit_Array\Bit_Array\obj\Debug\net8.0\Bit_Array.dll
+D:\UnityTuLam\C#\AdvancedC#\Bit_Array\Bit_Array\obj\Debug\net8.0\refint\Bit_Array.dll
+D:\UnityTuLam\C#\AdvancedC#\Bit_Array\Bit_Array\obj\Debug\net8.0\Bit_Array.pdb
+D:\UnityTuLam\C#\AdvancedC#\Bit_Array\Bit_Array\obj\Debug\net8.0\Bit_Array.genruntimeconfig.cache
+D:\UnityTuLam\C#\AdvancedC#\Bit_Array\Bit_Array\obj\Debug\net8.0\ref\Bit_Array.dll

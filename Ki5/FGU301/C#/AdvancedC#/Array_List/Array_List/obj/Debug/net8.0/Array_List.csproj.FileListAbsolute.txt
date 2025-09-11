@@ -1,0 +1,14 @@
+D:\UnityTuLam\C#\AdvancedC#\Array_List\Array_List\bin\Debug\net8.0\Array_List.exe
+D:\UnityTuLam\C#\AdvancedC#\Array_List\Array_List\bin\Debug\net8.0\Array_List.deps.json
+D:\UnityTuLam\C#\AdvancedC#\Array_List\Array_List\bin\Debug\net8.0\Array_List.runtimeconfig.json
+D:\UnityTuLam\C#\AdvancedC#\Array_List\Array_List\bin\Debug\net8.0\Array_List.dll
+D:\UnityTuLam\C#\AdvancedC#\Array_List\Array_List\bin\Debug\net8.0\Array_List.pdb
+D:\UnityTuLam\C#\AdvancedC#\Array_List\Array_List\obj\Debug\net8.0\Array_List.GeneratedMSBuildEditorConfig.editorconfig
+D:\UnityTuLam\C#\AdvancedC#\Array_List\Array_List\obj\Debug\net8.0\Array_List.AssemblyInfoInputs.cache
+D:\UnityTuLam\C#\AdvancedC#\Array_List\Array_List\obj\Debug\net8.0\Array_List.AssemblyInfo.cs
+D:\UnityTuLam\C#\AdvancedC#\Array_List\Array_List\obj\Debug\net8.0\Array_List.csproj.CoreCompileInputs.cache
+D:\UnityTuLam\C#\AdvancedC#\Array_List\Array_List\obj\Debug\net8.0\Array_List.dll
+D:\UnityTuLam\C#\AdvancedC#\Array_List\Array_List\obj\Debug\net8.0\refint\Array_List.dll
+D:\UnityTuLam\C#\AdvancedC#\Array_List\Array_List\obj\Debug\net8.0\Array_List.pdb
+D:\UnityTuLam\C#\AdvancedC#\Array_List\Array_List\obj\Debug\net8.0\Array_List.genruntimeconfig.cache
+D:\UnityTuLam\C#\AdvancedC#\Array_List\Array_List\obj\Debug\net8.0\ref\Array_List.dll

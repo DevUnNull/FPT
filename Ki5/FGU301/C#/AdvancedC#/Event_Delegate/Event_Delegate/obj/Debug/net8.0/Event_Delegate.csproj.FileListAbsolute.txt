@@ -1,0 +1,14 @@
+D:\UnityTuLam\C#\AdvancedC#\Event_Delegate\Event_Delegate\bin\Debug\net8.0\Event_Delegate.exe
+D:\UnityTuLam\C#\AdvancedC#\Event_Delegate\Event_Delegate\bin\Debug\net8.0\Event_Delegate.deps.json
+D:\UnityTuLam\C#\AdvancedC#\Event_Delegate\Event_Delegate\bin\Debug\net8.0\Event_Delegate.runtimeconfig.json
+D:\UnityTuLam\C#\AdvancedC#\Event_Delegate\Event_Delegate\bin\Debug\net8.0\Event_Delegate.dll
+D:\UnityTuLam\C#\AdvancedC#\Event_Delegate\Event_Delegate\bin\Debug\net8.0\Event_Delegate.pdb
+D:\UnityTuLam\C#\AdvancedC#\Event_Delegate\Event_Delegate\obj\Debug\net8.0\Event_Delegate.GeneratedMSBuildEditorConfig.editorconfig
+D:\UnityTuLam\C#\AdvancedC#\Event_Delegate\Event_Delegate\obj\Debug\net8.0\Event_Delegate.AssemblyInfoInputs.cache
+D:\UnityTuLam\C#\AdvancedC#\Event_Delegate\Event_Delegate\obj\Debug\net8.0\Event_Delegate.AssemblyInfo.cs
+D:\UnityTuLam\C#\AdvancedC#\Event_Delegate\Event_Delegate\obj\Debug\net8.0\Event_Delegate.csproj.CoreCompileInputs.cache
+D:\UnityTuLam\C#\AdvancedC#\Event_Delegate\Event_Delegate\obj\Debug\net8.0\Event_Delegate.dll
+D:\UnityTuLam\C#\AdvancedC#\Event_Delegate\Event_Delegate\obj\Debug\net8.0\refint\Event_Delegate.dll
+D:\UnityTuLam\C#\AdvancedC#\Event_Delegate\Event_Delegate\obj\Debug\net8.0\Event_Delegate.pdb
+D:\UnityTuLam\C#\AdvancedC#\Event_Delegate\Event_Delegate\obj\Debug\net8.0\Event_Delegate.genruntimeconfig.cache
+D:\UnityTuLam\C#\AdvancedC#\Event_Delegate\Event_Delegate\obj\Debug\net8.0\ref\Event_Delegate.dll

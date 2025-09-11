@@ -1,0 +1,17 @@
++ Trung thực 
++ Tập chung
++ 
++ 
+
+- chấm điểm
++ hoàn thành 1Đ
++ ... 1Đ
++ đúng yêu cầu : 3Đ
++ chuyên cần 1Đ
+
+- các đầu điểm thi 
+PT1 c# khoảng tuần thứ 3
+Ass1 : đồ án game nhóm 
+PT2 Quizz giấy Unity
+PT3 code trực tiếp 1 game 
+Ass2 : đồ án game các nhân 

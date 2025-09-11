@@ -1,0 +1,614 @@
+      body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .menu-container {
+            display: flex;
+            margin: 20px;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #ff6347; /* Màu đỏ cà chua */
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+        }
+        .content {
+            flex: 1;
+            margin-left: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        .dropdown-btn {
+            background-color: #ff4500;
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .dropdown-content {
+            display: none;
+            background-color: #ff7f50;
+            width: 100%;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .dropdown-content a:hover {
+            background-color: #ff4500;
+        }
+        .arrow {
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+            transform: rotate(45deg);
+        }
+        .food-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+        .food-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+        .food-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .food-details {
+            flex: 1;
+        }
+        .food-details h3 {
+            margin: 0 0 5px;
+            font-size: 20px;
+        }
+        .food-details p {
+            margin: 0 0 10px;
+            color: #555;
+        }
+        .food-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .food-buttons button {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+        .add-to-cart {
+            background-color: #ff6347;
+            color: white;
+        }
+        .add-to-cart:hover {
+            background-color: #ff4500;
+        }
+        .buy-now {
+            background-color: #32cd32;
+            color: white;
+        }
+        .buy-now:hover {
+            background-color: #28a428;
+        }
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cột, mỗi cột chiếm 1 phần bằng nhau */
+    gap: 20px;
+}
+
+.menu-item {
+    position: relative;
+}
+
+.menu-card {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Adjust height as needed */
+    perspective: 1000px;
+}
+
+.menu-front, .menu-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-front {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-front img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+}
+
+.menu-front h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.best-seller {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #f1c40f;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 0.8em;
+    border-radius: 5px;
+}
+
+.menu-back {
+    background-color: #f8f8f8;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.menu-back h3 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.menu-back p {
+    margin-bottom: 15px;
+    font-size: 0.9em;
+}
+
+.food-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.add-to-cart, .buy-now {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.add-to-cart {
+    background-color: #e67e22;
+    color: #fff;
+}
+
+.buy-now {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+.menu-card:hover .menu-front {
+    transform: rotateY(180deg);
+}
+
+.menu-card:hover .menu-back {
+    transform: rotateY(0deg);
+}
+/* CSS cho carousel */
+.banner-slideshow {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Giữ nguyên kích thước như thiết kế */
+    height: 250px; /* Giữ nguyên chiều cao */
+    margin: 20px auto; /* Canh giữa */
+    border-radius: 15px; /* Góc bo tròn */
+    background-color: #fff; /* Khung trắng */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+    /* Bỏ overflow: hidden để giữ phần "thừa thừa" */
+}
+
+/* Container chứa các slide */
+.slides {
+    display: flex; /* Sử dụng flex để xếp các slide cạnh nhau */
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out; /* Hiệu ứng trượt mượt mà */
+}
+
+/* Mỗi slide */
+.banner-slide {
+    min-width: 100%; /* Mỗi slide chiếm toàn bộ chiều rộng của khung */
+    height: 100%;
+    background-color: #f5e9d8; /* Màu nền beige nhạt */
+    border-radius: 15px; /* Góc bo tròn */
+    display: flex; /* Luôn hiển thị, không dùng display: none */
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Bỏ class .active vì không cần nữa (chúng ta dùng transform để trượt) */
+.banner-slide img {
+    width: 50%; /* Hình ảnh chiếm 50% chiều rộng */
+    height: 100%;
+    object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
+    border-radius: 10px;
+    display: block; /* Đảm bảo hình ảnh hiển thị */
+}
+
+.banner-content {
+    position: static; /* Bỏ định vị tuyệt đối */
+    transform: none; /* Bỏ transform */
+    color: #333; /* Màu chữ tối */
+    text-align: left;
+    width: 45%; /* Chiếm 45% chiều rộng */
+}
+
+.banner-content h1 {
+    font-size: 24px; /* Kích thước chữ nhỏ hơn */
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+    color: #2c3e50; /* Màu tối cho tiêu đề */
+    text-shadow: none; /* Bỏ bóng chữ */
+}
+
+.banner-content p {
+    font-size: 14px; /* Chữ nhỏ cho đoạn trích dẫn */
+    color: #e67e22; /* Màu cam cho trích dẫn */
+    margin-bottom: 10px;
+}
+
+.banner-content p.author {
+    font-size: 12px;
+    color: #555;
+    font-style: italic;
+}
+
+.order-btn {
+    background-color: #2c3e50; /* Màu nút xanh đậm */
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s;
+}
+
+.order-btn:hover {
+    background-color: #1a252f; /* Màu tối hơn khi hover */
+}
+
+.order-btn::before {
+    content: "📍"; /* Biểu tượng vị trí */
+    font-size: 16px;
+}
+
+/* Dots */
+.dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #2c3e50; /* Màu giống nút */
+}
+.price {
+    font-size: 1.2em;
+    color: #e74c3c; /* Màu đỏ nổi bật */
+    margin-top: 5px;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    /* Header (tích hợp từ file styles.css trước đó) */
+    header {
+        padding: 10px 15px; /* Giảm padding để tiết kiệm không gian */
+        flex-direction: row; /* Giữ logo và nav trên cùng một hàng */
+        align-items: center; /* Căn giữa theo chiều dọc */
+        flex-wrap: nowrap; /* Ngăn xuống dòng */
+    }
+
+    .logo a {
+        font-size: 1.3em; /* Giảm kích thước logo */
+    }
+
+    nav {
+        flex-grow: 1; /* Cho phép nav chiếm không gian còn lại */
+    }
+
+    nav ul {
+        display: flex;
+        overflow-x: auto; /* Cho phép cuộn ngang nếu danh sách dài */
+        width: 100%; /* Đảm bảo chiếm toàn bộ chiều rộng */
+        padding: 5px 0; /* Giảm padding */
+        white-space: nowrap; /* Ngăn các mục xuống dòng */
+        -webkit-overflow-scrolling: touch; /* Cuộn mượt trên mobile */
+    }
+
+    nav ul li {
+        margin-left: 10px; /* Giảm khoảng cách giữa các mục */
+        margin-right: 10px;
+    }
+
+    nav ul li a {
+        font-size: 0.85em; /* Giảm kích thước chữ */
+        padding: 5px; /* Thêm padding nhỏ để dễ chạm */
+    }
+
+    nav ul::-webkit-scrollbar {
+        height: 4px; /* Giảm chiều cao thanh cuộn */
+    }
+
+    nav ul::-webkit-scrollbar-thumb {
+        background: #d4af37; /* Màu vàng ánh kim */
+        border-radius: 2px;
+    }
+
+    nav ul::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Banner Slideshow */
+    .banner-slideshow {
+        height: 200px; /* Giảm chiều cao trên mobile */
+        margin: 10px auto; /* Giảm margin */
+    }
+
+    .banner-slide {
+        padding: 10px; /* Giảm padding */
+        flex-direction: column; /* Xếp chồng hình ảnh và nội dung */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .banner-slide img {
+        width: 100%; /* Hình ảnh chiếm toàn bộ chiều rộng */
+        height: 50%; /* Giảm chiều cao hình ảnh */
+        object-fit: cover;
+    }
+
+    .banner-content {
+        width: 100%; /* Nội dung chiếm toàn bộ chiều rộng */
+        text-align: center; /* Căn giữa nội dung */
+    }
+
+    .banner-content h1 {
+        font-size: 18px; /* Giảm kích thước chữ tiêu đề */
+        margin-bottom: 5px;
+    }
+
+    .banner-content p {
+        font-size: 12px; /* Giảm kích thước chữ đoạn trích dẫn */
+        margin-bottom: 5px;
+    }
+
+    .banner-content p.author {
+        font-size: 10px;
+    }
+
+    .order-btn {
+        padding: 6px 12px; /* Giảm kích thước nút */
+        font-size: 12px;
+    }
+
+    .dots {
+        bottom: 5px; /* Đưa dots lên cao hơn */
+    }
+
+    .dot {
+        width: 8px; /* Giảm kích thước dots */
+        height: 8px;
+        margin: 0 3px;
+    }
+
+    /* Menu Container */
+    .menu-container {
+        flex-direction: column; /* Xếp chồng sidebar và content trên mobile */
+        margin: 10px; /* Giảm margin */
+    }
+
+    /* Sidebar */
+    .sidebar {
+        width: 100%; /* Sidebar chiếm toàn bộ chiều rộng */
+        padding: 15px; /* Giảm padding */
+    }
+
+    .dropdown-btn {
+        font-size: 16px; /* Giảm kích thước chữ */
+        padding: 8px; /* Giảm padding */
+    }
+
+    .dropdown-content a {
+        padding: 10px 12px; /* Giảm padding */
+        font-size: 14px; /* Giảm kích thước chữ */
+    }
+
+    .food-icon {
+        width: 30px; /* Giảm kích thước icon */
+        height: 30px;
+    }
+
+    /* Content */
+    .content {
+        margin-left: 0; /* Bỏ margin-left vì sidebar đã xếp chồng */
+        padding: 15px; /* Giảm padding */
+    }
+
+    .content h2 {
+        font-size: 20px; /* Giảm kích thước tiêu đề */
+    }
+
+    /* Menu Items */
+    .menu-items {
+        grid-template-columns: repeat(2, 1fr); /* 2 cột trên màn hình nhỏ */
+        gap: 15px; /* Giảm khoảng cách giữa các mục */
+    }
+
+    .menu-card {
+        height: 250px; /* Giảm chiều cao thẻ */
+    }
+
+    .menu-front h3,
+    .menu-back h3 {
+        font-size: 1em; /* Giảm kích thước chữ tiêu đề */
+    }
+
+    .menu-back p {
+        font-size: 0.8em; /* Giảm kích thước chữ mô tả */
+    }
+
+    .price {
+        font-size: 1em; /* Giảm kích thước giá */
+    }
+
+    .add-to-cart,
+    .buy-now {
+        padding: 6px 10px; /* Giảm kích thước nút */
+        font-size: 0.8em; /* Giảm kích thước chữ nút */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Header */
+    .logo a {
+        font-size: 1em; /* Giảm thêm kích thước logo */
+    }
+
+    nav ul li a {
+        font-size: 0.7em; /* Giảm thêm kích thước chữ */
+    }
+
+    /* Banner Slideshow */
+    .banner-slideshow {
+        height: 150px; /* Giảm thêm chiều cao */
+    }
+
+    .banner-content h1 {
+        font-size: 16px; /* Giảm thêm kích thước chữ */
+    }
+
+    .banner-content p {
+        font-size: 10px; /* Giảm thêm kích thước chữ */
+    }
+
+    .banner-content p.author {
+        font-size: 8px;
+    }
+
+    .order-btn {
+        padding: 5px 10px; /* Giảm thêm kích thước nút */
+        font-size: 10px;
+    }
+
+    .dot {
+        width: 6px; /* Giảm thêm kích thước dots */
+        height: 6px;
+    }
+
+    /* Sidebar */
+    .dropdown-btn {
+        font-size: 14px; /* Giảm thêm kích thước chữ */
+    }
+
+    .dropdown-content a {
+        font-size: 12px; /* Giảm thêm kích thước chữ */
+        padding: 8px 10px; /* Giảm thêm padding */
+    }
+
+    .food-icon {
+        width: 25px; /* Giảm thêm kích thước icon */
+        height: 25px;
+    }
+
+    /* Content */
+    .content h2 {
+        font-size: 18px; /* Giảm thêm kích thước tiêu đề */
+    }
+
+    /* Menu Items */
+    .menu-items {
+        grid-template-columns: 1fr; /* 1 cột trên màn hình rất nhỏ */
+        gap: 10px; /* Giảm thêm khoảng cách */
+    }
+
+    .menu-card {
+        height: 200px; /* Giảm thêm chiều cao thẻ */
+    }
+
+    .menu-front h3,
+    .menu-back h3 {
+        font-size: 0.9em; /* Giảm thêm kích thước chữ */
+    }
+
+    .menu-back p {
+        font-size: 0.7em; /* Giảm thêm kích thước chữ mô tả */
+    }
+
+    .price {
+        font-size: 0.9em; /* Giảm thêm kích thước giá */
+    }
+
+    .add-to-cart,
+    .buy-now {
+        padding: 5px 8px; /* Giảm thêm kích thước nút */
+        font-size: 0.7em; /* Giảm thêm kích thước chữ nút */
+    }
+}

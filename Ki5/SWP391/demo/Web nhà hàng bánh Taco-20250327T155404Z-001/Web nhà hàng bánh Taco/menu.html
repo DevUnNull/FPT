@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Đồ Ăn Mexico</title>
+	<link rel="stylesheet" href="styles.css">	
+    <link rel="stylesheet" href="styless.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS cho carousel/slider */
+        .banner-slideshow {
+            width: 100%;
+            max-width: 1200px;
+            height: 400px;
+            position: relative;
+            margin: 0 auto;
+            /* Không đặt overflow: hidden để phần ảnh cũ "thừa" ra ngoài */
+        }
+
+        .slides {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out; /* Hiệu ứng trượt mượt mà */
+        }
+
+        .banner-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .banner-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .banner-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+
+        .banner-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .order-btn {
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #333;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .order-btn:hover {
+            background-color: #ddd;
+        }
+
+        .dots {
+            text-align: center;
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+        }
+
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: #717171;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html">Tica's Tacos</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="reservation.html">Reservation</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner Slideshow -->
+    <div class="banner-slideshow">
+        <div class="slides">
+			<div class="banner-slide">
+                <img src="banners/banner0.png" alt="Slide 1">              
+            </div>
+            <div class="banner-slide">
+                <img src="banners/banner1.jpg" alt="Slide 2">              
+            </div>
+            <div class="banner-slide">
+                <img src="banners/banner3.jpg" alt="Slide 4">             
+            </div>
+            <div class="banner-slide">
+                <img src="banners/banner2.png" alt="Slide 3">                
+            </div>
+			<div class="banner-slide">
+                <img src="banners/banner4.png" alt="Slide 5">                
+            </div>
+        </div>
+        <div class="dots">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+			<span class="dot" onclick="currentSlide(3)"></span>
+			<span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+    </div>
+
+    <!-- Menu Container -->
+    <div class="menu-container">
+        <div class="sidebar">
+            <div class="dropdown">
+                <button class="dropdown-btn" onclick="toggleDropdown(); showMostPopular()">Most Popular <span class="arrow"></span></button>
+                <div class="dropdown-content" id="dropdownContent">
+                    <a onclick="showTacos()">
+                        <img src="Menu/tacos.jpg" alt="Tacos" class="food-icon"> Tacos
+                    </a>
+                    <a onclick="showBurritos()">
+                        <img src="Menu/burrito.jpg" alt="Burrito" class="food-icon"> Burrito
+                    </a>
+                    <a onclick="showTamales()">
+                        <img src="Menu/tamales.jpg" alt="Tamales" class="food-icon"> Tamales
+                    </a>
+                    <a onclick="showChilesenNogada()">
+                        <img src="Menu/chiles.jpg" alt="Chiles en Nogada" class="food-icon"> Chiles en Nogada
+                    </a>
+                    <a onclick="showSoups()">
+                        <img src="Menu/soup.jpg" alt="Soup" class="food-icon"> Soup
+                    </a>
+                    <a onclick="showStews()">
+                        <img src="Menu/stew.jpg" alt="Stew" class="food-icon"> Stew
+                    </a>
+                    <a onclick="showAppetizers()">
+                        <img src="Menu/appetizer.jpg" alt="Appetizer" class="food-icon"> Appetizer
+                    </a>
+                    <a onclick="showDrinks()">
+                        <img src="Menu/drinks.jpg" alt="Drinks" class="food-icon"> Drinks
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="content" id="content">
+            <h2>Chọn một món để xem</h2>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+    // Hàm để bật/tắt dropdown menu
+    function toggleDropdown() {
+        const dropdownContent = document.getElementById('dropdownContent');
+        const arrow = document.querySelector('.arrow');
+        if (dropdownContent.style.display === 'block') {
+            dropdownContent.style.display = 'none';
+            arrow.style.transform = 'rotate(45deg)';
+        } else {
+            dropdownContent.style.display = 'block';
+            arrow.style.transform = 'rotate(-135deg)';
+        }
+    }
+
+    function showTacos() {
+        const contentDiv = document.getElementById('content');
+        const tacos = [
+            { name: "Taco al Pastor", img: "Menu/taco_al_pastor.jpg", description: "Tacos with marinated pork, grilled on a rotisserie skewer, served with pineapple, onion and cilantro.", isBestSeller: true, price: "35.000 VND/per" },
+            { name: "Taco de Carnitas", img: "Menu/taco_de_carnitas.jpg", description: "Tacos with tender braised pork, served with onions, cilantro and salsa.", price: "40.000 VND/per" },
+            { name: "Taco de Pescado", img: "Menu/taco_de_pescado.jpg", description: "Crispy fried fish tacos, served with cabbage, sour cream sauce and a squeeze of lime.", price: "48.000 VND/per" },
+            { name: "Taco de Barbacoa", img: "Menu/taco_de_barbacoa.jpg", description: "Tacos with slow-braised beef or goat, served with onions, cilantro and spicy sauce.", price: "45.000 VND/per" },
+            { name: "Taco de Birria", img: "Menu/taco_de_birria.jpg", description: "Tacos with tender beef stewed in chili sauce, served with melted cheese and consomé dipping sauce.", price: "50.000 VND/per" },
+            { name: "Taco de Asada", img: "Menu/taco_de_asada.jpg", description: "Taco with grilled beef, served with onions, cilantro and salsa.", price: "42.000 VND/per" },
+            { name: "Taco de Camarón", img: "Menu/taco_de_camarón.jpg", description: "Tacos with grilled or fried seasoned shrimp, served with cabbage, cream sauce and lime.", price: "55.000 VND/per" },
+            { name: "Taco de Lengua", img: "Menu/taco_de_lengua.jpg", description: "Taco with tender braised beef tongue, served with onions, cilantro and salsa verde.", price: "50.000 VND/per" },
+            { name: "Taco de Chorizo", img: "Menu/taco_de_chorizo.jpg", description: "Taco with spicy chorizo ​​sausage, served with onions, cilantro and cheese.", price: "40.000 VND/per" },
+            { name: "Taco de Nopales", img: "Menu/taco_de_nopales.jpg", description: "Vegetarian tacos with grilled cactus, served with onions, tomatoes and salsa.", price: "38.000 VND/per" }
+        ];
+        let html = `<h2>Danh sách các món Tacos</h2><div class="menu-items">`;
+        tacos.forEach((taco, index) => {
+            if (index % 4 === 0 && index !== 0) html += `</div><div class="menu-items">`;
+            html += `
+                <div class="menu-item">
+                    <div class="menu-card">
+                        <div class="menu-front">
+                            <img src="${taco.img}" alt="${taco.name}">
+                            <h3>${taco.name}</h3>
+                            ${taco.isBestSeller ? '<span class="best-seller">Best Seller</span>' : ''}
+                        </div>
+                        <div class="menu-back">
+                            <h3>${taco.name}</h3>
+                            <p>${taco.description}</p>
+                            <p class="price">${taco.price}</p>
+                            <div class="food-buttons">
+                                <button class="add-to-cart" onclick="addToCart('${taco.name}')">Add to Cart</button>
+                                <button class="buy-now" onclick="buyNow('${taco.name}')">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        html += `</div>`;
+        contentDiv.innerHTML = html;
+    }
+
+    function showBurritos() {
+        const contentDiv = document.getElementById('content');
+        const burritos = [
+            { name: "Burrito de Carne Asada", img: "Menu/burrito_de_carne_asada.jpg", description: "Grilled beef burrito, served with rice, beans, cheese and salsa.", isBestSeller: true, price: "120.000 VND/per" },
+            { name: "Burrito de Pollo", img: "Menu/burrito_de_pollo.jpg", description: "Burrito with seasoned chicken, served with cheese, lettuce and creamy sauce.", price: "110.000 VND/per" },
+            { name: "Burrito de Barbacoa", img: "Menu/burrito_de_barbacoa.jpg", description: "Burrito with tender beef stew, served with beans, rice and raw vegetables.", price: "130.000 VND/per" },
+            { name: "Burrito de Chorizo y Papas", img: "Menu/burrito_de_chorizo_y_papas.jpg", description: "Burrito with spicy chorizo ​​and crispy fries.", price: "115.000 VND/per" },
+            { name: "Burrito Vegetariano", img: "Menu/burrito_vegetariano.jpg", description: "Burrito with fresh vegetables, black beans, brown rice and guacamole.", price: "100.000 VND/per" },
+            { name: "Burrito de Camarones", img: "Menu/burrito_de_camarones.jpg", description: "Burrito with seasoned shrimp, served with creamy sauce and fresh vegetables.", price: "135.000 VND/per" },
+            { name: "Burrito de Carnitas", img: "Menu/burrito_de_carnitas.jpg", description: "Burrito with crispy roast pork, served with beans, rice and salsa.", price: "125.000 VND/per" },
+            { name: "Burrito de Frijoles y Queso", img: "Menu/burrito_de_frijoles_y_queso.jpg", description: "Simple burrito with black beans, melted cheese and salsa.", price: "90.000 VND/per" },
+            { name: "Burrito de Huevo", img: "Menu/burrito_de_huevo.jpg", description: "Burrito with fried egg, cheese and hot sauce.", price: "95.000 VND/per" },
+            { name: "Burrito Supremo", img: "Menu/burrito_supremo.jpg", description: "Burrito with a variety of fillings such as beef, chicken, beans, cheese and fresh vegetables.", price: "150.000 VND/per" }
+        ];
+        let html = `<h2>Danh sách các món Burritos</h2><div class="menu-items">`;
+        burritos.forEach((burrito, index) => {
+            if (index % 4 === 0 && index !== 0) html += `</div><div class="menu-items">`;
+            html += `
+                <div class="menu-item">
+                    <div class="menu-card">
+                        <div class="menu-front">
+                            <img src="${burrito.img}" alt="${burrito.name}">
+                            <h3>${burrito.name}</h3>
+                            ${burrito.isBestSeller ? '<span class="best-seller">Best Seller</span>' : ''}
+                        </div>
+                        <div class="menu-back">
+                            <h3>${burrito.name}</h3>
+                            <p>${burrito.description}</p>
+                            <p class="price">${burrito.price}</p>
+                            <div class="food-buttons">
+                                <button class="add-to-cart" onclick="addToCart('${burrito.name}')">Add to Cart</button>
+                                <button class="buy-now" onclick="buyNow('${burrito.name}')">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        html += `</div>`;
+        contentDiv.innerHTML = html;
+    }
+
+    function showTamales() {
+        const contentDiv = document.getElementById('content');
+        const tamales = [
+            { name: "Tamales Verdes", img: "Menu/tamales_verdes.jpg", description: "Tamales with green sauce from chili and coriander, have a distinctive flavor.", price: "30.000 VNĐ/per" },
+            { name: "Tamales Rojos", img: "Menu/tamales_rojos.jpg", description: "Tamales with spicy red sauce, made from dried chilies and spices.", isBestSeller: true, price: "35.000 VNĐ/per" },
+            { name: "Tamales de Rajas", img: "Menu/tamales_rajas.jpg", description: "Tamales filled with bell peppers and cheese, delicious and distinctive flavor.", price: "32.000 VNĐ/per" },
+            { name: "Tamales de Dulce", img: "Menu/tamales_dulce.jpg", description: "Sweet tamales, usually pink and flavored with vanilla or strawberry.", price: "28.000 VNĐ/per" },
+            { name: "Tamales de Elote", img: "Menu/tamales_elote.jpg", description: "Sweet corn tamales are rich and flavorful.", price: "29.000 VND/per" },
+            { name: "Tamales Oaxaqueños", img: "Menu/tamales_oaxaquenos.jpg", description: "Tamales wrapped in banana leaves, filled with meat and signature mole sauce.", price: "40.000 VND/per" },
+            { name: "Tamales de Cambray", img: "Menu/tamales_cambray.jpg", description: "Sweet tamales with dried fruit and cinnamon, unique flavor.", price: "38.000 VND/per" },
+            { name: "Tamales de Chicharrón", img: "Menu/tamales_chicharron.jpg", description: "Crispy pork rind tamales with spicy red sauce.", price: "36.000 VND/per" },
+            { name: "Tamales de Frijoles", img: "Menu/tamales_de_frijoles.jpg", description: "Black bean tamales, suitable for vegetarians.", price: "30.000 VND/per" },
+            { name: "Tamales de Chocolate", img: "Menu/tamales_chocolate.jpg", description: "Tamales with a rich, delicious chocolate flavor.", price: "33.000 VND/per" }
+        ];
+        let html = `<h2>Danh sách các món Tamales</h2><div class="menu-items">`;
+        tamales.forEach((tamale, index) => {
+            if (index % 4 === 0 && index !== 0) html += `</div><div class="menu-items">`;
+            html += `
+                <div class="menu-item">
+                    <div class="menu-card">
+                        <div class="menu-front">
+                            <img src="${tamale.img}" alt="${tamale.name}">
+                            <h3>${tamale.name}</h3>
+                            ${tamale.isBestSeller ? '<span class="best-seller">Best Seller</span>' : ''}
+                        </div>
+                        <div class="menu-back">
+                            <h3>${tamale.name}</h3>
+                            <p>${tamale.description}</p>
+                            <p class="price">${tamale.price}</p>
+                            <div class="food-buttons">
+                                <button class="add-to-cart" onclick="addToCart('${tamale.name}')">Add to Cart</button>
+                                <button class="buy-now" onclick="buyNow('${tamale.name}')">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        html += `</div>`;
+        contentDiv.innerHTML = html;
+    }
+
+    function showChilesenNogada() {
+        const contentDiv = document.getElementById('content');
+        const chiles = [
+            { name: "Chiles en Nogada", img: "Menu/chiles_nogada_mariscos.jpg", description: "Poblano peppers stuffed with seafood, walnut sauce and pomegranate, in the colors of the Mexican flag.", price: "200.000 VND/per" },
+            { name: "Chiles en Nogada de Pollo", img: "Menu/chiles_nogada_pollo.jpg", description: "Poblano peppers stuffed with chicken, walnut sauce and pomegranate.", price: "190.000 VND/per" },
+            { name: "Chiles en Nogada Vegetariano", img: "Menu/chiles_nogada_vegetariano.jpg", description: "Vegetarian version with fresh vegetable filling.", price: "175.000 VND/per" },
+            { name: "Chiles en Nogada con Queso", img: "Menu/chiles_nogada_queso.jpg", description: "Poblano peppers stuffed with melted cheese and walnut sauce.", price: "185.000 VND/per" },
+            { name: "Chiles en Nogada con Frutas", img: "Menu/chiles_nogada_frutas.jpg", description: "Poblano peppers stuffed with fruit mixture, creating natural sweetness.", price: "195.000 VND/per" },
+            { name: "Chiles en Nogada con Nuez Pecana", img: "Menu/chiles_nogada_nuez.jpg", description: "Poblano peppers combined with pecans create a unique flavor.", price: "205.000 VND/per" },
+            { name: "Chiles en Nogada con Mole", img: "Menu/chiles_nogada_mole.jpg", description: "A combination of poblano peppers and traditional mole sauce.", price: "210.000 VND/per" },
+            { name: "Chiles en Nogada de Pavo", img: "Menu/chiles_nogada_pavo.jpg", description: "Poblano peppers stuffed with turkey, pomegranate and special sauce.", price: "220.000 VND/per" },
+            { name: "Chiles en Nogada con Amaranto", img: "Menu/chiles_nogada_amaranto.jpg", description: "A variation with nutritious amaranto seeds.", price: "190.000 VND/per" }
+        ];
+        let html = `<h2>Danh sách các món Chiles en Nogada</h2><div class="menu-items">`;
+        chiles.forEach((chile, index) => {
+            if (index % 4 === 0 && index !== 0) html += `</div><div class="menu-items">`;
+            html += `
+                <div class="menu-item">
+                    <div class="menu-card">
+                        <div class="menu-front">
+                            <img src="${chile.img}" alt="${chile.name}">
+                            <h3>${chile.name}</h3>
+                            ${chile.isBestSeller ? '<span class="best-seller">Best Seller</span>' : ''}
+                        </div>
+                        <div class="menu-back">
+                            <h3>${chile.name}</h3>
+                            <p>${chile.description}</p>
+                            <p class="price">${chile.price}</p>
+                            <div class="food-buttons">
+                                <button class="add-to-cart" onclick="addToCart('${chile.name}')">Add to Cart</button>
+                                <button class="buy-now" onclick="buyNow('${chile.name}')">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        html += `</div>`;
+        contentDiv.innerHTML = html;
+    }
+
+    function showSoups() {
+        const contentDiv = document.getElementById('content');
+        const soups = [
+            { name: "Pozole", img: "Menu/pozole.jpg", description: "Traditional Mexican soup with pork, hominy and spices, often served with raw vegetables.", price: "110.000 VND/per" },
+            { name: "Menudo", img: "Menu/menudo.jpg", description: "Spicy beef tripe soup with red chili, often used as a hangover remedy in the early morning.", price: "120.000 VND/per" },
+            { name: "Caldo de Res", img: "Menu/caldo_de_res.jpg", description: "Beef soup with vegetables like potatoes, carrots and corn, rich in flavor.", isBestSeller: true, price: "115.000 VND/per" },
+            { name: "Sopa de Tortilla", img: "Menu/sopa_de_tortilla.jpg", description: "Rich tomato soup with crispy tortillas, avocado, cheese and dried chiles.", price: "100.000 VND/per" },
+            { name: "Caldo de Pollo", img: "Menu/caldo_de_pollo.jpg", description: "Chicken soup with vegetables, warm and soothing.", price: "105.000 VND/per" }
+        ];
+        let html = `<h2>Danh sách các món Soup</h2><div class="menu-items">`;
+        soups.forEach((soup, index) => {
+            if (index % 4 === 0 && index !== 0) html += `</div><div class="menu-items">`;
+            html += `
+                <div class="menu-item">
+                    <div class="menu-card">
+                        <div class="menu-front">
+                            <img src="${soup.img}" alt="${soup.name}">
+                            <h3>${soup.name}</h3>
+                            ${soup.isBestSeller ? '<span class="best-seller">Best Seller</span>' : ''}
+                        </div>
+                        <div class="menu-back">
+                            <h3>${soup.name}</h3>
+                            <p>${soup.description}</p>
+                            <p class="price">${soup.price}</p>
+                            <div class="food-buttons">
+                                <button class="add-to-cart" onclick="addToCart('${soup.name}')">Add to Cart</button>
+                                <button class="buy-now" onclick="buyNow('${soup.name}')">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        html += `</div>`;
+        contentDiv.innerHTML = html;
+    }
+
+    function showStews() {
+        const contentDiv = document.getElementById('content');
+        const stews = [
+            { name: "Birria", img: "Menu/birria.jpg", description: "A rich stew made from goat or beef, cooked with dried chilies and spices, often served with tortillas.", isBestSeller: true, price: "130.000 VND/per" },
+            { name: "Mole Poblano", img: "Menu/mole_poblano.jpg", description: "Chicken or turkey cooked in a rich mole sauce made from chocolate, chilli and spices.", price: "140.000 VND/per" },
+            { name: "Cochinita Pibil", img: "Menu/cochinita_pibil.jpg", description: "Pork marinated with achiote and orange juice, slow cooked in banana leaves, brings out the typical flavors of Yucatán.", price: "135.000 VND/per" },
+            { name: "Carne Guisada", img: "Menu/carne_guisada.jpg", description: "Tender beef stew with tomato sauce, bell peppers and Mexican spices, usually served with rice or tortillas.", price: "125.000 VND/per" },
+            { name: "Albondigas", img: "Menu/albondigas.jpg", description: "Beef or pork meatballs stewed in tomato sauce, added vegetables for delicious flavor.", price: "120.000 VND/per" }
+        ];
+        let html = `<h2>Danh sách các món Stew</h2><div class="menu-items">`;
+        stews.forEach((stew, index) => {
+            if (index % 4 === 0 && index !== 0) html += `</div><div class="menu-items">`;
+            html += `
+                <div class="menu-item">
+                    <div class="menu-card">
+                        <div class="menu-front">
+                            <img src="${stew.img}" alt="${stew.name}">
+                            <h3>${stew.name}</h3>
+                            ${stew.isBestSeller ? '<span class="best-seller">Best Seller</span>' : ''}
+                        </div>
+                        <div class="menu-back">
+                            <h3>${stew.name}</h3>
+                            <p>${stew.description}</p>
+                            <p class="price">${stew.price}</p>
+                            <div class="food-buttons">
+                                <button class="add-to-cart" onclick="addToCart('${stew.name}')">Add to Cart</button>
+                                <button class="buy-now" onclick="buyNow('${stew.name}')">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        html += `</div>`;
+        contentDiv.innerHTML = html;
+    }
+
+    function showAppetizers() {
+        const contentDiv = document.getElementById('content');
+        const appetizers = [
+            { name: "Guacamole", img: "Menu/guacamole.jpg", description: "Appetizer made from mashed avocado, mixed with tomatoes, onions, cilantro and lime, served with crispy tortilla chips.", isBestSeller: true, price: "50.000 VND/per" },
+            { name: "Queso Fundido", img: "Menu/queso_fundido.jpg", description: "Hot melted cheese, often mixed with chorizo ​​or mushrooms, served on a tortilla.", price: "85.000 VND/per" },
+            { name: "Ceviche", img: "Menu/ceviche.jpg", description: "Fresh seafood (shrimp or fish) marinated in lime juice, mixed with tomatoes, onions and peppers, served with crispy tortillas.", price: "100.000 VND/per" },
+            { name: "Tostadas", img: "Menu/tostadas.jpg", description: "Crispy tortilla filled with beans, ground meat, lettuce, cheese and salsa.", price: "65.000 VND/per" },
+            { name: "Elote", img: "Menu/elote.jpg", description: "Grilled corn topped with mayonnaise, sprinkled with cotija cheese and chili powder, with a Mexican street flavor.", price: "45.000 VND/per" },
+            { name: "Pico de Gallo", img: "Menu/pico_de_gallo.jpg", description: "Fresh salad of tomatoes, onions, cilantro and lime, often served with tacos or nachos.", price: "40.000 VND/per" },
+            { name: "Totopos con Salsa", img: "Menu/totopos_con_salsa.jpg", description: "Crispy tortillas served with signature salsa.", price: "35.000 VND/per" },
+            { name: "Esquites", img: "Menu/esquites.jpg", description: "Corn kernels sauteed with butter, mayonnaise, cheese, chili and lemon, creating a rich flavor.", price: "40.000 VND/per" },
+            { name: "Tlacoyos", img: "Menu/tlacoyos.jpg", description: "Thick corn tortillas stuffed with beans, cheese or meat, deep fried and served with salsa.", price: "55.000 VND/per" },
+            { name: "Sopes", img: "Menu/sopes.jpg", description: "Thick corn tortillas filled with refried beans, meat, vegetables and cheese.", price: "60.000 VND/per" }
+        ];
+        let html = `<h2>Danh sách các món Khai vị</h2><div class="menu-items">`;
+        appetizers.forEach((appetizer, index) => {
+            if (index % 4 === 0 && index !== 0) html += `</div><div class="menu-items">`;
+            html += `
+                <div class="menu-item">
+                    <div class="menu-card">
+                        <div class="menu-front">
+                            <img src="${appetizer.img}" alt="${appetizer.name}">
+                            <h3>${appetizer.name}</h3>
+                            ${appetizer.isBestSeller ? '<span class="best-seller">Best Seller</span>' : ''}
+                        </div>
+                        <div class="menu-back">
+                            <h3>${appetizer.name}</h3>
+                            <p>${appetizer.description}</p>
+                            <p class="price">${appetizer.price}</p>
+                            <div class="food-buttons">
+                                <button class="add-to-cart" onclick="addToCart('${appetizer.name}')">Add to Cart</button>
+                                <button class="buy-now" onclick="buyNow('${appetizer.name}')">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        html += `</div>`;
+        contentDiv.innerHTML = html;
+    }
+
+    function showDrinks() {
+        const contentDiv = document.getElementById('content');
+        const drinks = [
+            { name: "Horchata", img: "Menu/horchata.jpg", description: "Sweet rice water with cinnamon and vanilla, a traditional Mexican drink.", price: "35.000 VND/per" },
+            { name: "Agua Fresca", img: "Menu/agua_fresca.jpg", description: "Refreshing fruit juices like watermelon, pineapple or lemon, naturally sweet.", isBestSeller: true, price: "30.000 VND/per" },
+            { name: "Margarita", img: "Menu/margarita.jpg", description: "Classic cocktail with tequila, lime juice and salt rimmed glass.", price: "80.000 VND/per" },
+            { name: "Michelada", img: "Menu/michelada.jpg", description: "Mexican beer mixed with lime juice, salt, hot sauce and spices.", price: "60.000 VND/per" },
+            { name: "Coca Cola", img: "Menu/coca.jpg", description: "Classic Coca Cola, made in Mexico with cane sugar.", price: "25.000 VND/per" },
+            { name: "Sprite", img: "Menu/sprite.jpg", description: "Fresh lemon flavored carbonated soft drink.", price: "25.000 VND/per" }
+        ];
+        let html = `<h2>Danh sách đồ uống</h2><div class="menu-items">`;
+        drinks.forEach((drink, index) => {
+            if (index % 4 === 0 && index !== 0) html += `</div><div class="menu-items">`;
+            html += `
+                <div class="menu-item">
+                    <div class="menu-card">
+                        <div class="menu-front">
+                            <img src="${drink.img}" alt="${drink.name}">
+                            <h3>${drink.name}</h3>
+                            ${drink.isBestSeller ? '<span class="best-seller">Best Seller</span>' : ''}
+                        </div>
+                        <div class="menu-back">
+                            <h3>${drink.name}</h3>
+                            <p>${drink.description}</p>
+                            <p class="price">${drink.price}</p>
+                            <div class="food-buttons">
+                                <button class="add-to-cart" onclick="addToCart('${drink.name}')">Add to Cart</button>
+                                <button class="buy-now" onclick="buyNow('${drink.name}')">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        html += `</div>`;
+        contentDiv.innerHTML = html;
+    }
+
+    function showMostPopular() {
+        const contentDiv = document.getElementById('content');
+        const mostPopular = [
+            { name: "Taco al Pastor", img: "Menu/taco_al_pastor.jpg", description: "Tacos with marinated pork, grilled on a rotisserie skewer, served with pineapple, onion and cilantro.", price: "35.000 VND/per" },
+            { name: "Taco de Carnitas", img: "Menu/taco_de_carnitas.jpg", description: "Tacos with tender braised pork, served with onions, cilantro and salsa.", price: "40.000 VND/per" },
+            { name: "Taco de Pescado", img: "Menu/taco_de_pescado.jpg", description: "Crispy fried fish tacos, served with cabbage, sour cream sauce and a squeeze of lime.", price: "48.000 VND/per" },
+            { name: "Burrito de Carne Asada", img: "Menu/burrito_de_carne_asada.jpg", description: "Grilled beef burrito, served with rice, beans, cheese and salsa.", price: "120.000 VND/per" },
+            { name: "Burrito de Pollo", img: "Menu/burrito_de_pollo.jpg", description: "Burrito with seasoned chicken, served with cheese, lettuce and creamy sauce.", price: "110.000 VND/per" },
+            { name: "Tamales Verdes", img: "Menu/tamales_verdes.jpg", description: "Tamales with green sauce from chili and coriander, have a distinctive flavor.", price: "30.000 VND/per" },
+            { name: "Pozole", img: "Menu/pozole.jpg", description: "Traditional Mexican soup with pork, hominy and spices, often served with raw vegetables.", price: "110.000 VND/per" },
+            { name: "Menudo", img: "Menu/menudo.jpg", description: "Spicy beef tripe soup with red chili, often used as a hangover remedy in the early morning.", price: "120.000 VND/per" },
+            { name: "Birria", img: "Menu/birria.jpg", description: "A rich stew made from goat or beef, cooked with dried chilies and spices, often served with tortillas.", price: "130.000 VND/per" },
+            { name: "Guacamole", img: "Menu/guacamole.jpg", description: "Appetizer made from mashed avocado, mixed with tomatoes, onions, cilantro and lime, served with crispy tortilla chips.", price: "50.000 VND/per" },
+            { name: "Queso Fundido", img: "Menu/queso_fundido.jpg", description: "Hot melted cheese, often mixed with chorizo ​​or mushrooms, served on a tortilla.", price: "85.000 VND/per" },
+            { name: "Tlacoyos", img: "Menu/tlacoyos.jpg", description: "Thick corn tortillas stuffed with beans, cheese or meat, deep fried and served with salsa.", price: "55.000 VND/per" },
+            { name: "Pico de Gallo", img: "Menu/pico_de_gallo.jpg", description: "Fresh salad of tomatoes, onions, cilantro and lime, often served with tacos or nachos.", price: "40.000 VND/per" },
+            { name: "Esquites", img: "Menu/esquites.jpg", description: "Corn kernels sauteed with butter, mayonnaise, cheese, chili and lemon, creating a rich flavor.", price: "40.000 VND/per" }
+        ];
+        let html = `<h2>Các món bán chạy nhất</h2><div class="menu-items">`;
+        mostPopular.forEach((item, index) => {
+            if (index % 4 === 0 && index !== 0) html += `</div><div class="menu-items">`;
+            html += `
+                <div class="menu-item">
+                    <div class="menu-card">
+                        <div class="menu-front">
+                            <img src="${item.img}" alt="${item.name}">
+                            <h3>${item.name}</h3>
+                            ${item.isBestSeller ? '<span class="best-seller">Best Seller</span>' : ''}
+                        </div>
+                        <div class="menu-back">
+                            <h3>${item.name}</h3>
+                            <p>${item.description}</p>
+                            <p class="price">${item.price}</p>
+                            <div class="food-buttons">
+                                <button class="add-to-cart" onclick="addToCart('${item.name}')">Add to Cart</button>
+                                <button class="buy-now" onclick="buyNow('${item.name}')">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        html += `</div>`;
+        contentDiv.innerHTML = html;
+    }
+
+    // JavaScript cho carousel/slider
+(function () {
+    const BannerSlideshow = {
+        currentIndex: 0,
+        slides: null,
+        dots: null,
+        totalSlides: 0,
+
+        init: function () {
+            this.slides = document.querySelector('.slides');
+            this.dots = document.querySelectorAll('.dot');
+            this.totalSlides = document.querySelectorAll('.banner-slide').length;
+
+            // Thêm bản sao của slide đầu tiên và slide cuối cùng để tạo hiệu ứng vòng lặp
+            const firstSlideClone = this.slides.children[0].cloneNode(true);
+            const lastSlideClone = this.slides.children[this.totalSlides - 1].cloneNode(true);
+            this.slides.appendChild(firstSlideClone); // Thêm bản sao slide đầu tiên vào cuối
+            this.slides.insertBefore(lastSlideClone, this.slides.children[0]); // Thêm bản sao slide cuối cùng vào đầu
+
+            // Điều chỉnh vị trí ban đầu để bắt đầu từ slide thực sự đầu tiên
+            this.currentIndex = 1; // Bắt đầu từ slide thực sự đầu tiên (do có bản sao slide cuối ở vị trí 0)
+            this.updateSlidePosition();
+
+            // Tự động chuyển slide sau 5 giây
+            setInterval(this.nextSlide.bind(this), 5000);
+
+            // Thêm sự kiện cho dots
+            this.dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => this.currentSlide(index));
+            });
+        },
+
+        updateSlidePosition: function () {
+            this.slides.style.transition = 'transform 0.5s ease-in-out';
+            this.slides.style.transform = `translateX(-${this.currentIndex * 100}%)`;
+
+            // Cập nhật dots
+            let dotIndex = this.currentIndex - 1;
+            if (dotIndex < 0) dotIndex = this.totalSlides - 1;
+            if (dotIndex >= this.totalSlides) dotIndex = 0;
+            this.dots.forEach(dot => dot.classList.remove('active'));
+            this.dots[dotIndex].classList.add('active');
+        },
+
+        nextSlide: function () {
+            this.currentIndex++;
+
+            // Khi đến bản sao của slide đầu tiên (vị trí totalSlides + 1)
+            if (this.currentIndex === this.totalSlides + 1) {
+                this.updateSlidePosition();
+
+                // Sau khi transition hoàn tất, nhảy về slide đầu tiên (vị trí 1) mà không có hiệu ứng
+                setTimeout(() => {
+                    this.slides.style.transition = 'none';
+                    this.currentIndex = 1;
+                    this.slides.style.transform = `translateX(-${this.currentIndex * 100}%)`;
+
+                    // Buộc reflow để áp dụng transition cho lần tiếp theo
+                    this.slides.offsetHeight;
+
+                    // Bật lại transition
+                    this.slides.style.transition = 'transform 0.5s ease-in-out';
+                }, 500); // Đồng bộ với thời gian transition (0.5s)
+            } else {
+                this.updateSlidePosition();
+            }
+        },
+
+        currentSlide: function (index) {
+            this.currentIndex = index + 1; // Điều chỉnh vì có bản sao slide cuối ở đầu
+            this.updateSlidePosition();
+        }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        BannerSlideshow.init();
+        showMostPopular();
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        document.getElementById('cart-count').textContent = cart.length;
+    });
+})();
+
+    function addToCart(itemName) {
+        const allMenuItems = {
+            tacos: [
+                { name: "Taco al Pastor", img: "Menu/taco_al_pastor.jpg" },
+                { name: "Taco de Carnitas", img: "Menu/taco_de_carnitas.jpg" },
+                { name: "Taco de Pescado", img: "Menu/taco_de_pescado.jpg" },
+                { name: "Taco de Barbacoa", img: "Menu/taco_de_barbacoa.jpg" },
+                { name: "Taco de Birria", img: "Menu/taco_de_birria.jpg" },
+                { name: "Taco de Asada", img: "Menu/taco_de_asada.jpg" },
+                { name: "Taco de Camarón", img: "Menu/taco_de_camarón.jpg" },
+                { name: "Taco de Lengua", img: "Menu/taco_de_lengua.jpg" },
+                { name: "Taco de Chorizo", img: "Menu/taco_de_chorizo.jpg" },
+                { name: "Taco de Nopales", img: "Menu/taco_de_nopales.jpg" }
+            ],
+            burritos: [
+                { name: "Burrito de Carne Asada", img: "Menu/burrito_de_carne_asada.jpg" },
+                { name: "Burrito de Pollo", img: "Menu/burrito_de_pollo.jpg" },
+                { name: "Burrito de Barbacoa", img: "Menu/burrito_de_barbacoa.jpg" },
+                { name: "Burrito de Chorizo y Papas", img: "Menu/burrito_de_chorizo_y_papas.jpg" },
+                { name: "Burrito Vegetariano", img: "Menu/burrito_vegetariano.jpg" },
+                { name: "Burrito de Camarones", img: "Menu/burrito_de_camarones.jpg" },
+                { name: "Burrito de Carnitas", img: "Menu/burrito_de_carnitas.jpg" },
+                { name: "Burrito de Frijoles y Queso", img: "Menu/burrito_de_frijoles_y_queso.jpg" },
+                { name: "Burrito de Huevo", img: "Menu/burrito_de_huevo.jpg" },
+                { name: "Burrito Supremo", img: "Menu/burrito_supremo.jpg" }
+            ],
+            tamales: [
+                { name: "Tamales Verdes", img: "Menu/tamales_verdes.jpg" },
+                { name: "Tamales Rojos", img: "Menu/tamales_rojos.jpg" },
+                { name: "Tamales de Rajas", img: "Menu/tamales_rajas.jpg" },
+                { name: "Tamales de Dulce", img: "Menu/tamales_dulce.jpg" },
+                { name: "Tamales de Elote", img: "Menu/tamales_elote.jpg" },
+                { name: "Tamales Oaxaqueños", img: "Menu/tamales_oaxaquenos.jpg" },
+                { name: "Tamales de Cambray", img: "Menu/tamales_cambray.jpg" },
+                { name: "Tamales de Chicharrón", img: "Menu/tamales_chicharron.jpg" },
+                { name: "Tamales de Frijoles", img: "Menu/tamales_de_frijoles.jpg" },
+                { name: "Tamales de Chocolate", img: "Menu/tamales_chocolate.jpg" }
+            ],
+            chiles: [
+                { name: "Chiles en Nogada", img: "Menu/chiles_nogada_mariscos.jpg" },
+                { name: "Chiles en Nogada de Pollo", img: "Menu/chiles_nogada_pollo.jpg" },
+                { name: "Chiles en Nogada Vegetariano", img: "Menu/chiles_nogada_vegetariano.jpg" },
+                { name: "Chiles en Nogada con Queso", img: "Menu/chiles_nogada_queso.jpg" },
+                { name: "Chiles en Nogada con Frutas", img: "Menu/chiles_nogada_frutas.jpg" },
+                { name: "Chiles en Nogada con Nuez Pecana", img: "Menu/chiles_nogada_nuez.jpg" },
+                { name: "Chiles en Nogada con Mole", img: "Menu/chiles_nogada_mole.jpg" },
+                { name: "Chiles en Nogada de Pavo", img: "Menu/chiles_nogada_pavo.jpg" },
+                { name: "Chiles en Nogada con Amaranto", img: "Menu/chiles_nogada_amaranto.jpg" }
+            ],
+            soups: [
+                { name: "Pozole", img: "Menu/pozole.jpg" },
+                { name: "Menudo", img: "Menu/menudo.jpg" },
+                { name: "Caldo de Res", img: "Menu/caldo_de_res.jpg" },
+                { name: "Sopa de Tortilla", img: "Menu/sopa_de_tortilla.jpg" },
+                { name: "Caldo de Pollo", img: "Menu/caldo_de_pollo.jpg" }
+            ],
+            stews: [
+                { name: "Birria", img: "Menu/birria.jpg" },
+                { name: "Mole Poblano", img: "Menu/mole_poblano.jpg" },
+                { name: "Cochinita Pibil", img: "Menu/cochinita_pibil.jpg" },
+                { name: "Carne Guisada", img: "Menu/carne_guisada.jpg" },
+                { name: "Albondigas", img: "Menu/albondigas.jpg" }
+            ],
+            appetizers: [
+                { name: "Guacamole", img: "Menu/guacamole.jpg" },
+                { name: "Queso Fundido", img: "Menu/queso_fundido.jpg" },
+                { name: "Ceviche", img: "Menu/ceviche.jpg" },
+                { name: "Tostadas", img: "Menu/tostadas.jpg" },
+                { name: "Elote", img: "Menu/elote.jpg" },
+                { name: "Pico de Gallo", img: "Menu/pico_de_gallo.jpg" },
+                { name: "Totopos con Salsa", img: "Menu/totopos_con_salsa.jpg" },
+                { name: "Esquites", img: "Menu/esquites.jpg" },
+                { name: "Tlacoyos", img: "Menu/tlacoyos.jpg" },
+                { name: "Sopes", img: "Menu/sopes.jpg" }
+            ],
+            drinks: [
+                { name: "Horchata", img: "Menu/horchata.jpg" },
+                { name: "Agua Fresca", img: "Menu/agua_fresca.jpg" },
+                { name: "Margarita", img: "Menu/margarita.jpg" },
+                { name: "Michelada", img: "Menu/michelada.jpg" },
+                { name: "Coca Cola", img: "Menu/coca.jpg" },
+                { name: "Sprite", img: "Menu/sprite.jpg" }
+            ]
+        };
+
+        let itemImg = '';
+        for (const category in allMenuItems) {
+            const item = allMenuItems[category].find(i => i.name === itemName);
+            if (item) {
+                itemImg = item.img;
+                break;
+            }
+        }
+
+        const cartItem = { name: itemName, img: itemImg };
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push(cartItem);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        document.getElementById('cart-count').textContent = cart.length; // Cập nhật số lượng trên header
+        alert(`${itemName} đã được thêm vào giỏ hàng!`);
+    }
+
+    function buyNow(itemName) {
+        const allMenuItems = {
+            tacos: [
+                { name: "Taco al Pastor", img: "Menu/taco_al_pastor.jpg" },
+                { name: "Taco de Carnitas", img: "Menu/taco_de_carnitas.jpg" },
+                { name: "Taco de Pescado", img: "Menu/taco_de_pescado.jpg" },
+                { name: "Taco de Barbacoa", img: "Menu/taco_de_barbacoa.jpg" },
+                { name: "Taco de Birria", img: "Menu/taco_de_birria.jpg" },
+                { name: "Taco de Asada", img: "Menu/taco_de_asada.jpg" },
+                { name: "Taco de Camarón", img: "Menu/taco_de_camarón.jpg" },
+                { name: "Taco de Lengua", img: "Menu/taco_de_lengua.jpg" },
+                { name: "Taco de Chorizo", img: "Menu/taco_de_chorizo.jpg" },
+                { name: "Taco de Nopales", img: "Menu/taco_de_nopales.jpg" }
+            ],
+            burritos: [
+                { name: "Burrito de Carne Asada", img: "Menu/burrito_de_carne_asada.jpg" },
+                { name: "Burrito de Pollo", img: "Menu/burrito_de_pollo.jpg" },
+                { name: "Burrito de Barbacoa", img: "Menu/burrito_de_barbacoa.jpg" },
+                { name: "Burrito de Chorizo y Papas", img: "Menu/burrito_de_chorizo_y_papas.jpg" },
+                { name: "Burrito Vegetariano", img: "Menu/burrito_vegetariano.jpg" },
+                { name: "Burrito de Camarones", img: "Menu/burrito_de_camarones.jpg" },
+                { name: "Burrito de Carnitas", img: "Menu/burrito_de_carnitas.jpg" },
+                { name: "Burrito de Frijoles y Queso", img: "Menu/burrito_de_frijoles_y_queso.jpg" },
+                { name: "Burrito de Huevo", img: "Menu/burrito_de_huevo.jpg" },
+                { name: "Burrito Supremo", img: "Menu/burrito_supremo.jpg" }
+            ],
+            tamales: [
+                { name: "Tamales Verdes", img: "Menu/tamales_verdes.jpg" },
+                { name: "Tamales Rojos", img: "Menu/tamales_rojos.jpg" },
+                { name: "Tamales de Rajas", img: "Menu/tamales_rajas.jpg" },
+                { name: "Tamales de Dulce", img: "Menu/tamales_dulce.jpg" },
+                { name: "Tamales de Elote", img: "Menu/tamales_elote.jpg" },
+                { name: "Tamales Oaxaqueños", img: "Menu/tamales_oaxaquenos.jpg" },
+                { name: "Tamales de Cambray", img: "Menu/tamales_cambray.jpg" },
+                { name: "Tamales de Chicharrón", img: "Menu/tamales_chicharron.jpg" },
+                { name: "Tamales de Frijoles", img: "Menu/tamales_de_frijoles.jpg" },
+                { name: "Tamales de Chocolate", img: "Menu/tamales_chocolate.jpg" }
+            ],
+            chiles: [
+                { name: "Chiles en Nogada", img: "Menu/chiles_nogada_mariscos.jpg" },
+                { name: "Chiles en Nogada de Pollo", img: "Menu/chiles_nogada_pollo.jpg" },
+                { name: "Chiles en Nogada Vegetariano", img: "Menu/chiles_nogada_vegetariano.jpg" },
+                { name: "Chiles en Nogada con Queso", img: "Menu/chiles_nogada_queso.jpg" },
+                { name: "Chiles en Nogada con Frutas", img: "Menu/chiles_nogada_frutas.jpg" },
+                { name: "Chiles en Nogada con Nuez Pecana", img: "Menu/chiles_nogada_nuez.jpg" },
+                { name: "Chiles en Nogada con Mole", img: "Menu/chiles_nogada_mole.jpg" },
+                { name: "Chiles en Nogada de Pavo", img: "Menu/chiles_nogada_pavo.jpg" },
+                { name: "Chiles en Nogada con Amaranto", img: "Menu/chiles_nogada_amaranto.jpg" }
+            ],
+            soups: [
+                { name: "Pozole", img: "Menu/pozole.jpg" },
+                { name: "Menudo", img: "Menu/menudo.jpg" },
+                { name: "Caldo de Res", img: "Menu/caldo_de_res.jpg" },
+                { name: "Sopa de Tortilla", img: "Menu/sopa_de_tortilla.jpg" },
+                { name: "Caldo de Pollo", img: "Menu/caldo_de_pollo.jpg" }
+            ],
+            stews: [
+                { name: "Birria", img: "Menu/birria.jpg" },
+                { name: "Mole Poblano", img: "Menu/mole_poblano.jpg" },
+                { name: "Cochinita Pibil", img: "Menu/cochinita_pibil.jpg" },
+                { name: "Carne Guisada", img: "Menu/carne_guisada.jpg" },
+                { name: "Albondigas", img: "Menu/albondigas.jpg" }
+            ],
+            appetizers: [
+                { name: "Guacamole", img: "Menu/guacamole.jpg" },
+                { name: "Queso Fundido", img: "Menu/queso_fundido.jpg" },
+                { name: "Ceviche", img: "Menu/ceviche.jpg" },
+                { name: "Tostadas", img: "Menu/tostadas.jpg" },
+                { name: "Elote", img: "Menu/elote.jpg" },
+                { name: "Pico de Gallo", img: "Menu/pico_de_gallo.jpg" },
+                { name: "Totopos con Salsa", img: "Menu/totopos_con_salsa.jpg" },
+                { name: "Esquites", img: "Menu/esquites.jpg" },
+                { name: "Tlacoyos", img: "Menu/tlacoyos.jpg" },
+                { name: "Sopes", img: "Menu/sopes.jpg" }
+            ],
+            drinks: [
+                { name: "Horchata", img: "Menu/horchata.jpg" },
+                { name: "Agua Fresca", img: "Menu/agua_fresca.jpg" },
+                { name: "Margarita", img: "Menu/margarita.jpg" },
+                { name: "Michelada", img: "Menu/michelada.jpg" },
+                { name: "Coca Cola", img: "Menu/coca.jpg" },
+                { name: "Sprite", img: "Menu/sprite.jpg" }
+            ]
+        };
+
+        let itemImg = '';
+        for (const category in allMenuItems) {
+            const item = allMenuItems[category].find(i => i.name === itemName);
+            if (item) {
+                itemImg = item.img;
+                break;
+            }
+        }
+
+        // Lưu món vừa chọn vào localStorage với key 'checkoutItems'
+        const checkoutItem = [{ name: itemName, img: itemImg }]; // Chỉ lưu món vừa chọn
+        localStorage.setItem('checkoutItems', JSON.stringify(checkoutItem));
+
+        // Chuyển hướng sang trang checkout.html
+        window.location.href = 'checkout.html';
+    }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'92666e7f2cb544dc',t:'MTc0Mjk4OTgzOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+D:\UnityTuLam\C#\AdvancedC#\Queue_\Queue_\bin\Debug\net8.0\Queue_.exe
+D:\UnityTuLam\C#\AdvancedC#\Queue_\Queue_\bin\Debug\net8.0\Queue_.deps.json
+D:\UnityTuLam\C#\AdvancedC#\Queue_\Queue_\bin\Debug\net8.0\Queue_.runtimeconfig.json
+D:\UnityTuLam\C#\AdvancedC#\Queue_\Queue_\bin\Debug\net8.0\Queue_.dll
+D:\UnityTuLam\C#\AdvancedC#\Queue_\Queue_\bin\Debug\net8.0\Queue_.pdb
+D:\UnityTuLam\C#\AdvancedC#\Queue_\Queue_\obj\Debug\net8.0\Queue_.GeneratedMSBuildEditorConfig.editorconfig
+D:\UnityTuLam\C#\AdvancedC#\Queue_\Queue_\obj\Debug\net8.0\Queue_.AssemblyInfoInputs.cache
+D:\UnityTuLam\C#\AdvancedC#\Queue_\Queue_\obj\Debug\net8.0\Queue_.AssemblyInfo.cs
+D:\UnityTuLam\C#\AdvancedC#\Queue_\Queue_\obj\Debug\net8.0\Queue_.csproj.CoreCompileInputs.cache
+D:\UnityTuLam\C#\AdvancedC#\Queue_\Queue_\obj\Debug\net8.0\Queue_.dll
+D:\UnityTuLam\C#\AdvancedC#\Queue_\Queue_\obj\Debug\net8.0\refint\Queue_.dll
+D:\UnityTuLam\C#\AdvancedC#\Queue_\Queue_\obj\Debug\net8.0\Queue_.pdb
+D:\UnityTuLam\C#\AdvancedC#\Queue_\Queue_\obj\Debug\net8.0\Queue_.genruntimeconfig.cache
+D:\UnityTuLam\C#\AdvancedC#\Queue_\Queue_\obj\Debug\net8.0\ref\Queue_.dll

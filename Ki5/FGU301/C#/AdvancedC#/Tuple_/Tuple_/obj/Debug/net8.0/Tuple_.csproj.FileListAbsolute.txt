@@ -1,0 +1,14 @@
+D:\UnityTuLam\C#\AdvancedC#\Tuple_\Tuple_\bin\Debug\net8.0\Tuple_.exe
+D:\UnityTuLam\C#\AdvancedC#\Tuple_\Tuple_\bin\Debug\net8.0\Tuple_.deps.json
+D:\UnityTuLam\C#\AdvancedC#\Tuple_\Tuple_\bin\Debug\net8.0\Tuple_.runtimeconfig.json
+D:\UnityTuLam\C#\AdvancedC#\Tuple_\Tuple_\bin\Debug\net8.0\Tuple_.dll
+D:\UnityTuLam\C#\AdvancedC#\Tuple_\Tuple_\bin\Debug\net8.0\Tuple_.pdb
+D:\UnityTuLam\C#\AdvancedC#\Tuple_\Tuple_\obj\Debug\net8.0\Tuple_.GeneratedMSBuildEditorConfig.editorconfig
+D:\UnityTuLam\C#\AdvancedC#\Tuple_\Tuple_\obj\Debug\net8.0\Tuple_.AssemblyInfoInputs.cache
+D:\UnityTuLam\C#\AdvancedC#\Tuple_\Tuple_\obj\Debug\net8.0\Tuple_.AssemblyInfo.cs
+D:\UnityTuLam\C#\AdvancedC#\Tuple_\Tuple_\obj\Debug\net8.0\Tuple_.csproj.CoreCompileInputs.cache
+D:\UnityTuLam\C#\AdvancedC#\Tuple_\Tuple_\obj\Debug\net8.0\Tuple_.dll
+D:\UnityTuLam\C#\AdvancedC#\Tuple_\Tuple_\obj\Debug\net8.0\refint\Tuple_.dll
+D:\UnityTuLam\C#\AdvancedC#\Tuple_\Tuple_\obj\Debug\net8.0\Tuple_.pdb
+D:\UnityTuLam\C#\AdvancedC#\Tuple_\Tuple_\obj\Debug\net8.0\Tuple_.genruntimeconfig.cache
+D:\UnityTuLam\C#\AdvancedC#\Tuple_\Tuple_\obj\Debug\net8.0\ref\Tuple_.dll

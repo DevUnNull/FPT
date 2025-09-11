@@ -1,0 +1,19 @@
+1. Lệnh làm việc với .NET
+| Câu lệnh                           | Mô tả                                           | Ví dụ thực tế                                   |
+| ---------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| `dotnet --version`                 | Kiểm tra phiên bản .NET đã cài                  | `dotnet --version` → Kết quả: `8.0.100`         |
+| `dotnet new console -n TênProject` | Tạo project console mới                         | `dotnet new console -n Sum` → Tạo thư mục `Sum` |
+| `cd TênThưMục`                     | Di chuyển vào thư mục                           | `cd Sum`                                        |
+| `dotnet run`                       | Biên dịch & chạy chương trình                   | `dotnet run` → In ra “Hello World”              |
+| `dotnet build`                     | Chỉ biên dịch, không chạy                       | `dotnet build` → Tạo thư mục `bin/` và `obj/`   |
+| `dotnet clean`                     | Xoá file biên dịch tạm                          | `dotnet clean`                                  |
+| `dotnet publish`                   | Xuất bản để deploy (chạy không cần source code) | `dotnet publish -o ./build`                     |
+2. Lệnh quản lý thư mục & file
+| Câu lệnh                   | Mô tả                               | Ví dụ thực tế               |
+| -------------------------- | ----------------------------------- | --------------------------- |
+| `dir` / `ls`               | Xem danh sách file, thư mục         | `dir`                       |
+| `cd ..`                    | Trở về thư mục cha                  | `cd ..`                     |
+| `mkdir TênThưMục`          | Tạo thư mục mới                     | `mkdir DemoProject`         |
+| `del TênFile`              | Xoá file                            | `del test.cs`               |
+| `rmdir TênThưMục -Recurse` | Xoá cả thư mục và dữ liệu bên trong | `rmdir HelloWorld -Recurse` |
+| `copy file1 file2`         | Sao chép file                       | `copy test.cs Program.cs`   |

@@ -1,0 +1,14 @@
+D:\UnityTuLam\C#\AdvancedC#\Generic_\Generic_\obj\Debug\net8.0\Generic_.GeneratedMSBuildEditorConfig.editorconfig
+D:\UnityTuLam\C#\AdvancedC#\Generic_\Generic_\obj\Debug\net8.0\Generic_.AssemblyInfoInputs.cache
+D:\UnityTuLam\C#\AdvancedC#\Generic_\Generic_\obj\Debug\net8.0\Generic_.AssemblyInfo.cs
+D:\UnityTuLam\C#\AdvancedC#\Generic_\Generic_\obj\Debug\net8.0\Generic_.csproj.CoreCompileInputs.cache
+D:\UnityTuLam\C#\AdvancedC#\Generic_\Generic_\bin\Debug\net8.0\Generic_.exe
+D:\UnityTuLam\C#\AdvancedC#\Generic_\Generic_\bin\Debug\net8.0\Generic_.deps.json
+D:\UnityTuLam\C#\AdvancedC#\Generic_\Generic_\bin\Debug\net8.0\Generic_.runtimeconfig.json
+D:\UnityTuLam\C#\AdvancedC#\Generic_\Generic_\bin\Debug\net8.0\Generic_.dll
+D:\UnityTuLam\C#\AdvancedC#\Generic_\Generic_\bin\Debug\net8.0\Generic_.pdb
+D:\UnityTuLam\C#\AdvancedC#\Generic_\Generic_\obj\Debug\net8.0\Generic_.dll
+D:\UnityTuLam\C#\AdvancedC#\Generic_\Generic_\obj\Debug\net8.0\refint\Generic_.dll
+D:\UnityTuLam\C#\AdvancedC#\Generic_\Generic_\obj\Debug\net8.0\Generic_.pdb
+D:\UnityTuLam\C#\AdvancedC#\Generic_\Generic_\obj\Debug\net8.0\Generic_.genruntimeconfig.cache
+D:\UnityTuLam\C#\AdvancedC#\Generic_\Generic_\obj\Debug\net8.0\ref\Generic_.dll

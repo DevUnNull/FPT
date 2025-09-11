@@ -1,0 +1,14 @@
+D:\UnityTuLam\C#\AdvancedC#\Stack_\Stack_\bin\Debug\net8.0\Stack_.exe
+D:\UnityTuLam\C#\AdvancedC#\Stack_\Stack_\bin\Debug\net8.0\Stack_.deps.json
+D:\UnityTuLam\C#\AdvancedC#\Stack_\Stack_\bin\Debug\net8.0\Stack_.runtimeconfig.json
+D:\UnityTuLam\C#\AdvancedC#\Stack_\Stack_\bin\Debug\net8.0\Stack_.dll
+D:\UnityTuLam\C#\AdvancedC#\Stack_\Stack_\bin\Debug\net8.0\Stack_.pdb
+D:\UnityTuLam\C#\AdvancedC#\Stack_\Stack_\obj\Debug\net8.0\Stack_.GeneratedMSBuildEditorConfig.editorconfig
+D:\UnityTuLam\C#\AdvancedC#\Stack_\Stack_\obj\Debug\net8.0\Stack_.AssemblyInfoInputs.cache
+D:\UnityTuLam\C#\AdvancedC#\Stack_\Stack_\obj\Debug\net8.0\Stack_.AssemblyInfo.cs
+D:\UnityTuLam\C#\AdvancedC#\Stack_\Stack_\obj\Debug\net8.0\Stack_.csproj.CoreCompileInputs.cache
+D:\UnityTuLam\C#\AdvancedC#\Stack_\Stack_\obj\Debug\net8.0\Stack_.dll
+D:\UnityTuLam\C#\AdvancedC#\Stack_\Stack_\obj\Debug\net8.0\refint\Stack_.dll
+D:\UnityTuLam\C#\AdvancedC#\Stack_\Stack_\obj\Debug\net8.0\Stack_.pdb
+D:\UnityTuLam\C#\AdvancedC#\Stack_\Stack_\obj\Debug\net8.0\Stack_.genruntimeconfig.cache
+D:\UnityTuLam\C#\AdvancedC#\Stack_\Stack_\obj\Debug\net8.0\ref\Stack_.dll

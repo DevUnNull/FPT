@@ -1,0 +1,14 @@
+D:\UnityTuLam\C#\AdvancedC#\Array_List_Bai2\Array_List_Bai2\bin\Debug\net8.0\Array_List_Bai2.exe
+D:\UnityTuLam\C#\AdvancedC#\Array_List_Bai2\Array_List_Bai2\bin\Debug\net8.0\Array_List_Bai2.deps.json
+D:\UnityTuLam\C#\AdvancedC#\Array_List_Bai2\Array_List_Bai2\bin\Debug\net8.0\Array_List_Bai2.runtimeconfig.json
+D:\UnityTuLam\C#\AdvancedC#\Array_List_Bai2\Array_List_Bai2\bin\Debug\net8.0\Array_List_Bai2.dll
+D:\UnityTuLam\C#\AdvancedC#\Array_List_Bai2\Array_List_Bai2\bin\Debug\net8.0\Array_List_Bai2.pdb
+D:\UnityTuLam\C#\AdvancedC#\Array_List_Bai2\Array_List_Bai2\obj\Debug\net8.0\Array_List_Bai2.GeneratedMSBuildEditorConfig.editorconfig
+D:\UnityTuLam\C#\AdvancedC#\Array_List_Bai2\Array_List_Bai2\obj\Debug\net8.0\Array_List_Bai2.AssemblyInfoInputs.cache
+D:\UnityTuLam\C#\AdvancedC#\Array_List_Bai2\Array_List_Bai2\obj\Debug\net8.0\Array_List_Bai2.AssemblyInfo.cs
+D:\UnityTuLam\C#\AdvancedC#\Array_List_Bai2\Array_List_Bai2\obj\Debug\net8.0\Array_List_Bai2.csproj.CoreCompileInputs.cache
+D:\UnityTuLam\C#\AdvancedC#\Array_List_Bai2\Array_List_Bai2\obj\Debug\net8.0\Array_List_Bai2.dll
+D:\UnityTuLam\C#\AdvancedC#\Array_List_Bai2\Array_List_Bai2\obj\Debug\net8.0\refint\Array_List_Bai2.dll
+D:\UnityTuLam\C#\AdvancedC#\Array_List_Bai2\Array_List_Bai2\obj\Debug\net8.0\Array_List_Bai2.pdb
+D:\UnityTuLam\C#\AdvancedC#\Array_List_Bai2\Array_List_Bai2\obj\Debug\net8.0\Array_List_Bai2.genruntimeconfig.cache
+D:\UnityTuLam\C#\AdvancedC#\Array_List_Bai2\Array_List_Bai2\obj\Debug\net8.0\ref\Array_List_Bai2.dll

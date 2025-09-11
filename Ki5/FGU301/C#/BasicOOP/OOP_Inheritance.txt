@@ -1,0 +1,16 @@
+Inheritance (Kế thừa)
+
+Cho phép một lớp kế thừa thuộc tính và phương thức từ lớp khác.
+Giúp tái sử dụng code, tạo mối quan hệ "is-a" (là một).
+
+class Animal
+{
+    public void Eat() => Console.WriteLine("Eating...");
+}
+
+class Dog : Animal
+{
+    public void Bark() => Console.WriteLine("Barking...");
+}
+
+lùc này ở main mình vẫn gọi ra Dog.Eat() được
