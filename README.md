@@ -15,7 +15,6 @@ Hướng dẫn quy ước và quy trình làm việc với Git cho team.
   - [Bước 6: Merge `dev` vào `main`](#bước-6-merge-dev-vào-main)
 - [3. Quy trình xử lý xung đột (Conflict)](#3-quy-trình-xử-lý-xung-đột-conflict)
 - [4. Các lưu ý quan trọng](#4-các-lưu-ý-quan-trọng)
-- [⚡ Lệnh gộp nhanh](#-lệnh-gộp-nhanh)
 
 ---
 
